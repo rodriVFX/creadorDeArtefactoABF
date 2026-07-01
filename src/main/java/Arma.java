@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Arma extends Equipamiento{
+public abstract class Arma extends Equipamiento{
 
     private int modificadorHA;
     private int velocidad;

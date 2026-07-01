@@ -2,7 +2,7 @@ import java.util.List;
 
 public class ArmaLanzable extends ArmaDistancia{
 
-    int cadenciaFuego;
+    private int cadenciaFuego;
 
     public ArmaLanzable(){}
 

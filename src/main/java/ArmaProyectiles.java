@@ -2,7 +2,7 @@ import java.util.List;
 
 public class ArmaProyectiles extends ArmaDistancia{
 
-    int recarga;
+    private int recarga;
 
     public ArmaProyectiles(){}
 

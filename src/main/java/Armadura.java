@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Armadura extends Equipamiento{
 
-    private Map<String, Integer> ta;
+    private Map<TipoDanoEnum, Integer> ta;
     private int requerimientoArmadura;
     private int penalizadorNatural;
     private int restriccionMov;
@@ -12,7 +12,7 @@ public class Armadura extends Equipamiento{
 
     public Armadura(){}
 
-    public Armadura(String nombre, int presenciaBase, List<String> especialidades, String tipo, int entereza, int rotura, List<String> especializaciones, Map<String, Integer> ta, int requerimientoArmadura, int penalizadorNatural, int restriccionMov, String localizacion) {
+    public Armadura(String nombre, int presenciaBase, List<String> especialidades, String tipo, int entereza, int rotura, List<String> especializaciones, Map<TipoDanoEnum, Integer> ta, int requerimientoArmadura, int penalizadorNatural, int restriccionMov, String localizacion) {
         super(nombre, presenciaBase, especialidades, tipo, entereza, rotura, especializaciones);
         this.ta = ta;
         this.requerimientoArmadura = requerimientoArmadura;
@@ -21,13 +21,13 @@ public class Armadura extends Equipamiento{
         this.localizacion = localizacion;
     }
 
-    public Map<String, Integer> getTa() { return new HashMap<>(ta);}
+    public Map<TipoDanoEnum, Integer> getTa() { return new HashMap<>(ta);}
     public int getRequerimientoArmadura() { return requerimientoArmadura; }
     public int getPenalizadorNatural() { return penalizadorNatural; }
     public int getRestriccionMov() { return restriccionMov; }
     public String getLocalizacion() { return localizacion; }
 
-    public void modificarTA(String tipoDano, int modificador){
+    public void modificarTA(TipoDanoEnum tipoDano, int modificador){
 
         if(ta == null){ ta = new HashMap<>(); }
 
