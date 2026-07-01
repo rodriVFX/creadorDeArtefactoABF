@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Piedra",
+    "modMaterial": 0
+  },
+  {
+    "nombre": "Hueso común",
+    "modMaterial": 0
+  },
+  {
+    "nombre": "Mármol",
+    "modMaterial": 5
+  },
+  {
+    "nombre": "Metal común",
+    "modMaterial": 0
+  },
+  {
+    "nombre": "Acero Negro",
+    "modMaterial": 5
+  },
+  {
+    "nombre": "Iluminati",
+    "modMaterial": 15
+  },
+  {
+    "nombre": "Acero Blanco",
+    "modMaterial": 10
+  },
+  {
+    "nombre": "Elektra",
+    "modMaterial": 20
+  },
+  {
+    "nombre": "Madera de Ghestal",
+    "modMaterial": 20
+  },
+  {
+    "nombre": "Malebolgia",
+    "modMaterial": 50
+  },
+  {
+    "nombre": "Diamante",
+    "modMaterial": 10
+  },
+  {
+    "nombre": "Perla Negra",
+    "modMaterial": 30
+  }
+]

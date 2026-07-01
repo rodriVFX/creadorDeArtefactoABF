@@ -1,0 +1,18 @@
+[
+  {
+    "nombre": "Calidad pésima",
+    "modCalidad": -10
+  },
+  {
+    "nombre": "Calidad normal",
+    "modCalidad": 0
+  },
+  {
+    "nombre": "Calidad magistral (+5)",
+    "modCalidad": 50
+  },
+  {
+    "nombre": "Obra única (+10)",
+    "modCalidad": 100
+  }
+]

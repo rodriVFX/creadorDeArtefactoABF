@@ -1,0 +1,131 @@
+[
+  {
+    "nombre": "Polvo de Hada (50g)",
+    "nivelPP": 2,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Polvo de Hada (100g)",
+    "nivelPP": 2,
+    "cantidadPP": 100
+  },
+  {"nombre": "Polvo de Hada (250g)",
+  "nivelPP": 3,
+  "cantidadPP": 20
+  },
+  {
+    "nombre": "Polvo de Hada (+1Kg)",
+    "nivelPP": 3,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Sangre de Paloma: Gema Pequeña",
+    "nivelPP": 2,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Sangre de Paloma: Gema Grande",
+    "nivelPP": 2,
+    "cantidadPP": 250
+  },
+  {
+    "nombre": "Lágrimas de Banshee: Lamento Menor",
+    "nivelPP": 3,
+    "cantidadPP": 20
+  },
+  {
+    "nombre": "Lágrimas de Banshee: Lamento Mayor",
+    "nivelPP": 3,
+    "cantidadPP": 60
+  },
+  {
+    "nombre": "Mandrágora",
+    "nivelPP": 1,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Metal Estelar: Adornos",
+    "nivelPP": 1,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Metal Estelar: Mitad del Artefacto",
+    "nivelPP": 2,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Metal Estelar: Artefacto Completo",
+    "nivelPP": 3,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Corazón de Cría de Dragón",
+    "nivelPP": 3,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Corazón de Dragón adulto",
+    "nivelPP": 3,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Corazón de Dragón Antiguo",
+    "nivelPP": 4,
+    "cantidadPP": 20
+  },
+  {
+    "nombre": "Corazón de Dragón Ancestral",
+    "nivelPP": 4,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Semilla de Ramalen: Fragmento",
+    "nivelPP": 2,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Semilla de Ramalen: Completa",
+    "nivelPP": 3,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Un cuerno de Oni menor",
+    "nivelPP": 2,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Un cuerno de Oni mayor",
+    "nivelPP": 3,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Ambos cuernos de un Oni menor",
+    "nivelPP": 2,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Ambos cuernos de un Oni mayor",
+    "nivelPP": 3,
+    "cantidadPP": 100
+  },
+  {
+    "nombre": "Elementos de absoluta pureza",
+    "nivelPP": 3,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Sangre de Linaje Antiguo: Menos de medio litro",
+    "nivelPP": 2,
+    "cantidadPP": 50
+  },
+  {
+    "nombre": "Sangre de Linaje Antiguo: Menos de la mitad de su sangre",
+    "nivelPP": 2,
+    "cantidadPP": 250
+  },
+  {
+    "nombre": "Sangre de Linaje Antiguo: Toda su sangre",
+    "nivelPP": 3,
+    "cantidadPP": 150
+  }
+]

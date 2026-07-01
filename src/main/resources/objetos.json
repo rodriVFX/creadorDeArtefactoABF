@@ -1,0 +1,67 @@
+[
+  {
+    "nombre": "Anillo",
+    "presenciaBase": 10,
+    "especialidades": ["Conjuros Automáticos", "Conjuros innatos", "Habilidad de Lanzador"]
+  },
+  {
+    "nombre": "Pendiente",
+    "presenciaBase": 10,
+    "especialidades": ["Mejora de Resistencias", "Contenedor de Zeon", "Recarga Mágica"]
+  },
+  {
+    "nombre": "Báculo",
+    "presenciaBase": 30,
+    "especialidades": ["ACT", "Proyección Mágica", "Poder Añadido"]
+  },
+  {
+    "nombre": "Corona",
+    "presenciaBase": 30,
+    "especialidades": ["Alteración del Destino", "Mejora de Habilidades Secundarias", "Mejora de características"]
+  },
+  {
+    "nombre": "Diadema",
+    "presenciaBase": 10,
+    "especialidades": ["Inmunidad Psíquica", "Inmunidad", "Mejora de mantenimientos"]
+  },
+  {
+    "nombre": "Prenda de ropa",
+    "presenciaBase": 15,
+    "especialidades": ["Mejora de Movimiento", "Inmunidad", "Inmunidad elemental"]
+  },
+  {
+    "nombre": "Orbe",
+    "presenciaBase": 30,
+    "especialidades": ["Presencia incrementada", "Convocación Incrementada", "Efecto Místico"]
+  },
+  {
+    "nombre": "Gema",
+    "presenciaBase": 20,
+    "especialidades": ["Contenedor de Zeon", "Reserva de Ki", "Potencial Psíquico"]
+  },
+  {
+    "nombre": "Brazal",
+    "presenciaBase": 25,
+    "especialidades": ["Ataques Elementales", "Sustitución de Características", "Ataque Especial"]
+  },
+  {
+    "nombre": "Cinturón",
+    "presenciaBase": 20,
+    "especialidades": ["Aumento de Características", "Barrera de Daño"]
+  },
+  {
+    "nombre": "Símbolo místico (cruces, anks, mandalas...)",
+    "presenciaBase": 40,
+    "especialidades": ["Efecto Místico", "Inmunidad Física y Mágica", "Control de Resistencia Incrementado", "ACT"]
+  },
+  {
+    "nombre": "Espejo",
+    "presenciaBase": 30,
+    "especialidades": ["Creador de portales", "Lanzador de Conjuros", "Efecto Místico"]
+  },
+  {
+    "nombre": "Gafas",
+    "presenciaBase": 20,
+    "especialidades": ["Medios de Visión Especiales", "Aumento de Características"]
+  }
+]
