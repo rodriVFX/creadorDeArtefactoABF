@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ConfiguracionArmaMelee {
 
-    private Map<String, ArmaMelee> armasMelee;
+    private final Map<String, ArmaMelee> armasMelee;
 
     public ConfiguracionArmaMelee() {
 
