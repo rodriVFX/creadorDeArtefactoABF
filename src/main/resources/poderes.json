@@ -1,0 +1,2706 @@
+[
+  {
+    "nombre": "Arma con Ataque Incrementado",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "+5", "costePP": 50, "nivel": 1 },
+      { "nombre": "+10", "costePP": 20, "nivel": 2 },
+      { "nombre": "+15", "costePP": 20, "nivel": 3 },
+      { "nombre": "+20", "costePP": 20, "nivel": 4 },
+      { "nombre": "+25", "costePP": 10, "nivel": 5 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Calidad de Combate",
+    "faceta": "Generales de Calidad",
+    "opciones": [
+      { "nombre": "Calidad +5", "costePP": 50, "nivel": 2 },
+      { "nombre": "Calidad +10", "costePP": 100, "nivel": 2 },
+      { "nombre": "Calidad +15", "costePP": 50, "nivel": 3 },
+      { "nombre": "Calidad +20", "costePP": 50, "nivel": 4 },
+      { "nombre": "Calidad +25", "costePP": 50, "nivel": 5 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Potenciación Ofensiva",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Bono +5", "costePP": 60, "nivel": 2 },
+      { "nombre": "Bono +10", "costePP": 120, "nivel": 2 },
+      { "nombre": "Bono +15", "costePP": 60, "nivel": 3 },
+      { "nombre": "Bono +20", "costePP": 60, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Calidad General",
+    "faceta": "Generales de Calidad",
+    "opciones": [
+      { "nombre": "Calidad +5", "costePP": 50, "nivel": 1 },
+      { "nombre": "Calidad +10", "costePP": 100, "nivel": 1 },
+      { "nombre": "Calidad +15", "costePP": 50, "nivel": 2 },
+      { "nombre": "Calidad +20", "costePP": 50, "nivel": 3 },
+      { "nombre": "Calidad +25", "costePP": 50, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Daño Incrementado",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "+10", "costePP": 20, "nivel": 1 },
+      { "nombre": "+20", "costePP": 80, "nivel": 1 },
+      { "nombre": "+30", "costePP": 50, "nivel": 2 },
+      { "nombre": "+40", "costePP": 100, "nivel": 2 },
+      { "nombre": "+50", "costePP": 50, "nivel": 3 },
+      { "nombre": "+60", "costePP": 100, "nivel": 3 },
+      { "nombre": "+80", "costePP": 40, "nivel": 4 },
+      { "nombre": "+100", "costePP": 80, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Arma Encantada",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Encantada", "costePP": 50, "nivel": 2 },
+      { "nombre": "Sobrenatural", "costePP": 80, "nivel": 3 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Ataques Elementales",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Frío", "costePP": 30, "nivel": 2 },
+      { "nombre": "Fuego", "costePP": 30, "nivel": 2 },
+      { "nombre": "Electricidad", "costePP": 30, "nivel": 2 },
+      { "nombre": "Luz", "costePP": 60, "nivel": 2 },
+      { "nombre": "Oscuridad", "costePP": 60, "nivel": 2 },
+      { "nombre": "Energía", "costePP": 20, "nivel": 3 }
+    ],
+    "modificadores": [
+      { "nombre": "Variable", "modCostePP": 20, "modNivel": 0 },
+      { "nombre": "Combinado", "modCostePP": 40, "modNivel": 0 },
+      { "nombre": "Primario", "modCostePP": 50, "modNivel": 0 }
+    ]
+  },
+  {
+    "nombre": "Exterminador",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Un tipo de raza", "costePP": 50, "nivel": 3 },
+      { "nombre": "Un ser determinado", "costePP": 20, "nivel": 2 },
+      { "nombre": "Una condición", "costePP": 100, "nivel": 2 }
+    ],
+    "modificadores": [
+      { "nombre": "Exterminador mayor", "modCostePP": 50, "modNivel": 0 }
+    ]
+  },
+  {
+    "nombre": "Embate",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Embate", "costePP": 100, "nivel": 2 },
+      { "nombre": "Embate mayor", "costePP": 50, "nivel": 3 },
+      { "nombre": "Embate 8", "costePP": 20, "nivel": 2 },
+      { "nombre": "Embate 10", "costePP": 100, "nivel": 2 },
+      { "nombre": "Embate 12", "costePP": 20, "nivel": 3 },
+      { "nombre": "Embate 15", "costePP": 100, "nivel": 3 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Munición Ilimitada",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "10 Proyectiles al día", "costePP": 20, "nivel": 1 },
+      { "nombre": "25 Proyectiles al día", "costePP": 50, "nivel": 1 },
+      { "nombre": "100 Proyectiles al día", "costePP": 20, "nivel": 2 },
+      { "nombre": "Proyectiles ilimitados", "costePP": 50, "nivel": 2 }
+    ],
+    "modificadores": [
+      { "nombre": "Arma de fuego", "modCostePP": 20, "modNivel": 0 },
+      { "nombre": "Munición combinable", "modCostePP": 20, "modNivel": 0 }
+    ]
+  },
+  {
+    "nombre": "Ataque Especial",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Distancia: 25 metros", "costePP": 20, "nivel": 2 },
+      { "nombre": "Distancia: 50 metros", "costePP": 40, "nivel": 2 },
+      { "nombre": "Distancia: 100 metros", "costePP": 80, "nivel": 2 },
+      { "nombre": "Distancia: 250 metros", "costePP": 40, "nivel": 3 },
+      { "nombre": "Distancia: 1 kilómetro", "costePP": 40, "nivel": 4 },
+      { "nombre": "Distancia: Cualquier punto visible", "costePP": 80, "nivel": 4 },
+      { "nombre": "Daño: 40", "costePP": 10, "nivel": 2 },
+      { "nombre": "Daño: 60", "costePP": 40, "nivel": 2 },
+      { "nombre": "Daño: 80", "costePP": 10, "nivel": 3 },
+      { "nombre": "Daño: 100", "costePP": 20, "nivel": 3 },
+      { "nombre": "Daño: 120", "costePP": 40, "nivel": 3 },
+      { "nombre": "Daño: 150", "costePP": 20, "nivel": 4 },
+      { "nombre": "Daño: 200", "costePP": 40, "nivel": 4 },
+      { "nombre": "Daño: 250", "costePP": 80, "nivel": 4 },
+      { "nombre": "Daño completo", "costePP": 80, "nivel": 2 },
+      { "nombre": "Área: 1 metro de radio", "costePP": 20, "nivel": 2 },
+      { "nombre": "Área: 3 metros de radio", "costePP": 40, "nivel": 2 },
+      { "nombre": "Área: 5 metros de radio", "costePP": 80, "nivel": 2 },
+      { "nombre": "Área: 10 metros de radio", "costePP": 20, "nivel": 3 },
+      { "nombre": "Área: 25 metros de radio", "costePP": 40, "nivel": 3 },
+      { "nombre": "Área: 100 metros de radio", "costePP": 40, "nivel": 4 },
+      { "nombre": "Área: 250 metros de radio", "costePP": 80, "nivel": 4 },
+      { "nombre": "Área: 500 metros de radio", "costePP": 40, "nivel": 5 },
+      { "nombre": "Habilidad ofensiva: 80", "costePP": 100, "nivel": 2 },
+      { "nombre": "Habilidad ofensiva: 120", "costePP": 150, "nivel": 2 },
+      { "nombre": "Habilidad ofensiva: 140", "costePP": 250, "nivel": 2 },
+      { "nombre": "Habilidad ofensiva: 180", "costePP": 100, "nivel": 3 },
+      { "nombre": "Habilidad ofensiva: 240", "costePP": 200, "nivel": 3 },
+      { "nombre": "Habilidad ofensiva: 320", "costePP": 100, "nivel": 4 },
+      { "nombre": "Habilidad ofensiva: 440", "costePP": 100, "nivel": 5 }
+    ],
+    "modificadores": [
+      { "nombre": "Debilidad: X Asaltos (-5 PP por asalto)", "modCostePP": 0, "modNivel": 0 },
+      { "nombre": "Debilidad: 1 Al día", "modCostePP": -40, "modNivel": 0 },
+      { "nombre": "Debilidad: 3 Al día", "modCostePP": -20, "modNivel": 0 },
+      { "nombre": "Debilidad: 5 Al día", "modCostePP": -10, "modNivel": 0 },
+      { "nombre": "Debilidad: Habilidad final", "modCostePP": -40, "modNivel": 0 }
+    ]
+  },
+  {
+    "nombre": "Crítico Incrementado",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "+10", "costePP": 40, "nivel": 1 },
+      { "nombre": "+20", "costePP": 40, "nivel": 2 },
+      { "nombre": "+30", "costePP": 80, "nivel": 2 },
+      { "nombre": "+40", "costePP": 20, "nivel": 3 },
+      { "nombre": "+50", "costePP": 60, "nivel": 3 },
+      { "nombre": "+60", "costePP": 150, "nivel": 3 },
+      { "nombre": "Crítico automático", "costePP": 100, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Destrucción de Armadura",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "-1 TA", "costePP": 40, "nivel": 1 },
+      { "nombre": "-2 TA", "costePP": 20, "nivel": 2 },
+      { "nombre": "-3 TA", "costePP": 40, "nivel": 2 },
+      { "nombre": "-4 TA", "costePP": 120, "nivel": 2 },
+      { "nombre": "-5 TA", "costePP": 20, "nivel": 3 },
+      { "nombre": "-6 TA", "costePP": 40, "nivel": 3 },
+      { "nombre": "-8 TA", "costePP": 20, "nivel": 4 },
+      { "nombre": "Ignora TA", "costePP": 150, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Recuperación",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Lanzamiento (Activo)", "costePP": 50, "nivel": 2 },
+      { "nombre": "Lanzamiento (Pasivo)", "costePP": 50, "nivel": 3 },
+      { "nombre": "A la vista", "costePP": 100, "nivel": 2 },
+      { "nombre": "Cercano", "costePP": 40, "nivel": 3 },
+      { "nombre": "Ilimitado", "costePP": 50, "nivel": 4 }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Otras Habilidades de Armas",
+    "faceta": "Ofensiva",
+    "opciones": [
+      { "nombre": "Precisa", "costePP": 50, "nivel": 2 },
+      { "nombre": "Vorpal", "costePP": 50, "nivel": 3 },
+      { "nombre": "Crítico variable", "costePP": 40, "nivel": 2 },
+      { "nombre": "Transformable (Limitada)", "costePP": 100, "nivel": 2 },
+      { "nombre": "Transformable (Completa)", "costePP": 50, "nivel": 3 },
+      { "nombre": "Control de daño", "costePP": 100, "nivel": 2 }
+    ],
+    "modificadores": []
+  },
+  {
+      "nombre": "Lanzador de Conjuros",
+      "faceta": "Conjuros Innatos",
+      "opciones": [
+        {
+          "nombre": "Nivel 2 a 10",
+          "costePP": 0,
+          "nivel": 1,
+          "descripcion": "Determina el nivel del conjuro que puede lanzar el artefacto. El coste en PP es equivalente a una cuarta parte del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba."
+        },
+        {
+          "nombre": "Nivel 12 a 50",
+          "costePP": 0,
+          "nivel": 2,
+          "descripcion": "Determina el nivel del conjuro que puede lanzar el artefacto. El coste en PP es equivalente a una cuarta parte del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba."
+        },
+        {
+          "nombre": "Nivel 52 a 80",
+          "costePP": 0,
+          "nivel": 3,
+          "descripcion": "Determina el nivel del conjuro que puede lanzar el artefacto. El coste en PP es equivalente a una cuarta parte del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba."
+        },
+        {
+          "nombre": "Nivel 82 a 90",
+          "costePP": 0,
+          "nivel": 4,
+          "descripcion": "Determina el nivel del conjuro que puede lanzar el artefacto. El coste en PP es equivalente a una cuarta parte del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba."
+        }
+      ],
+      "modificadores": [
+        {
+          "nombre": "Sin Don",
+          "modCostePP": 40,
+          "modNivel": 0,
+          "descripcion": "El poseedor no requiere tener el Don para introducir Zeon en el artefacto y activar los conjuros que contiene. Incluso sin control sobre su ACT, el objeto absorbe de él la energía mágica a un ritmo de 25 puntos por asalto."
+        },
+        {
+          "nombre": "Innato",
+          "modCostePP": 20,
+          "modNivel": 0,
+          "descripcion": "A una orden del usuario, el objeto toma Zeon del portador al ritmo de su ACT, permitiéndole seguir acumulando magia para lanzar sus propios conjuros."
+        },
+        {
+          "nombre": "Mitad de coste",
+          "modCostePP": 0,
+          "modNivel": 1,
+          "descripcion": "La cantidad de Zeon necesaria para lanzar los conjuros preparados queda reducida a la mitad."
+        },
+        {
+          "nombre": "Energías propias",
+          "modCostePP": 40,
+          "modNivel": 0,
+          "descripcion": "Si el artefacto dispone de una reserva propia de Zeon (Contenedor de Zeon), el portador puede utilizarla para lanzar los conjuros preparados. El ritmo de transferencia es de 50 puntos de Zeon por asalto."
+        },
+        {
+          "nombre": "Doble ACT",
+          "modCostePP": 20,
+          "modNivel": 0,
+          "descripcion": "El portador dobla su ACT al determinar el ritmo al que introduce Zeon en el artefacto. Combinado con Sin Don o Energías propias incrementa la transferencia hasta 50 y 100 puntos por asalto respectivamente."
+        }
+      ]
+    },
+    {
+      "nombre": "Habilidad de Lanzador",
+      "faceta": "Conjuros Innatos",
+      "opciones": [
+        {
+          "nombre": "80",
+          "costePP": 50,
+          "nivel": 2,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 80 para lanzar sus propios conjuros innatos."
+        },
+        {
+          "nombre": "120",
+          "costePP": 100,
+          "nivel": 2,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 120 para lanzar sus propios conjuros innatos."
+        },
+        {
+          "nombre": "160",
+          "costePP": 50,
+          "nivel": 3,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 160 para lanzar sus propios conjuros innatos."
+        },
+        {
+          "nombre": "200",
+          "costePP": 100,
+          "nivel": 3,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 200 para lanzar sus propios conjuros innatos."
+        },
+        {
+          "nombre": "240",
+          "costePP": 250,
+          "nivel": 3,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 240 para lanzar sus propios conjuros innatos."
+        },
+        {
+          "nombre": "280",
+          "costePP": 100,
+          "nivel": 4,
+          "descripcion": "El objeto utiliza una Proyección Mágica de 280 para lanzar sus propios conjuros innatos."
+        }
+      ],
+      "modificadores": [
+        {
+          "nombre": "Habilidad Final",
+          "modCostePP": 0,
+          "modNivel": -1,
+          "descripcion": "Debilidad. El artefacto no realiza tiradas para calcular su habilidad; la Proyección Mágica elegida se considera directamente su valor final."
+        }
+      ]
+    },
+  {
+    "nombre": "Conjuros Automáticos",
+    "faceta": "Conjuros Innatos",
+    "opciones": [
+      {
+        "nombre": "Nivel 2 a 10",
+        "costePP": 0,
+        "nivel": 1,
+        "descripcion": "Determina el nivel del conjuro que va a lanzar el artefacto. El coste en PP es equivalente a la mitad del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba. El conjuro se lanza automáticamente, sin necesidad de acumular Zeon ni invertir poder sobrenatural. Si el conjuro tiene mantenimiento, permanece activo automáticamente durante tres asaltos o una hora si su mantenimiento es diario. Tras utilizarlo debe transcurrir un día completo antes de volver a lanzarlo."
+      },
+      {
+        "nombre": "Nivel 12 a 50",
+        "costePP": 0,
+        "nivel": 2,
+        "descripcion": "Determina el nivel del conjuro que va a lanzar el artefacto. El coste en PP es equivalente a la mitad del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba. El conjuro se lanza automáticamente, sin necesidad de acumular Zeon ni invertir poder sobrenatural. Si el conjuro tiene mantenimiento, permanece activo automáticamente durante tres asaltos o una hora si su mantenimiento es diario. Tras utilizarlo debe transcurrir un día completo antes de volver a lanzarlo."
+      },
+      {
+        "nombre": "Nivel 52 a 80",
+        "costePP": 0,
+        "nivel": 3,
+        "descripcion": "Determina el nivel del conjuro que va a lanzar el artefacto. El coste en PP es equivalente a la mitad del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba. El conjuro se lanza automáticamente, sin necesidad de acumular Zeon ni invertir poder sobrenatural. Si el conjuro tiene mantenimiento, permanece activo automáticamente durante tres asaltos o una hora si su mantenimiento es diario. Tras utilizarlo debe transcurrir un día completo antes de volver a lanzarlo."
+      },
+      {
+        "nombre": "Nivel 82 a 90",
+        "costePP": 0,
+        "nivel": 4,
+        "descripcion": "Determina el nivel del conjuro que va a lanzar el artefacto. El coste en PP es equivalente a la mitad del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba. El conjuro se lanza automáticamente, sin necesidad de acumular Zeon ni invertir poder sobrenatural. Si el conjuro tiene mantenimiento, permanece activo automáticamente durante tres asaltos o una hora si su mantenimiento es diario. Tras utilizarlo debe transcurrir un día completo antes de volver a lanzarlo."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Uso adicional",
+        "modCostePP": 10,
+        "modNivel": 0,
+        "descripcion": "El artefacto puede utilizar el conjuro una vez adicional al día. Este modificador puede escogerse varias veces para incrementar el número de usos diarios. Una carga también puede emplearse para prolongar el mantenimiento de un conjuro activo."
+      },
+      {
+        "nombre": "Recarga reducida",
+        "modCostePP": 100,
+        "modNivel": 0,
+        "descripcion": "Solo es necesario esperar una hora antes de volver a lanzar el conjuro o recuperar una carga gastada."
+      },
+      {
+        "nombre": "Sin límite",
+        "modCostePP": 0,
+        "modNivel": 1,
+        "descripcion": "No existe límite diario de usos. El conjuro puede lanzarse tantas veces como se desee, siempre que transcurran al menos tres asaltos entre un lanzamiento y el siguiente."
+      },
+      {
+        "nombre": "X Asaltos",
+        "modCostePP": -5,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El artefacto necesita un determinado número de asaltos de preparación antes de ejecutar el conjuro desde que se declara su lanzamiento. El modificador al coste es de -5 PP por cada asalto requerido."
+      },
+      {
+        "nombre": "Condicionado",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El conjuro no solo necesita tiempo para volver a estar disponible, sino que además debe cumplirse una condición específica para poder utilizarlo de nuevo. La reducción del coste depende de la dificultad de dicha condición; puede variar entre -10 y -40 PP."
+      }
+    ]
+  },
+  {
+    "nombre": "Calidad de Armadura",
+    "faceta": "Defensiva",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este es el valor de Calidad que obtiene la armadura. Al ser de carácter sobrenatural, también modifica la defensa contra Energía."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "Este es el valor de Calidad que obtiene la armadura. Al ser de carácter sobrenatural, también modifica la defensa contra Energía."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este es el valor de Calidad que obtiene la armadura. Al ser de carácter sobrenatural, también modifica la defensa contra Energía."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este es el valor de Calidad que obtiene la armadura. Al ser de carácter sobrenatural, también modifica la defensa contra Energía."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 50,
+        "nivel": 5,
+        "descripcion": "Este es el valor de Calidad que obtiene la armadura. Al ser de carácter sobrenatural, también modifica la defensa contra Energía."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Abierta",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "Debilidad. La armadura tiene una debilidad y se considera que tiene Armadura 0 contra un determinado tipo de ataque."
+      }
+    ]
+  },
+  {
+    "nombre": "Armadura Innata",
+    "faceta": "Defensiva",
+    "opciones": [
+      {
+        "nombre": "Armadura 1",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Otorga Armadura 1 contra un tipo de ataque elegido al crear el artefacto. El objeto concede esta protección sobrenatural simplemente por estar en contacto con el cuerpo del portador. Puede acumularse con otras armaduras como una capa adicional."
+      },
+      {
+        "nombre": "Armadura 2",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "Otorga Armadura 2 contra un tipo de ataque elegido al crear el artefacto. No puede elegirse Energía salvo con el modificador Mística."
+      },
+      {
+        "nombre": "Armadura 3",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Otorga Armadura 3 contra un tipo de ataque elegido al crear el artefacto."
+      },
+      {
+        "nombre": "Armadura 4",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "Otorga Armadura 4 contra un tipo de ataque elegido al crear el artefacto."
+      },
+      {
+        "nombre": "Armadura 5",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "Otorga Armadura 5 contra un tipo de ataque elegido al crear el artefacto."
+      },
+      {
+        "nombre": "Armadura 6",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Otorga Armadura 6 contra un tipo de ataque elegido al crear el artefacto."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Física",
+        "modCostePP": 80,
+        "modNivel": 0,
+        "descripcion": "La protección funciona exclusivamente contra ataques de Filo, Contundente y Penetrante."
+      },
+      {
+        "nombre": "Elemental",
+        "modCostePP": 80,
+        "modNivel": 0,
+        "descripcion": "La protección funciona exclusivamente contra ataques de Frío, Calor y Electricidad."
+      },
+      {
+        "nombre": "Mística",
+        "modCostePP": 40,
+        "modNivel": 0,
+        "descripcion": "Permite elegir Energía como tipo de Armadura."
+      },
+      {
+        "nombre": "Enfocada",
+        "modCostePP": 80,
+        "modNivel": 0,
+        "descripcion": "El objeto funciona plenamente contra el tipo de ataque elegido originalmente y, frente al resto, proporciona la mitad del bono de Armadura, redondeando hacia abajo."
+      },
+      {
+        "nombre": "Completa",
+        "modCostePP": 20,
+        "modNivel": 1,
+        "descripcion": "La Armadura protege contra cualquier clase de ataque."
+      }
+    ]
+  },
+  {
+    "nombre": "Potenciación Defensiva",
+    "faceta": "Defensiva",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 60,
+        "nivel": 2,
+        "descripcion": "Es el bono que recibe el personaje a su Habilidad de Defensa."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Es el bono que recibe el personaje a su Habilidad de Defensa."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 60,
+        "nivel": 3,
+        "descripcion": "Es el bono que recibe el personaje a su Habilidad de Defensa."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 60,
+        "nivel": 4,
+        "descripcion": "Es el bono que recibe el personaje a su Habilidad de Defensa."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Arma con Defensa Incrementada",
+    "faceta": "Defensiva",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Es el bono defensivo que recibe el arma."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Es el bono defensivo que recibe el arma."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Es el bono defensivo que recibe el arma."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Es el bono defensivo que recibe el arma."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 10,
+        "nivel": 5,
+        "descripcion": "Es el bono defensivo que recibe el arma."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Inmunidad",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "Mitad de daño",
+        "costePP": 140,
+        "nivel": 2,
+        "descripcion": "El poseedor sufre la mitad de daño ante ataques de naturaleza física. Esta habilidad queda anulada ante ataques basados en calor, frío o electricidad, así como si el atacante tiene la capacidad de dañar Energía."
+      },
+      {
+        "nombre": "Daño físico",
+        "costePP": 60,
+        "nivel": 3,
+        "descripcion": "El poseedor no sufre daño ante ningún tipo de ataque que no esté basado en frío, calor, electricidad o energía."
+      },
+      {
+        "nombre": "Mitad de daño místico",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "El poseedor sufre la mitad de daño ante cualquier tipo de ataque. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Cualquier presencia",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "El portador se hace inmune a cualquier daño que no afecte Energía. Naturalmente seguirá recibiendo la potencia de los impactos, así como las consecuencias del ataque."
+      },
+      {
+        "nombre": "Presencia inferior a 80",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "Igual que 'Cualquier presencia', pero sigue siendo inmune a menos que el ataque provenga además de una presencia igual o superior a 80."
+      },
+      {
+        "nombre": "Presencia inferior a 120",
+        "costePP": 80,
+        "nivel": 4,
+        "descripcion": "Igual que 'Cualquier presencia', pero sigue siendo inmune a menos que el ataque provenga además de una presencia igual o superior a 120."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Inmunidad Mágica",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "Zeon 40",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 40. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 80",
+        "costePP": 250,
+        "nivel": 2,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 80. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 120",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 120. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 180",
+        "costePP": 350,
+        "nivel": 3,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 180. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 250",
+        "costePP": 150,
+        "nivel": 4,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 250. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 350",
+        "costePP": 300,
+        "nivel": 4,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 350. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Zeon 500",
+        "costePP": 150,
+        "nivel": 5,
+        "descripcion": "El personaje es inmune a cualquier conjuro cuyo potencial zeónico sea igual o inferior a 500. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Única vía",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "Debilidad. La inmunidad ante la magia sólo funciona contra los conjuros de una determinada Vía."
+      }
+    ]
+  },
+  {
+    "nombre": "Inmunidad Psíquica",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "Matrices 80",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 80. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 120",
+        "costePP": 250,
+        "nivel": 2,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 120. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 140",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 140. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 180",
+        "costePP": 300,
+        "nivel": 3,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 180. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 240",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 240. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 280",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 280. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices 320",
+        "costePP": 250,
+        "nivel": 4,
+        "descripcion": "El personaje es inmune a poderes psíquicos cuyo potencial sea igual o inferior a 320. Un ser con un Gnosis 35 o superior puede ignorar esta regla, salvo si el creador del artefacto tenía más Gnosis que él."
+      },
+      {
+        "nombre": "Matrices completa",
+        "costePP": 100,
+        "nivel": 5,
+        "descripcion": "El personaje es completamente inmune a todos los poderes psíquicos."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Única disciplina",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "Debilidad. La inmunidad ante los poderes psíquicos sólo funciona contra una determinada disciplina."
+      }
+    ]
+  },
+  {
+    "nombre": "Inmunidad Elemental",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "2 intensidades",
+        "costePP": 20,
+        "nivel": 1,
+        "descripcion": "El portador se hace inmune a dos intensidades de un elemento determinado durante la elección del poder (Frío, Fuego, Luz…). En caso de recibir un ataque basado en dicho elemento de una entidad cuyo Gnosis no sea superior a 25, por cada intensidad a la que es inmune aplica un -5 puntos a su Daño Base y obtiene un +5 a cualquier Resistencia pertinente. Los seres con más Gnosis ignoran esta habilidad."
+      },
+      {
+        "nombre": "4 intensidades",
+        "costePP": 40,
+        "nivel": 1,
+        "descripcion": "El portador se hace inmune a cuatro intensidades de un elemento determinado durante la elección del poder (Frío, Fuego, Luz…). En caso de recibir un ataque basado en dicho elemento de una entidad cuyo Gnosis no sea superior a 25, por cada intensidad a la que es inmune aplica un -5 puntos a su Daño Base y obtiene un +5 a cualquier Resistencia pertinente. Los seres con más Gnosis ignoran esta habilidad."
+      },
+      {
+        "nombre": "6 intensidades",
+        "costePP": 80,
+        "nivel": 1,
+        "descripcion": "El portador se hace inmune a seis intensidades de un elemento determinado durante la elección del poder (Frío, Fuego, Luz…). En caso de recibir un ataque basado en dicho elemento de una entidad cuyo Gnosis no sea superior a 25, por cada intensidad a la que es inmune aplica un -5 puntos a su Daño Base y obtiene un +5 a cualquier Resistencia pertinente. Los seres con más Gnosis ignoran esta habilidad."
+      },
+      {
+        "nombre": "10 intensidades",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "El portador se hace inmune a diez intensidades de un elemento determinado durante la elección del poder (Frío, Fuego, Luz…). En caso de recibir un ataque basado en dicho elemento de una entidad cuyo Gnosis no sea superior a 25, por cada intensidad a la que es inmune aplica un -5 puntos a su Daño Base y obtiene un +5 a cualquier Resistencia pertinente. Los seres con más Gnosis ignoran esta habilidad."
+      },
+      {
+        "nombre": "20 intensidades",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "El portador se hace inmune a veinte intensidades de un elemento determinado durante la elección del poder (Frío, Fuego, Luz…). En caso de recibir un ataque basado en dicho elemento de una entidad cuyo Gnosis no sea superior a 25, por cada intensidad a la que es inmune aplica un -5 puntos a su Daño Base y obtiene un +5 a cualquier Resistencia pertinente. Los seres con más Gnosis ignoran esta habilidad."
+      },
+      {
+        "nombre": "Inmunidad completa",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Hace al portador inmune al elemento elegido de forma completa. Los elementos producidos por criaturas con Gnosis 30 o superior pueden ignorar esta regla."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Elementos naturales",
+        "modCostePP": 40,
+        "modNivel": 0,
+        "descripcion": "El personaje es inmune por completo a los efectos de los cuatro elementos naturales."
+      },
+      {
+        "nombre": "Todos los elementos",
+        "modCostePP": 80,
+        "modNivel": 0,
+        "descripcion": "La resistencia se amplía de uno a todos los elementos, incluyendo luz y oscuridad."
+      }
+    ]
+  },
+  {
+    "nombre": "Reducción de Daño",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "-10",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "Indica el valor que se resta al daño base de cualquier ataque que sufre el personaje."
+      },
+      {
+        "nombre": "-20",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Indica el valor que se resta al daño base de cualquier ataque que sufre el personaje."
+      },
+      {
+        "nombre": "-30",
+        "costePP": 80,
+        "nivel": 4,
+        "descripcion": "Indica el valor que se resta al daño base de cualquier ataque que sufre el personaje."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "La reducción sólo funciona contra una clase de ataque."
+      }
+    ]
+  },
+  {
+    "nombre": "Barrera de Daño",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "40",
+        "costePP": 60,
+        "nivel": 1,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "60",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "80",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "100",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "120",
+        "costePP": 180,
+        "nivel": 2,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "150",
+        "costePP": 250,
+        "nivel": 2,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "180",
+        "costePP": 10,
+        "nivel": 3,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "200",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      },
+      {
+        "nombre": "250",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Confiere al objeto y su portador una Barrera de Daño contra toda clase de ataque. Este es el valor de la barrera de daño que obtiene el personaje que porta el objeto."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Mejora de Resistencias",
+    "faceta": "Protección",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 1,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 60,
+        "nivel": 2,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      },
+      {
+        "nombre": "+40",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      },
+      {
+        "nombre": "+50",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      },
+      {
+        "nombre": "+80",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Este poder permite aumentar las resistencias del portador del mismo. Este es el valor en que aumenta una de las Resistencias del portador del artefacto."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Todas las físicas",
+        "modCostePP": 60,
+        "modNivel": 0,
+        "descripcion": "El bono se aplica a la RF, RV y RE. No es compatible con el modificador Todas las místicas."
+      },
+      {
+        "nombre": "Todas las místicas",
+        "modCostePP": 60,
+        "modNivel": 0,
+        "descripcion": "El bono se aplica a la RM y RP."
+      },
+      {
+        "nombre": "Todas las resistencias",
+        "modCostePP": 0,
+        "modNivel": 1,
+        "descripcion": "El bono se aplica a todas las resistencias."
+      },
+      {
+        "nombre": "Sólo ante un tipo de magia",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona contra los efectos de una vía determinada de magia."
+      },
+      {
+        "nombre": "Sólo ante una disciplina psíquica",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona contra los efectos de una disciplina psíquica determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "ACT",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 150,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 200,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa el ACT del poseedor del artefacto cuando se encuentra en contacto con él. Es el valor que el artefacto suma al ACT de su poseedor cuando lo usa como potenciador."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Proyección Mágica",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus conjuros sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Mágica que obtiene el personaje que emplea el objeto al usarlo para lanzar conjuros a través suyo."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus conjuros sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Mágica que obtiene el personaje que emplea el objeto al usarlo para lanzar conjuros a través suyo."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus conjuros sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Mágica que obtiene el personaje que emplea el objeto al usarlo para lanzar conjuros a través suyo."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus conjuros sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Mágica que obtiene el personaje que emplea el objeto al usarlo para lanzar conjuros a través suyo."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus conjuros sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Mágica que obtiene el personaje que emplea el objeto al usarlo para lanzar conjuros a través suyo."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Contenedor de Zeon",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "50",
+        "costePP": 20,
+        "nivel": 1,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "100",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "200",
+        "costePP": 100,
+        "nivel": 1,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "250",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "500",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "750",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "1000",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "1500",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "2000",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "3000",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "5000",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "10000",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. Indica la cantidad máxima de Zeon que el artefacto puede recibir."
+      },
+      {
+        "nombre": "Sin Límite",
+        "costePP": 100,
+        "nivel": 5,
+        "descripcion": "Este poder permite al artefacto almacenar puntos de Zeon como contenedor mágico. El artefacto puede recibir una cantidad ilimitada de Zeon."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Poder Añadido",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "+10 Zeon",
+        "costePP": 100,
+        "nivel": 1,
+        "descripcion": "Esta habilidad incrementa el valor zeónico de todos los conjuros lanzados por el personaje que lo utilice sin la necesidad de invertir Zeon en ello. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica la cantidad que se añade al conjuro lanzado. Por ejemplo, alguien con un objeto que le otorga un +20 al valor zeónico de sus conjuros podría gastar únicamente 30 puntos de Zeon al lanzar un sortilegio, pero este aparecería como si hubiera gastado 50. Este poder no funciona con Alta Magia o Magia Divina."
+      },
+      {
+        "nombre": "+20 Zeon",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Esta habilidad incrementa el valor zeónico de todos los conjuros lanzados por el personaje que lo utilice sin la necesidad de invertir Zeon en ello. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica la cantidad que se añade al conjuro lanzado. Por ejemplo, alguien con un objeto que le otorga un +20 al valor zeónico de sus conjuros podría gastar únicamente 30 puntos de Zeon al lanzar un sortilegio, pero este aparecería como si hubiera gastado 50. Este poder no funciona con Alta Magia o Magia Divina."
+      },
+      {
+        "nombre": "+30 Zeon",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Esta habilidad incrementa el valor zeónico de todos los conjuros lanzados por el personaje que lo utilice sin la necesidad de invertir Zeon en ello. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica la cantidad que se añade al conjuro lanzado. Por ejemplo, alguien con un objeto que le otorga un +20 al valor zeónico de sus conjuros podría gastar únicamente 30 puntos de Zeon al lanzar un sortilegio, pero este aparecería como si hubiera gastado 50. Este poder no funciona con Alta Magia o Magia Divina."
+      },
+      {
+        "nombre": "+40 Zeon",
+        "costePP": 140,
+        "nivel": 2,
+        "descripcion": "Esta habilidad incrementa el valor zeónico de todos los conjuros lanzados por el personaje que lo utilice sin la necesidad de invertir Zeon en ello. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica la cantidad que se añade al conjuro lanzado. Por ejemplo, alguien con un objeto que le otorga un +20 al valor zeónico de sus conjuros podría gastar únicamente 30 puntos de Zeon al lanzar un sortilegio, pero este aparecería como si hubiera gastado 50. Este poder no funciona con Alta Magia o Magia Divina."
+      },
+      {
+        "nombre": "Grado Superior",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "El conjuro es lanzado con un grado por encima de su potencial. Este poder no funciona con Alta Magia o Magia Divina."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Control de Resistencia Mágica Incrementado",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia Mágica que provocan los conjuros del portador del artefacto. Por ejemplo, un conjuro con dificultad 120 de RM canalizado a través de un artefacto que incrementa 10 puntos la RM aumentaría el valor de dicha dificultad hasta 130 RM. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RM de los conjuros del lanzador."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia Mágica que provocan los conjuros del portador del artefacto. Por ejemplo, un conjuro con dificultad 120 de RM canalizado a través de un artefacto que incrementa 10 puntos la RM aumentaría el valor de dicha dificultad hasta 130 RM. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RM de los conjuros del lanzador."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia Mágica que provocan los conjuros del portador del artefacto. Por ejemplo, un conjuro con dificultad 120 de RM canalizado a través de un artefacto que incrementa 10 puntos la RM aumentaría el valor de dicha dificultad hasta 130 RM. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RM de los conjuros del lanzador."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia Mágica que provocan los conjuros del portador del artefacto. Por ejemplo, un conjuro con dificultad 120 de RM canalizado a través de un artefacto que incrementa 10 puntos la RM aumentaría el valor de dicha dificultad hasta 130 RM. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RM de los conjuros del lanzador."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 120,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia Mágica que provocan los conjuros del portador del artefacto. Por ejemplo, un conjuro con dificultad 120 de RM canalizado a través de un artefacto que incrementa 10 puntos la RM aumentaría el valor de dicha dificultad hasta 130 RM. Este modificador no se apila con el mismo poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RM de los conjuros del lanzador."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Recarga Mágica",
+    "faceta": "Potenciación Mágica",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 100,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 250,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "+40",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "+50",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "+60",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la regeneración zeónica del hechicero. Es el valor que el artefacto suma a la regeneración de Zeon diaria de su portador."
+      },
+      {
+        "nombre": "Doble",
+        "costePP": 200,
+        "nivel": 3,
+        "descripcion": "Dobla la regeneración de Zeon del portador."
+      },
+      {
+        "nombre": "Triple",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Triplica la regeneración de Zeon del portador."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Potencial",
+    "faceta": "Potenciación Psíquica",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 150,
+        "nivel": 1,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 200,
+        "nivel": 4,
+        "descripcion": "El artefacto incrementa el poder de las habilidades psíquicas del personaje. Es el valor que el artefacto suma al potencial psíquico de su poseedor cuando lo usa como canalizador de sus poderes."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "Debilidad. El bono sólo funciona al usar poderes de una disciplina determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Proyección Psíquica",
+    "faceta": "Potenciación Psíquica",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus poderes mentales sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Psíquica que obtiene el personaje que emplea el objeto al usarlo para lanzar poderes a través suyo."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus poderes mentales sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Psíquica que obtiene el personaje que emplea el objeto al usarlo para lanzar poderes a través suyo."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus poderes mentales sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Psíquica que obtiene el personaje que emplea el objeto al usarlo para lanzar poderes a través suyo."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus poderes mentales sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Psíquica que obtiene el personaje que emplea el objeto al usarlo para lanzar poderes a través suyo."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la habilidad del personaje para enfocar sus poderes mentales sobre un objetivo. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Indica el bono a la Proyección Psíquica que obtiene el personaje que emplea el objeto al usarlo para lanzar poderes a través suyo."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona con poderes de una disciplina determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Control de Resistencia Psíquica Incrementado",
+    "faceta": "Potenciación Psíquica",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia que los poderes del portador del artefacto requieren superar. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RP o RF de los poderes del lanzador."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia que los poderes del portador del artefacto requieren superar. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RP o RF de los poderes del lanzador."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia que los poderes del portador del artefacto requieren superar. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RP o RF de los poderes del lanzador."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia que los poderes del portador del artefacto requieren superar. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RP o RF de los poderes del lanzador."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 40,
+        "nivel": 5,
+        "descripcion": "Este poder incrementa la dificultad a superar de la Resistencia que los poderes del portador del artefacto requieren superar. Este modificador no se apila con el poder de un artefacto similar, sino que se toma el valor más elevado de los dos. Este es el valor que se suma a la dificultad a superar de las RP o RF de los poderes del lanzador."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona al lanzar poderes de una disciplina determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Mejora de Mantenimientos",
+    "faceta": "Potenciación Psíquica",
+    "opciones": [
+      {
+        "nombre": "+1",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "Este poder permite mantener un poder psíquico un turno adicional sin necesidad de volver a pagar su coste en CV. Indica el número de turnos adicionales durante los que puede mantenerse el poder."
+      },
+      {
+        "nombre": "+2",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder permite mantener un poder psíquico un turno adicional sin necesidad de volver a pagar su coste en CV. Indica el número de turnos adicionales durante los que puede mantenerse el poder."
+      },
+      {
+        "nombre": "+3",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "Este poder permite mantener un poder psíquico un turno adicional sin necesidad de volver a pagar su coste en CV. Indica el número de turnos adicionales durante los que puede mantenerse el poder."
+      },
+      {
+        "nombre": "+4",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder permite mantener un poder psíquico un turno adicional sin necesidad de volver a pagar su coste en CV. Indica el número de turnos adicionales durante los que puede mantenerse el poder."
+      },
+      {
+        "nombre": "+5",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "Este poder permite mantener un poder psíquico un turno adicional sin necesidad de volver a pagar su coste en CV. Indica el número de turnos adicionales durante los que puede mantenerse el poder."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El mantenimiento adicional sólo funciona con poderes de una disciplina determinada."
+      }
+    ]
+  },
+  {
+    "nombre": "Presencia Incrementada",
+    "faceta": "Potenciación en la Conjuración",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+40",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+50",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+60",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      },
+      {
+        "nombre": "+80",
+        "costePP": 120,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa la Presencia del objeto cuando es empleado para realizar una invocación. Indica el valor que se suma a la Presencia del objeto para realizar cualquier tipo de conjuración."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Reducción de Atadura",
+    "faceta": "Potenciación en la Conjuración",
+    "opciones": [
+      {
+        "nombre": "-1 nivel",
+        "costePP": 150,
+        "nivel": 1,
+        "descripcion": "Este poder reduce el coste del mantenimiento de las criaturas que se encuentren atadas en el interior del objeto. Las criaturas atadas en el objeto reducen su nivel en la cantidad indicada (hasta un mínimo de 0) a la hora de contabilizar el coste del mantenimiento de su atadura."
+      },
+      {
+        "nombre": "-2 niveles",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "Este poder reduce el coste del mantenimiento de las criaturas que se encuentren atadas en el interior del objeto. Las criaturas atadas en el objeto reducen su nivel en la cantidad indicada (hasta un mínimo de 0) a la hora de contabilizar el coste del mantenimiento de su atadura."
+      },
+      {
+        "nombre": "-3 niveles",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "Este poder reduce el coste del mantenimiento de las criaturas que se encuentren atadas en el interior del objeto. Las criaturas atadas en el objeto reducen su nivel en la cantidad indicada (hasta un mínimo de 0) a la hora de contabilizar el coste del mantenimiento de su atadura."
+      },
+      {
+        "nombre": "-4 niveles",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Este poder reduce el coste del mantenimiento de las criaturas que se encuentren atadas en el interior del objeto. Las criaturas atadas en el objeto reducen su nivel en la cantidad indicada (hasta un mínimo de 0) a la hora de contabilizar el coste del mantenimiento de su atadura."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Atadura elemental",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. La reducción sólo es concedida a las criaturas afines a un elemento específico."
+      }
+    ]
+  },
+  {
+    "nombre": "Convocación Incrementada",
+    "faceta": "Potenciación en la Conjuración",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 20,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 1,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      },
+      {
+        "nombre": "+40",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Este poder incrementa una de las cuatro habilidades de convocatoria del portador del artefacto. En el momento en el que se elige el poder, es necesario determinar cuál de ellas modifica; Convocar, Controlar, Atar o Desconvocar. Esta capacidad puede elegirse en varias ocasiones, pero siempre para modificar una habilidad diferente, ya que sus bonos no se apilan entre sí. Este es el valor que se incrementa la habilidad de convocatoria elegida."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Solo convocatoria",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "Debilidad. Esta desventaja sólo puede elegirse si la habilidad elegida es Convocar. De ser así, el bono no puede sumarse al realizar invocaciones."
+      },
+      {
+        "nombre": "Solo invocatoria",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "Debilidad. Esta desventaja sólo puede elegirse si la habilidad elegida es Invocar. De ser así, el bono únicamente se suma al realizar invocaciones."
+      },
+      {
+        "nombre": "Necesidad ritual",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo se aplica en caso de que se use en un ritual de al menos un minuto de duración."
+      },
+      {
+        "nombre": "Atadura elemental",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. El bono sólo funciona con las criaturas afines a un elemento específico."
+      }
+    ]
+  },
+  {
+    "nombre": "Incremento del Turno",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      },
+      {
+        "nombre": "+10",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      },
+      {
+        "nombre": "+15",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      },
+      {
+        "nombre": "+20",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      },
+      {
+        "nombre": "+30",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Este poder hace que el poseedor del artefacto incremente considerablemente su velocidad de reacción. Los bonos que otorga este poder no se apilan con otro de la misma naturaleza, sino que se toma el más elevado de los dos. Es el aumento del turno natural del portador del objeto."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Regeneración",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "Regeneración 4",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Este poder permite sustituir el nivel de regeneración del personaje por el valor indicado."
+      },
+      {
+        "nombre": "Regeneración 8",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Este poder permite sustituir el nivel de regeneración del personaje por el valor indicado."
+      },
+      {
+        "nombre": "Regeneración 12",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Este poder permite sustituir el nivel de regeneración del personaje por el valor indicado."
+      },
+      {
+        "nombre": "Regeneración 14",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Este poder permite sustituir el nivel de regeneración del personaje por el valor indicado."
+      },
+      {
+        "nombre": "Regeneración 16",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Este poder permite sustituir el nivel de regeneración del personaje por el valor indicado."
+      },
+      {
+        "nombre": "Regeneración +1",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Aumenta el nivel de regeneración del portador en 1. Este modificador no permite superar los límites determinados por el Gnosis del portador, ni se apila con otros efectos sobrenaturales que alteren la regeneración del personaje."
+      },
+      {
+        "nombre": "Regeneración +2",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Aumenta el nivel de regeneración del portador en 2. Este modificador no permite superar los límites determinados por el Gnosis del portador, ni se apila con otros efectos sobrenaturales que alteren la regeneración del personaje."
+      },
+      {
+        "nombre": "Regeneración +4",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Aumenta el nivel de regeneración del portador en 4. Este modificador no permite superar los límites determinados por el Gnosis del portador, ni se apila con otros efectos sobrenaturales que alteren la regeneración del personaje."
+      },
+      {
+        "nombre": "Regeneración +6",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Aumenta el nivel de regeneración del portador en 6. Este modificador no permite superar los límites determinados por el Gnosis del portador, ni se apila con otros efectos sobrenaturales que alteren la regeneración del personaje."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Mejora del Movimiento",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "+1",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "Aumenta el tipo de movimiento del portador. La mejora del tipo de movimiento sólo se aplica a la hora de ir a pie, aunque permite alcanzar Inhumanidad al desplazarse. No afectaría a su capacidad de nado, vuelo o cualquier otro tipo de movimiento diferente del normal."
+      },
+      {
+        "nombre": "+2",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Aumenta el tipo de movimiento del portador. La mejora del tipo de movimiento sólo se aplica a la hora de ir a pie, aunque permite alcanzar Inhumanidad al desplazarse. No afectaría a su capacidad de nado, vuelo o cualquier otro tipo de movimiento diferente del normal."
+      },
+      {
+        "nombre": "+3",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Aumenta el tipo de movimiento del portador. La mejora del tipo de movimiento sólo se aplica a la hora de ir a pie, aunque permite alcanzar Inhumanidad al desplazarse. No afectaría a su capacidad de nado, vuelo o cualquier otro tipo de movimiento diferente del normal."
+      },
+      {
+        "nombre": "+4",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Aumenta el tipo de movimiento del portador. La mejora del tipo de movimiento sólo se aplica a la hora de ir a pie, aunque permite alcanzar Inhumanidad al desplazarse. No afectaría a su capacidad de nado, vuelo o cualquier otro tipo de movimiento diferente del normal."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Mejora de Habilidades Secundarias",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "+10",
+        "costePP": 40,
+        "nivel": 1,
+        "descripcion": "Indica el bono aplicable a una habilidad secundaria en concreto."
+      },
+      {
+        "nombre": "+25",
+        "costePP": 20,
+        "nivel": 2,
+        "descripcion": "Indica el bono aplicable a una habilidad secundaria en concreto."
+      },
+      {
+        "nombre": "+50",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Indica el bono aplicable a una habilidad secundaria en concreto."
+      },
+      {
+        "nombre": "+75",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Indica el bono aplicable a una habilidad secundaria en concreto."
+      },
+      {
+        "nombre": "+100",
+        "costePP": 60,
+        "nivel": 3,
+        "descripcion": "Indica el bono aplicable a una habilidad secundaria en concreto."
+      },
+      {
+        "nombre": "+10 Campo Completo",
+        "costePP": 40,
+        "nivel": 2,
+        "descripcion": "Indica el bono aplicable a un grupo entero de habilidades secundarias (como por ejemplo, al grupo de habilidades Atléticas)."
+      },
+      {
+        "nombre": "+20 Campo Completo",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Indica el bono aplicable a un grupo entero de habilidades secundarias (como por ejemplo, al grupo de habilidades Atléticas)."
+      },
+      {
+        "nombre": "+30 Campo Completo",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "Indica el bono aplicable a un grupo entero de habilidades secundarias (como por ejemplo, al grupo de habilidades Atléticas)."
+      },
+      {
+        "nombre": "+40 Campo Completo",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Indica el bono aplicable a un grupo entero de habilidades secundarias (como por ejemplo, al grupo de habilidades Atléticas)."
+      },
+      {
+        "nombre": "+50 Campo Completo",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Indica el bono aplicable a un grupo entero de habilidades secundarias (como por ejemplo, al grupo de habilidades Atléticas)."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Mejora de Características",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "+1",
+        "costePP": 60,
+        "nivel": 2,
+        "descripcion": "Indica el valor incrementado que añade el portador del objeto al atributo elegido."
+      },
+      {
+        "nombre": "+2",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "Indica el valor incrementado que añade el portador del objeto al atributo elegido."
+      },
+      {
+        "nombre": "+3",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "Indica el valor incrementado que añade el portador del objeto al atributo elegido."
+      },
+      {
+        "nombre": "+4",
+        "costePP": 120,
+        "nivel": 4,
+        "descripcion": "Indica el valor incrementado que añade el portador del objeto al atributo elegido."
+      },
+      {
+        "nombre": "+5",
+        "costePP": 30,
+        "nivel": 5,
+        "descripcion": "Indica el valor incrementado que añade el portador del objeto al atributo elegido."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Solo Enfrentamientos",
+        "modCostePP": -20,
+        "modNivel": -1,
+        "descripcion": "La mejora de característica sólo se aplica a la hora de realizar controles enfrentados contra otros personajes, pero no otorga otros beneficios por sí misma."
+      }
+    ]
+  },
+  {
+    "nombre": "Sustitución de Características",
+    "faceta": "Mejoras",
+    "opciones": [
+      {
+        "nombre": "8",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "10",
+        "costePP": 20,
+        "nivel": 3,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "11",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "12",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "14",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "15",
+        "costePP": 80,
+        "nivel": 4,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      },
+      {
+        "nombre": "16",
+        "costePP": 20,
+        "nivel": 5,
+        "descripcion": "Sustituye la característica elegida por la del portador (en caso de ser mayor que la suya propia). Los atributos alterados permiten realizar acciones inhumanas y de Zen que dependan de dicha característica."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Potenciador de Acumulaciones de Ki",
+    "faceta": "Domine",
+    "opciones": [
+      {
+        "nombre": "+1",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "Indica el aumento que recibe el portador a una de sus acumulaciones de Ki."
+      },
+      {
+        "nombre": "+2",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Indica el aumento que recibe el portador a una de sus acumulaciones de Ki."
+      },
+      {
+        "nombre": "+3",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Indica el aumento que recibe el portador a una de sus acumulaciones de Ki."
+      },
+      {
+        "nombre": "+4",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "Indica el aumento que recibe el portador a una de sus acumulaciones de Ki."
+      },
+      {
+        "nombre": "+5",
+        "costePP": 50,
+        "nivel": 5,
+        "descripcion": "Indica el aumento que recibe el portador a una de sus acumulaciones de Ki."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Atributos Físicos",
+        "modCostePP": 50,
+        "modNivel": 0,
+        "descripcion": "El objeto otorga el incremento a los atributos de Fuerza y Constitución."
+      },
+      {
+        "nombre": "Atributos de Habilidad",
+        "modCostePP": 50,
+        "modNivel": 0,
+        "descripcion": "El objeto otorga el incremento a los atributos de Agilidad y Destreza."
+      },
+      {
+        "nombre": "Atributos Anímicos",
+        "modCostePP": 50,
+        "modNivel": 0,
+        "descripcion": "El objeto otorga el incremento a los atributos de Poder y Voluntad."
+      },
+      {
+        "nombre": "No Recuperación",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "El objeto otorga una mejora a la hora de acumular Ki para realizar técnicas y habilidades, pero no cuenta al determinar la cantidad de Ki que recupera el personaje."
+      },
+      {
+        "nombre": "Sólo Recuperación",
+        "modCostePP": 0,
+        "modNivel": -1,
+        "descripcion": "El objeto sólo mejora las acumulaciones a la hora de calcular la regeneración de Ki."
+      }
+    ]
+  },
+  {
+    "nombre": "Técnica Especial",
+    "faceta": "Domine",
+    "opciones": [
+      {
+        "nombre": "Nivel 1",
+        "costePP": 0,
+        "nivel": 3,
+        "descripcion": "Determina el nivel de técnica que porta el objeto. El coste en PP es equivalente al coste de CM por cuatro, aunque no es posible modificar el valor de CM incrementando o disminuyendo su coste en puntos de Ki. Salvo si se especifica lo contrario, la técnica sólo puede ser usada una vez al día."
+      },
+      {
+        "nombre": "Nivel 2",
+        "costePP": 0,
+        "nivel": 4,
+        "descripcion": "Determina el nivel de técnica que porta el objeto. El coste en PP es equivalente al coste de CM por cuatro, aunque no es posible modificar el valor de CM incrementando o disminuyendo su coste en puntos de Ki. Salvo si se especifica lo contrario, la técnica sólo puede ser usada una vez al día."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Uso adicional",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "El artefacto puede ser usado en una ocasión adicional al día. Puede escogerse varias veces para incrementar el número de cargas."
+      },
+      {
+        "nombre": "Sin límite",
+        "modCostePP": 50,
+        "modNivel": 1,
+        "descripcion": "No hay límite al número de veces que puede usarse la técnica, siempre que se espere al menos cinco asaltos entre activaciones."
+      },
+      {
+        "nombre": "Recarga reducida",
+        "modCostePP": 50,
+        "modNivel": 0,
+        "descripcion": "Sólo es necesario esperar una hora antes de volver a usar la técnica o recuperar una carga."
+      },
+      {
+        "nombre": "X Asaltos",
+        "modCostePP": -5,
+        "modNivel": 0,
+        "descripcion": "El artefacto requiere varios asaltos de preparación antes de ejecutar la técnica. La reducción en PP es de 5 por asalto, hasta un máximo de 10 asaltos."
+      },
+      {
+        "nombre": "Consume Ki",
+        "modCostePP": -50,
+        "modNivel": 0,
+        "descripcion": "Para activar la técnica el personaje debe introducir en el objeto el coste en puntos de Ki que tendría una técnica convencional."
+      }
+    ]
+  },
+  {
+    "nombre": "Reserva de Ki",
+    "faceta": "Domine",
+    "opciones": [
+      {
+        "nombre": "12",
+        "costePP": 100,
+        "nivel": 1,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "24",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "36",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "48",
+        "costePP": 250,
+        "nivel": 2,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "60",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "120",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "180",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "240",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      },
+      {
+        "nombre": "300",
+        "costePP": 250,
+        "nivel": 4,
+        "descripcion": "Es la cantidad de Ki que puede albergar el artefacto."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Fuga de poder",
+        "modCostePP": -40,
+        "modNivel": 0,
+        "descripcion": "El objeto pierde de forma natural la energía almacenada a un ritmo de 1 punto de Ki por hora."
+      },
+      {
+        "nombre": "Filtro debilitador",
+        "modCostePP": -25,
+        "modNivel": 0,
+        "descripcion": "El objeto almacena únicamente la mitad del Ki que recibe."
+      }
+    ]
+  },
+  {
+    "nombre": "Prótesis",
+    "faceta": "Esotérica",
+    "descripcion": "Permite crear mediante magia prótesis que sustituyan partes perdidas. Además de la propia creación del artefacto, habrá que tener en cuenta la inserción de la misma en el cuerpo, para lo que será necesario un control de Medicina. Naturalmente, las prótesis pueden estar dotadas de otros poderes adicionales.",
+    "opciones": [
+      {
+        "nombre": "Miembro inferior",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "Sustituye un brazo o una pierna, aunque no responde de un modo tan efectivo como el miembro original. Aplica un -20 a cualquier acción realizada con él y un -2 a los atributos que dependan de dicho miembro. Posee Armadura 4 contra ataques no basados en energía dirigidos directamente contra él."
+      },
+      {
+        "nombre": "Miembro perfecto",
+        "costePP": 60,
+        "nivel": 3,
+        "descripcion": "Sustituye un brazo o una pierna funcionando igual que el miembro original. Posee Armadura 4 contra ataques no basados en energía dirigidos directamente contra él."
+      },
+      {
+        "nombre": "Miembro superior",
+        "costePP": 200,
+        "nivel": 3,
+        "descripcion": "Como un miembro perfecto, pero además concede un +2 a Agilidad, Destreza o Fuerza (a elegir). Posee Armadura 4 contra ataques no basados en energía dirigidos directamente contra él."
+      },
+      {
+        "nombre": "Órgano sensitivo inferior",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "Sustituye un órgano sensitivo (vista, oído, olfato, etc.) funcionando de forma inferior al original. Aplica un -20 a cualquier habilidad vinculada a su uso y un -2 a los atributos relacionados."
+      },
+      {
+        "nombre": "Órgano sensitivo perfecto",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Sustituye un órgano sensitivo funcionando exactamente igual que el original."
+      },
+      {
+        "nombre": "Órgano sensitivo superior",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Como el anterior, pero funciona mejor que el original. El personaje obtiene un +2 al atributo vinculado a dicho órgano."
+      },
+      {
+        "nombre": "Órgano interno inferior",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "Sustituye un órgano interno (corazón, pulmones, riñones, etc.), pero funciona peor que el original, aplicando los penalizadores apropiados según el órgano sustituido."
+      },
+      {
+        "nombre": "Órgano interno perfecto",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "Sustituye un órgano interno funcionando exactamente igual que el original."
+      },
+      {
+        "nombre": "Órgano interno superior",
+        "costePP": 250,
+        "nivel": 3,
+        "descripcion": "Como el anterior, pero el órgano funciona mejor que el original, otorgando bonificadores apropiados dependiendo del órgano sustituido."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Tacto",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "El miembro conserva el sentido del tacto como si fuera el original. Durante la creación puede elegirse si también conserva la sensación de dolor."
+      },
+      {
+        "nombre": "Arma natural",
+        "modCostePP": 30,
+        "modNivel": 0,
+        "descripcion": "El miembro incorpora una característica especial (garras, cuchillas, etc.) que permite utilizarlo como un arma natural."
+      }
+    ]
+  },
+  {
+    "nombre": "Alteración del Destino",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Pifia reducida",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "El portador únicamente obtiene una pifia con un resultado de 1."
+      },
+      {
+        "nombre": "Mejora crítica",
+        "costePP": 75,
+        "nivel": 4,
+        "descripcion": "El portador mejora en 5 puntos la posibilidad de obtener una tirada abierta. Por tanto, obtendría una tirada abierta a partir de 85."
+      },
+      {
+        "nombre": "Dobles",
+        "costePP": 150,
+        "nivel": 4,
+        "descripcion": "Cualquier tirada en que ambos dados obtuviesen el mismo número se considera automáticamente una tirada abierta."
+      },
+      {
+        "nombre": "Alteración existencial",
+        "costePP": 100,
+        "nivel": 4,
+        "descripcion": "El personaje puede repetir una tirada de dados al día, quedándose con el segundo resultado. Puede adquirirse varias veces para aumentar el número de repeticiones diarias; aunque requiere pagar los PP adicionales, estas adquisiciones no cuentan como poderes adicionales al determinar la Presencia del artefacto."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Uso reducido",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Los beneficios sólo se aplican a una clase de acción concreta y determinada, y no a todas las que realice el personaje."
+      }
+    ]
+  },
+  {
+    "nombre": "Ocultación Mejorada",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Absurdo",
+        "costePP": 20,
+        "nivel": 0,
+        "descripcion": "Determina la dificultad base que tiene el objeto para ser detectado como mágico. El nivel de esta habilidad es equivalente a un nivel menos del poder más elevado del objeto."
+      },
+      {
+        "nombre": "Casi Imposible",
+        "costePP": 40,
+        "nivel": 0,
+        "descripcion": "Determina la dificultad base que tiene el objeto para ser detectado como mágico. El nivel de esta habilidad es equivalente a un nivel menos del poder más elevado del objeto."
+      },
+      {
+        "nombre": "Imposible",
+        "costePP": 80,
+        "nivel": 0,
+        "descripcion": "Determina la dificultad base que tiene el objeto para ser detectado como mágico. El nivel de esta habilidad es equivalente a un nivel menos del poder más elevado del objeto."
+      },
+      {
+        "nombre": "Inhumano",
+        "costePP": 120,
+        "nivel": 0,
+        "descripcion": "Determina la dificultad base que tiene el objeto para ser detectado como mágico. El nivel de esta habilidad es equivalente a un nivel menos del poder más elevado del objeto."
+      },
+      {
+        "nombre": "Zen",
+        "costePP": 160,
+        "nivel": 0,
+        "descripcion": "Determina la dificultad base que tiene el objeto para ser detectado como mágico. El nivel de esta habilidad es equivalente a un nivel menos del poder más elevado del objeto."
+      },
+      {
+        "nombre": "Indetectable",
+        "costePP": 100,
+        "nivel": 0,
+        "descripcion": "El objeto es completamente indetectable por ningún medio sobrenatural. El nivel de esta habilidad es equivalente al nivel del poder más elevado del objeto, con un mínimo de nivel 2."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Medios de Visión Especiales",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Visión nocturna",
+        "costePP": 100,
+        "nivel": 1,
+        "descripcion": "El portador obtiene visión nocturna."
+      },
+      {
+        "nombre": "Visión nocturna completa",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "El portador obtiene visión nocturna completa."
+      },
+      {
+        "nombre": "Ver magia",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El portador puede percibir la magia."
+      },
+      {
+        "nombre": "Ver matrices",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El portador puede ver matrices mágicas."
+      },
+      {
+        "nombre": "Ver espíritus",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El portador puede ver espíritus."
+      },
+      {
+        "nombre": "Ver lo sobrenatural",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "El portador puede percibir cualquier manifestación sobrenatural."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Efectos Menores",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Oculto",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "El artefacto se oculta en el interior del cuerpo o de otro objeto, haciendo que sea imposible detectarlo a simple vista. No obstante, es necesario exteriorizarlo para que funcione."
+      },
+      {
+        "nombre": "Traspaso",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Permite que el objeto pase de manos de un portador a las de otro a voluntad del anterior. El traspaso tiene un alcance máximo de 250 metros. Aunque activarlo es una acción pasiva, el objeto no aparecerá en las manos del destinatario hasta el inicio del siguiente asalto."
+      },
+      {
+        "nombre": "Maestría",
+        "costePP": 50,
+        "nivel": 1,
+        "descripcion": "El creador puede exigir un valor mínimo en una habilidad concreta para poder utilizar el artefacto. Si no se cumple dicho requisito, el artefacto resulta completamente inútil."
+      },
+      {
+        "nombre": "Indestructible",
+        "costePP": 50,
+        "nivel": 4,
+        "descripcion": "El objeto se vuelve inmune a cualquier daño que no provenga de un ser con Gnosis 35 o superior."
+      },
+      {
+        "nombre": "Autodestrucción",
+        "costePP": 50,
+        "nivel": 2,
+        "descripcion": "El objeto puede autodestruirse a voluntad de su portador sin afectar a nada de su entorno."
+      }
+    ],
+    "modificadores": []
+  },
+  {
+    "nombre": "Ego",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Ego básico",
+        "costePP": 60,
+        "nivel": 3,
+        "descripcion": "El objeto posee consciencia propia y una personalidad extremadamente básica. Es incapaz de desarrollar verdaderos sentimientos y actúa de forma similar a un autómata. Su personalidad viene determinada por el azar y por la naturaleza del artefacto."
+      },
+      {
+        "nombre": "Ego avanzado",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "Como Ego básico, pero el objeto se comporta como un ser vivo cualquiera, siendo capaz de desarrollar sentimientos y emociones."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Comunicación",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "Permite al objeto comunicarse con su dueño o con las personas que le rodean, ya sea mediante palabras o comunicación mental, a elección de su creador."
+      },
+      {
+        "nombre": "Genio",
+        "modCostePP": 60,
+        "modNivel": 0,
+        "descripcion": "El objeto posee una inteligencia excepcional y es capaz de comprender varios idiomas y desarrollar pensamientos extremadamente elaborados."
+      },
+      {
+        "nombre": "Personalidad determinada",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "El creador puede elegir la personalidad del objeto e incluso dotarlo de recuerdos básicos que considerará propios."
+      },
+      {
+        "nombre": "Orden",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "El objeto obedece una orden o directriz impuesta por su creador, que condiciona su comportamiento."
+      }
+    ]
+  },
+  {
+    "nombre": "Creador de Portales",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Puerta a La Vigilia (Velo Débil)",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "El objeto es capaz de abrir puertas a La Vigilia en lugares donde la membrana que separa ambos mundos sea débil. El transporte será al reflejo equivalente de La Vigilia del lugar en el que el portador se encuentra en ese instante."
+      },
+      {
+        "nombre": "Puerta a La Vigilia",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "Como el anterior, pero no es necesario encontrarse en un lugar donde la membrana entre mundos sea frágil."
+      },
+      {
+        "nombre": "Portal (Lugar Determinado)",
+        "costePP": 50,
+        "nivel": 3,
+        "descripcion": "Crea una abertura entre dos puntos, permitiendo a su usuario o quien éste decida transportarse instantáneamente de uno a otro. El lugar de destino debe quedar determinado durante la creación del artefacto."
+      },
+      {
+        "nombre": "Portal fijo",
+        "costePP": 30,
+        "nivel": 4,
+        "descripcion": "Crea una abertura entre dos puntos, permitiendo el transporte instantáneo. Es necesario conocer previamente el destino y esperar al menos un minuto antes de volver a activar este poder."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "Objeto dividido",
+        "modCostePP": -25,
+        "modNivel": 0,
+        "descripcion": "El objeto está dividido en dos partes o resuena con otro artefacto de la misma naturaleza. Cuando crea un portal, debe hacerlo necesariamente hacia el lugar donde se encuentra la otra parte."
+      },
+      {
+        "nombre": "5 al día",
+        "modCostePP": -10,
+        "modNivel": 0,
+        "descripcion": "El poder solo puede utilizarse cinco veces al día."
+      },
+      {
+        "nombre": "3 al día",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "El poder solo puede utilizarse tres veces al día."
+      },
+      {
+        "nombre": "1 al día",
+        "modCostePP": -30,
+        "modNivel": 0,
+        "descripcion": "El poder solo puede utilizarse una vez al día."
+      }
+    ]
+  },
+  {
+    "nombre": "Efecto Místico",
+    "faceta": "Esotérica",
+    "opciones": [
+      {
+        "nombre": "Miedo",
+        "costePP": 150,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Miedo."
+      },
+      {
+        "nombre": "Terror",
+        "costePP": 150,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Terror."
+      },
+      {
+        "nombre": "Dolor",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Dolor."
+      },
+      {
+        "nombre": "Dolor extremo",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Dolor Extremo."
+      },
+      {
+        "nombre": "Debilidad",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Debilidad."
+      },
+      {
+        "nombre": "Paralización parcial",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Paralización Parcial."
+      },
+      {
+        "nombre": "Paralización completa",
+        "costePP": 20,
+        "nivel": 4,
+        "descripcion": "El objetivo sufre el estado de Paralización Completa."
+      },
+      {
+        "nombre": "Ira",
+        "costePP": 100,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Ira."
+      },
+      {
+        "nombre": "Ceguera",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Ceguera."
+      },
+      {
+        "nombre": "Sordera",
+        "costePP": 120,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Sordera."
+      },
+      {
+        "nombre": "Mudez",
+        "costePP": 60,
+        "nivel": 2,
+        "descripcion": "El objetivo sufre el estado de Mudez."
+      },
+      {
+        "nombre": "Fascinación",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Fascinación."
+      },
+      {
+        "nombre": "Daño simple",
+        "costePP": 80,
+        "nivel": 2,
+        "descripcion": "El objetivo recibe un efecto de Daño Simple."
+      },
+      {
+        "nombre": "Daño doble",
+        "costePP": 40,
+        "nivel": 3,
+        "descripcion": "El objetivo recibe un efecto de Daño Doble."
+      },
+      {
+        "nombre": "Inconsciencia",
+        "costePP": 200,
+        "nivel": 3,
+        "descripcion": "El objetivo queda Inconsciente."
+      },
+      {
+        "nombre": "Dominio",
+        "costePP": 40,
+        "nivel": 4,
+        "descripcion": "El objetivo queda bajo un efecto de Dominio."
+      },
+      {
+        "nombre": "Muerte",
+        "costePP": 80,
+        "nivel": 4,
+        "descripcion": "El objetivo sufre el efecto de Muerte."
+      },
+      {
+        "nombre": "Locura",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre el estado de Locura."
+      },
+      {
+        "nombre": "Vejez",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "El objetivo envejece sobrenaturalmente."
+      },
+      {
+        "nombre": "Penalizador a toda acción",
+        "costePP": 80,
+        "nivel": 3,
+        "descripcion": "El objetivo sufre un penalizador general a todas sus acciones."
+      },
+      {
+        "nombre": "Destrucción de características",
+        "costePP": 120,
+        "nivel": 3,
+        "descripcion": "Destruye características del objetivo según las reglas del efecto."
+      },
+      {
+        "nombre": "Drenaje (Mitad)",
+        "costePP": 100,
+        "nivel": 3,
+        "descripcion": "Drena la mitad del recurso elegido (PV, Zeon o Ki). Al crear este poder debe elegirse qué recurso drena."
+      },
+      {
+        "nombre": "Drenaje (Completo)",
+        "costePP": 160,
+        "nivel": 3,
+        "descripcion": "Drena completamente el recurso elegido (PV, Zeon o Ki). Al crear este poder debe elegirse qué recurso drena."
+      }
+    ],
+    "modificadores": [
+      {
+        "nombre": "RM 40",
+        "modCostePP": 0,
+        "modNivel": 0,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 80",
+        "modCostePP": 10,
+        "modNivel": 0,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 100",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 120",
+        "modCostePP": 40,
+        "modNivel": 0,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 140",
+        "modCostePP": 60,
+        "modNivel": 0,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 180",
+        "modCostePP": 20,
+        "modNivel": 1,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "RM 200",
+        "modCostePP": 60,
+        "modNivel": 1,
+        "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
+      },
+      {
+        "nombre": "Por daño",
+        "modCostePP": 0,
+        "modNivel": 0,
+        "descripcion": "El objeto sólo provoca el efecto si consigue causar daño al objetivo."
+      },
+      {
+        "nombre": "Por contacto",
+        "modCostePP": 20,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto a todo aquel que lo toque de un modo directo. Al crear el artefacto debe determinarse si sólo afecta a una zona concreta del objeto o a toda su superficie, así como si el portador es inmune o no a sus efectos."
+      },
+      {
+        "nombre": "Por sonido",
+        "modCostePP": 40,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto a todo aquel que escuche el sonido que emite. Quien bloquee parcialmente su audición (por ejemplo tapándose los oídos) puede obtener un bono de entre +20 y +40 a su Resistencia Mágica."
+      },
+      {
+        "nombre": "Por vista",
+        "modCostePP": 60,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto a todo aquel que lo mire. El portador es inmune a este efecto."
+      },
+      {
+        "nombre": "Por olfato",
+        "modCostePP": 40,
+        "modNivel": 0,
+        "descripcion": "El objeto genera un aroma que afecta a todo aquel que lo huela. Quien bloquee parcialmente su capacidad olfativa (por ejemplo usando un pañuelo) puede obtener un bono de entre +20 y +40 a su Resistencia Mágica."
+      },
+      {
+        "nombre": "Área (5 metros)",
+        "modCostePP": 80,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
+      },
+      {
+        "nombre": "Área (10 metros)",
+        "modCostePP": 120,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
+      },
+      {
+        "nombre": "Área (25 metros)",
+        "modCostePP": 150,
+        "modNivel": 0,
+        "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
+      },
+      {
+        "nombre": "Área (50 metros)",
+        "modCostePP": 20,
+        "modNivel": 1,
+        "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
+      },
+      {
+        "nombre": "Tiempo Limitado",
+        "modCostePP": -20,
+        "modNivel": 0,
+        "descripcion": "Debilidad. Los poderes con efectos de duración prolongada mantienen su efecto durante un número de asaltos igual al nivel de fracaso, independientemente de lo que determinen las reglas generales."
+      }
+    ]
+  }
+]

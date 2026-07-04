@@ -1,3 +1,5 @@
+import Datos.Calidad;
+import Datos.Material;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

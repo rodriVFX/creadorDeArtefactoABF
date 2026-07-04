@@ -1,3 +1,9 @@
+import Contenedores.Contenedor;
+import Datos.Calidad;
+import Datos.Material;
+import MateriasPrimas.MateriaPrima;
+import Poderes.Poder;
+
 import java.util.ArrayList;
 import java.util.List;
 
