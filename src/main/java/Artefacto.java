@@ -15,10 +15,10 @@ public class Artefacto {
     private List<Poder> poderes;
     private List<MateriaPrima> materiasPrimas;
 
-    public Artefacto(Contenedor contenedor, String material, String calidad, ConfiguracionArtefacto config){
+    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, ConfiguracionArtefacto config){
         this.contenedor = contenedor;
-        this.material = material;
-        this.calidad = calidad;
+        this.material = material.getNombre();
+        this.calidad = calidad.getNombre();
 
         poderes = new ArrayList<>();
         materiasPrimas = new ArrayList<>();
