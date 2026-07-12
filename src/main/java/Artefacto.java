@@ -3,7 +3,6 @@ import Datos.Calidad;
 import Datos.Material;
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +33,10 @@ public class Artefacto {
         presencia = contenedor.getPresenciaBase() + mat.getModificador() + cal.getModificador();
     }
 
+    public void anadirPoder(Poder poder){poderes.add(poder);}
+
+    public void anadirMateriaPrima(MateriaPrima mat){materiasPrimas.add(mat);}
+
     public int getPresencia(){
         return presencia;
     }
@@ -48,5 +51,36 @@ public class Artefacto {
 
     public List<MateriaPrima> getMateriasPrimas(){
         return new ArrayList<>(materiasPrimas);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("==========\n");
+        sb.append("Artefacto\n");
+        sb.append("==========\n\n");
+
+        sb.append("Contenedor = ").append(contenedor.getNombre()).append("\n");
+        sb.append("Material = ").append(material).append("\n");
+        sb.append("Calidad = ").append(calidad).append("\n");
+        sb.append("Presencia = ").append(presencia).append("\n\n");
+
+        sb.append("Materias primas\n");
+        sb.append("--------------------\n");
+        if(materiasPrimas.isEmpty()){sb.append("Ninguna\n");}
+        else{for (MateriaPrima m:materiasPrimas){sb.append("- ").append(m.getNombre()).append("\n");}}
+
+        sb.append("\nPoderes\n");
+        sb.append("--------------------\n");
+
+        if (poderes.isEmpty()) {
+            sb.append("Ninguno");
+        } else {
+            for (Poder p : poderes) {
+                sb.append("- ").append(p.getNombre()).append("\n");
+            }
+        }
+
+        return sb.toString();
     }
 }

@@ -1,7 +1,9 @@
 package Poderes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Poder {
 
@@ -18,20 +20,18 @@ public class Poder {
         this.modificadores = new ArrayList<>(modificadores);
     }
 
-    public int getCostePP(){
+    public Map<Integer, Integer> getCostePP(){
         int costePP = opcion.getCostePP();
+        int nivelPP = opcion.getNivel();
+        Map<Integer, Integer> puntos = new HashMap<>();
         for(ModificadorPoder mod : modificadores){
                 costePP += mod.getModificadorCoste();
-        }
-        return costePP;
-    }
-    public int getNivelPP(){
-        int nivelPP = opcion.getNivel();
-        for(ModificadorPoder mod : modificadores){
                 nivelPP += mod.getModificadorNivel();
         }
-        return nivelPP;
+        puntos.put(nivelPP, costePP);
+        return puntos;
     }
+
     public String getNombre(){
     return base.getNombre();
     }

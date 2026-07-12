@@ -82,9 +82,9 @@
       { "nombre": "Energía", "costePP": 20, "nivel": 3 }
     ],
     "modificadores": [
-      { "nombre": "Variable", "modCostePP": 20, "modNivel": 0 },
-      { "nombre": "Combinado", "modCostePP": 40, "modNivel": 0 },
-      { "nombre": "Primario", "modCostePP": 50, "modNivel": 0 }
+      { "nombre": "Variable", "modificadorCoste": 20, "modificadorNivel": 0 },
+      { "nombre": "Combinado", "modificadorCoste": 40, "modificadorNivel": 0 },
+      { "nombre": "Primario", "modificadorCoste": 50, "modificadorNivel": 0 }
     ]
   },
   {
@@ -96,7 +96,7 @@
       { "nombre": "Una condición", "costePP": 100, "nivel": 2 }
     ],
     "modificadores": [
-      { "nombre": "Exterminador mayor", "modCostePP": 50, "modNivel": 0 }
+      { "nombre": "Exterminador mayor", "modificadorCoste": 50, "modificadorNivel": 0 }
     ]
   },
   {
@@ -122,8 +122,8 @@
       { "nombre": "Proyectiles ilimitados", "costePP": 50, "nivel": 2 }
     ],
     "modificadores": [
-      { "nombre": "Arma de fuego", "modCostePP": 20, "modNivel": 0 },
-      { "nombre": "Munición combinable", "modCostePP": 20, "modNivel": 0 }
+      { "nombre": "Arma de fuego", "modificadorCoste": 20, "modificadorNivel": 0 },
+      { "nombre": "Munición combinable", "modificadorCoste": 20, "modificadorNivel": 0 }
     ]
   },
   {
@@ -162,11 +162,11 @@
       { "nombre": "Habilidad ofensiva: 440", "costePP": 100, "nivel": 5 }
     ],
     "modificadores": [
-      { "nombre": "Debilidad: X Asaltos (-5 PP por asalto)", "modCostePP": 0, "modNivel": 0 },
-      { "nombre": "Debilidad: 1 Al día", "modCostePP": -40, "modNivel": 0 },
-      { "nombre": "Debilidad: 3 Al día", "modCostePP": -20, "modNivel": 0 },
-      { "nombre": "Debilidad: 5 Al día", "modCostePP": -10, "modNivel": 0 },
-      { "nombre": "Debilidad: Habilidad final", "modCostePP": -40, "modNivel": 0 }
+      { "nombre": "Debilidad: X Asaltos (-5 PP por asalto)", "modificadorCoste": 0, "modificadorNivel": 0 },
+      { "nombre": "Debilidad: 1 Al día", "modificadorCoste": -40, "modificadorNivel": 0 },
+      { "nombre": "Debilidad: 3 Al día", "modificadorCoste": -20, "modificadorNivel": 0 },
+      { "nombre": "Debilidad: 5 Al día", "modificadorCoste": -10, "modificadorNivel": 0 },
+      { "nombre": "Debilidad: Habilidad final", "modificadorCoste": -40, "modificadorNivel": 0 }
     ]
   },
   {
@@ -255,32 +255,32 @@
       "modificadores": [
         {
           "nombre": "Sin Don",
-          "modCostePP": 40,
-          "modNivel": 0,
+          "modificadorCoste": 40,
+          "modificadorNivel": 0,
           "descripcion": "El poseedor no requiere tener el Don para introducir Zeon en el artefacto y activar los conjuros que contiene. Incluso sin control sobre su ACT, el objeto absorbe de él la energía mágica a un ritmo de 25 puntos por asalto."
         },
         {
           "nombre": "Innato",
-          "modCostePP": 20,
-          "modNivel": 0,
+          "modificadorCoste": 20,
+          "modificadorNivel": 0,
           "descripcion": "A una orden del usuario, el objeto toma Zeon del portador al ritmo de su ACT, permitiéndole seguir acumulando magia para lanzar sus propios conjuros."
         },
         {
           "nombre": "Mitad de coste",
-          "modCostePP": 0,
-          "modNivel": 1,
+          "modificadorCoste": 0,
+          "modificadorNivel": 1,
           "descripcion": "La cantidad de Zeon necesaria para lanzar los conjuros preparados queda reducida a la mitad."
         },
         {
           "nombre": "Energías propias",
-          "modCostePP": 40,
-          "modNivel": 0,
+          "modificadorCoste": 40,
+          "modificadorNivel": 0,
           "descripcion": "Si el artefacto dispone de una reserva propia de Zeon (Contenedor de Zeon), el portador puede utilizarla para lanzar los conjuros preparados. El ritmo de transferencia es de 50 puntos de Zeon por asalto."
         },
         {
           "nombre": "Doble ACT",
-          "modCostePP": 20,
-          "modNivel": 0,
+          "modificadorCoste": 20,
+          "modificadorNivel": 0,
           "descripcion": "El portador dobla su ACT al determinar el ritmo al que introduce Zeon en el artefacto. Combinado con Sin Don o Energías propias incrementa la transferencia hasta 50 y 100 puntos por asalto respectivamente."
         }
       ]
@@ -329,8 +329,8 @@
       "modificadores": [
         {
           "nombre": "Habilidad Final",
-          "modCostePP": 0,
-          "modNivel": -1,
+          "modificadorCoste": 0,
+          "modificadorNivel": -1,
           "descripcion": "Debilidad. El artefacto no realiza tiradas para calcular su habilidad; la Proyección Mágica elegida se considera directamente su valor final."
         }
       ]
@@ -367,32 +367,32 @@
     "modificadores": [
       {
         "nombre": "Uso adicional",
-        "modCostePP": 10,
-        "modNivel": 0,
+        "modificadorCoste": 10,
+        "modificadorNivel": 0,
         "descripcion": "El artefacto puede utilizar el conjuro una vez adicional al día. Este modificador puede escogerse varias veces para incrementar el número de usos diarios. Una carga también puede emplearse para prolongar el mantenimiento de un conjuro activo."
       },
       {
         "nombre": "Recarga reducida",
-        "modCostePP": 100,
-        "modNivel": 0,
+        "modificadorCoste": 100,
+        "modificadorNivel": 0,
         "descripcion": "Solo es necesario esperar una hora antes de volver a lanzar el conjuro o recuperar una carga gastada."
       },
       {
         "nombre": "Sin límite",
-        "modCostePP": 0,
-        "modNivel": 1,
+        "modificadorCoste": 0,
+        "modificadorNivel": 1,
         "descripcion": "No existe límite diario de usos. El conjuro puede lanzarse tantas veces como se desee, siempre que transcurran al menos tres asaltos entre un lanzamiento y el siguiente."
       },
       {
         "nombre": "X Asaltos",
-        "modCostePP": -5,
-        "modNivel": 0,
+        "modificadorCoste": -5,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El artefacto necesita un determinado número de asaltos de preparación antes de ejecutar el conjuro desde que se declara su lanzamiento. El modificador al coste es de -5 PP por cada asalto requerido."
       },
       {
         "nombre": "Condicionado",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El conjuro no solo necesita tiempo para volver a estar disponible, sino que además debe cumplirse una condición específica para poder utilizarlo de nuevo. La reducción del coste depende de la dificultad de dicha condición; puede variar entre -10 y -40 PP."
       }
     ]
@@ -435,8 +435,8 @@
     "modificadores": [
       {
         "nombre": "Abierta",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. La armadura tiene una debilidad y se considera que tiene Armadura 0 contra un determinado tipo de ataque."
       }
     ]
@@ -485,32 +485,32 @@
     "modificadores": [
       {
         "nombre": "Física",
-        "modCostePP": 80,
-        "modNivel": 0,
+        "modificadorCoste": 80,
+        "modificadorNivel": 0,
         "descripcion": "La protección funciona exclusivamente contra ataques de Filo, Contundente y Penetrante."
       },
       {
         "nombre": "Elemental",
-        "modCostePP": 80,
-        "modNivel": 0,
+        "modificadorCoste": 80,
+        "modificadorNivel": 0,
         "descripcion": "La protección funciona exclusivamente contra ataques de Frío, Calor y Electricidad."
       },
       {
         "nombre": "Mística",
-        "modCostePP": 40,
-        "modNivel": 0,
+        "modificadorCoste": 40,
+        "modificadorNivel": 0,
         "descripcion": "Permite elegir Energía como tipo de Armadura."
       },
       {
         "nombre": "Enfocada",
-        "modCostePP": 80,
-        "modNivel": 0,
+        "modificadorCoste": 80,
+        "modificadorNivel": 0,
         "descripcion": "El objeto funciona plenamente contra el tipo de ataque elegido originalmente y, frente al resto, proporciona la mitad del bono de Armadura, redondeando hacia abajo."
       },
       {
         "nombre": "Completa",
-        "modCostePP": 20,
-        "modNivel": 1,
+        "modificadorCoste": 20,
+        "modificadorNivel": 1,
         "descripcion": "La Armadura protege contra cualquier clase de ataque."
       }
     ]
@@ -676,8 +676,8 @@
     "modificadores": [
       {
         "nombre": "Única vía",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "Debilidad. La inmunidad ante la magia sólo funciona contra los conjuros de una determinada Vía."
       }
     ]
@@ -738,8 +738,8 @@
     "modificadores": [
       {
         "nombre": "Única disciplina",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "Debilidad. La inmunidad ante los poderes psíquicos sólo funciona contra una determinada disciplina."
       }
     ]
@@ -788,14 +788,14 @@
     "modificadores": [
       {
         "nombre": "Elementos naturales",
-        "modCostePP": 40,
-        "modNivel": 0,
+        "modificadorCoste": 40,
+        "modificadorNivel": 0,
         "descripcion": "El personaje es inmune por completo a los efectos de los cuatro elementos naturales."
       },
       {
         "nombre": "Todos los elementos",
-        "modCostePP": 80,
-        "modNivel": 0,
+        "modificadorCoste": 80,
+        "modificadorNivel": 0,
         "descripcion": "La resistencia se amplía de uno a todos los elementos, incluyendo luz y oscuridad."
       }
     ]
@@ -826,8 +826,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "La reducción sólo funciona contra una clase de ataque."
       }
     ]
@@ -937,32 +937,32 @@
     "modificadores": [
       {
         "nombre": "Todas las físicas",
-        "modCostePP": 60,
-        "modNivel": 0,
+        "modificadorCoste": 60,
+        "modificadorNivel": 0,
         "descripcion": "El bono se aplica a la RF, RV y RE. No es compatible con el modificador Todas las místicas."
       },
       {
         "nombre": "Todas las místicas",
-        "modCostePP": 60,
-        "modNivel": 0,
+        "modificadorCoste": 60,
+        "modificadorNivel": 0,
         "descripcion": "El bono se aplica a la RM y RP."
       },
       {
         "nombre": "Todas las resistencias",
-        "modCostePP": 0,
-        "modNivel": 1,
+        "modificadorCoste": 0,
+        "modificadorNivel": 1,
         "descripcion": "El bono se aplica a todas las resistencias."
       },
       {
         "nombre": "Sólo ante un tipo de magia",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona contra los efectos de una vía determinada de magia."
       },
       {
         "nombre": "Sólo ante una disciplina psíquica",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona contra los efectos de una disciplina psíquica determinada."
       }
     ]
@@ -1011,8 +1011,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
       }
     ]
@@ -1055,8 +1055,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
       }
     ]
@@ -1184,8 +1184,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
       }
     ]
@@ -1228,8 +1228,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona al lanzar conjuros de una vía determinada."
       }
     ]
@@ -1333,8 +1333,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "Debilidad. El bono sólo funciona al usar poderes de una disciplina determinada."
       }
     ]
@@ -1377,8 +1377,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona con poderes de una disciplina determinada."
       }
     ]
@@ -1421,8 +1421,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona al lanzar poderes de una disciplina determinada."
       }
     ]
@@ -1465,8 +1465,8 @@
     "modificadores": [
       {
         "nombre": "Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El mantenimiento adicional sólo funciona con poderes de una disciplina determinada."
       }
     ]
@@ -1552,8 +1552,8 @@
     "modificadores": [
       {
         "nombre": "Atadura elemental",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. La reducción sólo es concedida a las criaturas afines a un elemento específico."
       }
     ]
@@ -1608,26 +1608,26 @@
     "modificadores": [
       {
         "nombre": "Solo convocatoria",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. Esta desventaja sólo puede elegirse si la habilidad elegida es Convocar. De ser así, el bono no puede sumarse al realizar invocaciones."
       },
       {
         "nombre": "Solo invocatoria",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. Esta desventaja sólo puede elegirse si la habilidad elegida es Invocar. De ser así, el bono únicamente se suma al realizar invocaciones."
       },
       {
         "nombre": "Necesidad ritual",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo se aplica en caso de que se use en un ritual de al menos un minuto de duración."
       },
       {
         "nombre": "Atadura elemental",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. El bono sólo funciona con las criaturas afines a un elemento específico."
       }
     ]
@@ -1872,8 +1872,8 @@
     "modificadores": [
       {
         "nombre": "Solo Enfrentamientos",
-        "modCostePP": -20,
-        "modNivel": -1,
+        "modificadorCoste": -20,
+        "modificadorNivel": -1,
         "descripcion": "La mejora de característica sólo se aplica a la hora de realizar controles enfrentados contra otros personajes, pero no otorga otros beneficios por sí misma."
       }
     ]
@@ -1965,32 +1965,32 @@
     "modificadores": [
       {
         "nombre": "Atributos Físicos",
-        "modCostePP": 50,
-        "modNivel": 0,
+        "modificadorCoste": 50,
+        "modificadorNivel": 0,
         "descripcion": "El objeto otorga el incremento a los atributos de Fuerza y Constitución."
       },
       {
         "nombre": "Atributos de Habilidad",
-        "modCostePP": 50,
-        "modNivel": 0,
+        "modificadorCoste": 50,
+        "modificadorNivel": 0,
         "descripcion": "El objeto otorga el incremento a los atributos de Agilidad y Destreza."
       },
       {
         "nombre": "Atributos Anímicos",
-        "modCostePP": 50,
-        "modNivel": 0,
+        "modificadorCoste": 50,
+        "modificadorNivel": 0,
         "descripcion": "El objeto otorga el incremento a los atributos de Poder y Voluntad."
       },
       {
         "nombre": "No Recuperación",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "El objeto otorga una mejora a la hora de acumular Ki para realizar técnicas y habilidades, pero no cuenta al determinar la cantidad de Ki que recupera el personaje."
       },
       {
         "nombre": "Sólo Recuperación",
-        "modCostePP": 0,
-        "modNivel": -1,
+        "modificadorCoste": 0,
+        "modificadorNivel": -1,
         "descripcion": "El objeto sólo mejora las acumulaciones a la hora de calcular la regeneración de Ki."
       }
     ]
@@ -2015,32 +2015,32 @@
     "modificadores": [
       {
         "nombre": "Uso adicional",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "El artefacto puede ser usado en una ocasión adicional al día. Puede escogerse varias veces para incrementar el número de cargas."
       },
       {
         "nombre": "Sin límite",
-        "modCostePP": 50,
-        "modNivel": 1,
+        "modificadorCoste": 50,
+        "modificadorNivel": 1,
         "descripcion": "No hay límite al número de veces que puede usarse la técnica, siempre que se espere al menos cinco asaltos entre activaciones."
       },
       {
         "nombre": "Recarga reducida",
-        "modCostePP": 50,
-        "modNivel": 0,
+        "modificadorCoste": 50,
+        "modificadorNivel": 0,
         "descripcion": "Sólo es necesario esperar una hora antes de volver a usar la técnica o recuperar una carga."
       },
       {
         "nombre": "X Asaltos",
-        "modCostePP": -5,
-        "modNivel": 0,
+        "modificadorCoste": -5,
+        "modificadorNivel": 0,
         "descripcion": "El artefacto requiere varios asaltos de preparación antes de ejecutar la técnica. La reducción en PP es de 5 por asalto, hasta un máximo de 10 asaltos."
       },
       {
         "nombre": "Consume Ki",
-        "modCostePP": -50,
-        "modNivel": 0,
+        "modificadorCoste": -50,
+        "modificadorNivel": 0,
         "descripcion": "Para activar la técnica el personaje debe introducir en el objeto el coste en puntos de Ki que tendría una técnica convencional."
       }
     ]
@@ -2107,14 +2107,14 @@
     "modificadores": [
       {
         "nombre": "Fuga de poder",
-        "modCostePP": -40,
-        "modNivel": 0,
+        "modificadorCoste": -40,
+        "modificadorNivel": 0,
         "descripcion": "El objeto pierde de forma natural la energía almacenada a un ritmo de 1 punto de Ki por hora."
       },
       {
         "nombre": "Filtro debilitador",
-        "modCostePP": -25,
-        "modNivel": 0,
+        "modificadorCoste": -25,
+        "modificadorNivel": 0,
         "descripcion": "El objeto almacena únicamente la mitad del Ki que recibe."
       }
     ]
@@ -2182,14 +2182,14 @@
     "modificadores": [
       {
         "nombre": "Tacto",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "El miembro conserva el sentido del tacto como si fuera el original. Durante la creación puede elegirse si también conserva la sensación de dolor."
       },
       {
         "nombre": "Arma natural",
-        "modCostePP": 30,
-        "modNivel": 0,
+        "modificadorCoste": 30,
+        "modificadorNivel": 0,
         "descripcion": "El miembro incorpora una característica especial (garras, cuchillas, etc.) que permite utilizarlo como un arma natural."
       }
     ]
@@ -2226,8 +2226,8 @@
     "modificadores": [
       {
         "nombre": "Uso reducido",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Los beneficios sólo se aplican a una clase de acción concreta y determinada, y no a todas las que realice el personaje."
       }
     ]
@@ -2375,26 +2375,26 @@
     "modificadores": [
       {
         "nombre": "Comunicación",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "Permite al objeto comunicarse con su dueño o con las personas que le rodean, ya sea mediante palabras o comunicación mental, a elección de su creador."
       },
       {
         "nombre": "Genio",
-        "modCostePP": 60,
-        "modNivel": 0,
+        "modificadorCoste": 60,
+        "modificadorNivel": 0,
         "descripcion": "El objeto posee una inteligencia excepcional y es capaz de comprender varios idiomas y desarrollar pensamientos extremadamente elaborados."
       },
       {
         "nombre": "Personalidad determinada",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "El creador puede elegir la personalidad del objeto e incluso dotarlo de recuerdos básicos que considerará propios."
       },
       {
         "nombre": "Orden",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "El objeto obedece una orden o directriz impuesta por su creador, que condiciona su comportamiento."
       }
     ]
@@ -2431,26 +2431,26 @@
     "modificadores": [
       {
         "nombre": "Objeto dividido",
-        "modCostePP": -25,
-        "modNivel": 0,
+        "modificadorCoste": -25,
+        "modificadorNivel": 0,
         "descripcion": "El objeto está dividido en dos partes o resuena con otro artefacto de la misma naturaleza. Cuando crea un portal, debe hacerlo necesariamente hacia el lugar donde se encuentra la otra parte."
       },
       {
         "nombre": "5 al día",
-        "modCostePP": -10,
-        "modNivel": 0,
+        "modificadorCoste": -10,
+        "modificadorNivel": 0,
         "descripcion": "El poder solo puede utilizarse cinco veces al día."
       },
       {
         "nombre": "3 al día",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "El poder solo puede utilizarse tres veces al día."
       },
       {
         "nombre": "1 al día",
-        "modCostePP": -30,
-        "modNivel": 0,
+        "modificadorCoste": -30,
+        "modificadorNivel": 0,
         "descripcion": "El poder solo puede utilizarse una vez al día."
       }
     ]
@@ -2601,104 +2601,104 @@
     "modificadores": [
       {
         "nombre": "RM 40",
-        "modCostePP": 0,
-        "modNivel": 0,
+        "modificadorCoste": 0,
+        "modificadorNivel": 0,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 80",
-        "modCostePP": 10,
-        "modNivel": 0,
+        "modificadorCoste": 10,
+        "modificadorNivel": 0,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 100",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 120",
-        "modCostePP": 40,
-        "modNivel": 0,
+        "modificadorCoste": 40,
+        "modificadorNivel": 0,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 140",
-        "modCostePP": 60,
-        "modNivel": 0,
+        "modificadorCoste": 60,
+        "modificadorNivel": 0,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 180",
-        "modCostePP": 20,
-        "modNivel": 1,
+        "modificadorCoste": 20,
+        "modificadorNivel": 1,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "RM 200",
-        "modCostePP": 60,
-        "modNivel": 1,
+        "modificadorCoste": 60,
+        "modificadorNivel": 1,
         "descripcion": "Determina la Resistencia Mágica que el objetivo del efecto debe superar. El nivel del poder es el correspondiente al efecto elegido."
       },
       {
         "nombre": "Por daño",
-        "modCostePP": 0,
-        "modNivel": 0,
+        "modificadorCoste": 0,
+        "modificadorNivel": 0,
         "descripcion": "El objeto sólo provoca el efecto si consigue causar daño al objetivo."
       },
       {
         "nombre": "Por contacto",
-        "modCostePP": 20,
-        "modNivel": 0,
+        "modificadorCoste": 20,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto a todo aquel que lo toque de un modo directo. Al crear el artefacto debe determinarse si sólo afecta a una zona concreta del objeto o a toda su superficie, así como si el portador es inmune o no a sus efectos."
       },
       {
         "nombre": "Por sonido",
-        "modCostePP": 40,
-        "modNivel": 0,
+        "modificadorCoste": 40,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto a todo aquel que escuche el sonido que emite. Quien bloquee parcialmente su audición (por ejemplo tapándose los oídos) puede obtener un bono de entre +20 y +40 a su Resistencia Mágica."
       },
       {
         "nombre": "Por vista",
-        "modCostePP": 60,
-        "modNivel": 0,
+        "modificadorCoste": 60,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto a todo aquel que lo mire. El portador es inmune a este efecto."
       },
       {
         "nombre": "Por olfato",
-        "modCostePP": 40,
-        "modNivel": 0,
+        "modificadorCoste": 40,
+        "modificadorNivel": 0,
         "descripcion": "El objeto genera un aroma que afecta a todo aquel que lo huela. Quien bloquee parcialmente su capacidad olfativa (por ejemplo usando un pañuelo) puede obtener un bono de entre +20 y +40 a su Resistencia Mágica."
       },
       {
         "nombre": "Área (5 metros)",
-        "modCostePP": 80,
-        "modNivel": 0,
+        "modificadorCoste": 80,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
       },
       {
         "nombre": "Área (10 metros)",
-        "modCostePP": 120,
-        "modNivel": 0,
+        "modificadorCoste": 120,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
       },
       {
         "nombre": "Área (25 metros)",
-        "modCostePP": 150,
-        "modNivel": 0,
+        "modificadorCoste": 150,
+        "modificadorNivel": 0,
         "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
       },
       {
         "nombre": "Área (50 metros)",
-        "modCostePP": 20,
-        "modNivel": 1,
+        "modificadorCoste": 20,
+        "modificadorNivel": 1,
         "descripcion": "El objeto provoca el efecto automáticamente a todo aquel que se encuentre dentro del radio indicado. El portador es inmune al efecto."
       },
       {
         "nombre": "Tiempo Limitado",
-        "modCostePP": -20,
-        "modNivel": 0,
+        "modificadorCoste": -20,
+        "modificadorNivel": 0,
         "descripcion": "Debilidad. Los poderes con efectos de duración prolongada mantienen su efecto durante un número de asaltos igual al nivel de fracaso, independientemente de lo que determinen las reglas generales."
       }
     ]

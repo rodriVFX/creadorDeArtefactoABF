@@ -6,14 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class MateriaPrima {
-    private final Map<Integer, Integer> puntosPoder;
-    private final List<String> reglasEspeciales;
-    private final String origen;
+    private Map<Integer, Integer> puntosPoder;
+    private List<String> reglasEspeciales;
+    private String nombre;
 
-    public MateriaPrima(Map<Integer, Integer> puntosPoder, List<String> reglasEspeciales, String origen){
+    protected MateriaPrima(){}
+
+    public MateriaPrima(Map<Integer, Integer> puntosPoder, List<String> reglasEspeciales, String nombre){
         this.puntosPoder = new HashMap<>(puntosPoder);
         this.reglasEspeciales = new ArrayList<>(reglasEspeciales);
-        this.origen = origen;
+        this.nombre = nombre;
     }
 
     public Map<Integer, Integer> getPuntosPoder(){
@@ -22,7 +24,7 @@ public abstract class MateriaPrima {
     public List<String> getReglasEspeciales(){
         return new ArrayList<>(reglasEspeciales);
     }
-    public String getOrigen(){
-        return origen;
+    public String getNombre(){
+        return nombre;
     }
 }
