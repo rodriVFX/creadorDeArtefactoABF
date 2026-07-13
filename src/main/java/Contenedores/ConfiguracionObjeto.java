@@ -3,6 +3,7 @@ package Contenedores;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,5 +38,8 @@ public class ConfiguracionObjeto {
 
     public Objeto getObjeto(String nombre){
         return objetos.get(nombre);
+    }
+    public Map<String, Objeto> getObjetos(){
+        return Map.copyOf(objetos);
     }
 }

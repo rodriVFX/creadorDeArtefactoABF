@@ -2,6 +2,7 @@ import Contenedores.Contenedor;
 import Datos.Calidad;
 import Datos.Material;
 import MateriasPrimas.MateriaPrima;
+import Poderes.ModificadorPoder;
 import Poderes.Poder;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,11 @@ public class Artefacto {
             sb.append("Ninguno");
         } else {
             for (Poder p : poderes) {
-                sb.append("- ").append(p.getNombre()).append("\n");
+                sb.append("- ").append(p.getNombre());
+                for (ModificadorPoder m : p.getModificadores()){
+                sb.append(" (").append(m.getNombre()).append(") ");
+                }
+            sb.append("\n");
             }
         }
 

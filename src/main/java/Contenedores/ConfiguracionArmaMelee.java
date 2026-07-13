@@ -38,4 +38,8 @@ public class ConfiguracionArmaMelee {
     public ArmaMelee getArmaMelee(String nombre){
         return armasMelee.get(nombre);
     }
+
+    public Map<String, ArmaMelee> getArmasMelee() {
+        return Map.copyOf(armasMelee);
+    }
 }

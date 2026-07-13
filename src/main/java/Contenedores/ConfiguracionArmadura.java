@@ -39,4 +39,8 @@ public class ConfiguracionArmadura {
     public Armadura getArmadura(String nombre){
         return armaduras.get(nombre);
     }
+
+    public Map<String, Armadura> getArmaduras() {
+        return Map.copyOf(armaduras);
+    }
 }

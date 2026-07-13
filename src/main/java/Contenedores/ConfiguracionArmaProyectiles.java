@@ -39,4 +39,8 @@ public class ConfiguracionArmaProyectiles {
     public ArmaProyectiles getArmaProyectiles(String nombre){
         return armasProyectiles.get(nombre);
     }
+
+    public Map<String, ArmaProyectiles> getArmasProyectiles() {
+        return Map.copyOf(armasProyectiles);
+    }
 }

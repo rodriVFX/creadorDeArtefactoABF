@@ -39,4 +39,8 @@ public class ConfiguracionArmaLanzable {
     public ArmaLanzable getArmaLanzable(String nombre){
         return armasLanzables.get(nombre);
     }
+
+    public Map<String, ArmaLanzable> getArmasLanzables() {
+        return Map.copyOf(armasLanzables);
+    }
 }

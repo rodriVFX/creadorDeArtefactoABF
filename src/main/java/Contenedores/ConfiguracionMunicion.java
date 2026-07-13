@@ -39,4 +39,8 @@ public class ConfiguracionMunicion {
     public Municion getMunicion(String nombre){
         return municiones.get(nombre);
     }
+
+    public Map<String, Municion> getMuniciones() {
+        return Map.copyOf(municiones);
+    }
 }
