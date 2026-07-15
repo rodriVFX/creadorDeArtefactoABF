@@ -1,3 +1,5 @@
+package Datos.Repositorios;
+
 import Datos.Calidad;
 import Datos.Material;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -8,12 +10,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ConfiguracionArtefacto {
+public class RepositorioArtefacto {
 
     private Map<String, Material> materiales;
     private Map<String, Calidad> calidades;
 
-    public ConfiguracionArtefacto(){
+    public RepositorioArtefacto(){
 
         ObjectMapper mapper = new ObjectMapper();
 

@@ -8,8 +8,8 @@ public class ArmaProyectiles extends ArmaDistancia{
 
     public ArmaProyectiles(){}
 
-    public ArmaProyectiles(String nombre, int presenciaBase, List<String> especialidades, int modificadorHA, int ignoraTA, int velocidad, String fuerzaRequerida, String criticoPrimario, String criticoSecundario, String tipo, int entereza, int rotura, List<String> especializaciones, int alcance, int recarga) {
-        super(nombre, presenciaBase, especialidades, modificadorHA, ignoraTA, velocidad, fuerzaRequerida, criticoPrimario, criticoSecundario, tipo, entereza, rotura, especializaciones, alcance);
+    public ArmaProyectiles(String nombre, int presenciaBase, List<String> especialidades, int modificadorHA, int velocidad, String fuerzaRequerida, String tipo, int entereza, int rotura, List<String> especializaciones, int alcance, int recarga) {
+        super(nombre, presenciaBase, especialidades, modificadorHA, velocidad, fuerzaRequerida, tipo, entereza, rotura, especializaciones, alcance);
         this.recarga = recarga;
     }
 

@@ -1,18 +1,18 @@
-package Contenedores;
+package Datos.Repositorios;
 
+import Contenedores.Objeto;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ConfiguracionObjeto {
+public class RepositorioObjeto {
 
     private Map<String, Objeto> objetos;
 
-    public ConfiguracionObjeto() {
+    public RepositorioObjeto() {
 
         try {
 
@@ -39,7 +39,7 @@ public class ConfiguracionObjeto {
     public Objeto getObjeto(String nombre){
         return objetos.get(nombre);
     }
-    public Map<String, Objeto> getObjetos(){
+    public Map<String, Objeto> listar(){
         return Map.copyOf(objetos);
     }
 }

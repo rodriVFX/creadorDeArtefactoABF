@@ -1,3 +1,5 @@
+package Artefactos;
+
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
 import java.util.HashMap;

@@ -1,5 +1,6 @@
-package Poderes;
+package Datos.Repositorios;
 
+import Poderes.PoderBase;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -8,11 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ConfiguracionPoder {
+public class RepositorioPoder {
 
     private final Map<String, PoderBase> poderes;
 
-    public ConfiguracionPoder() {
+    public RepositorioPoder() {
 
         try {
 
@@ -40,5 +41,5 @@ public class ConfiguracionPoder {
         return poderes.get(nombre);
     }
 
-    public Map<String, PoderBase> getPoderes() {return Map.copyOf(poderes);}
+    public Map<String, PoderBase> listar() {return Map.copyOf(poderes);}
 }

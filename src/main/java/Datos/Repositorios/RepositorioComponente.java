@@ -1,15 +1,17 @@
-package MateriasPrimas;
+package Datos.Repositorios;
+import MateriasPrimas.Componente;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class ConfiguracionComponente {
+public class RepositorioComponente {
 
     private HashMap<String, Componente> componentes;
 
-    public ConfiguracionComponente() {
+    public RepositorioComponente() {
 
         try {
 
@@ -36,4 +38,6 @@ public class ConfiguracionComponente {
     public Componente getComponente (String nombre){
         return componentes.get(nombre);
     }
+
+    public Map<String, Componente> listar (){ return Map.copyOf(componentes);}
 }

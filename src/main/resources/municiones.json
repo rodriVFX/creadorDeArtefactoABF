@@ -2,7 +2,7 @@
   {
     "nombre": "Saeta",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 3,
     "rotura": 0,
@@ -14,7 +14,7 @@
   {
     "nombre": "Saeta pesada",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 4,
     "rotura": 1,
@@ -26,7 +26,7 @@
   {
     "nombre": "Saeta ligera",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 2,
     "rotura": -1,
@@ -38,7 +38,7 @@
   {
     "nombre": "Flecha de fajo",
     "presenciaBase": 20,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 3,
     "rotura": 0,
@@ -50,7 +50,7 @@
   {
     "nombre": "Flecha de descarga",
     "presenciaBase": 20,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 4,
     "rotura": 1,
@@ -62,7 +62,7 @@
   {
     "nombre": "Flecha de mella",
     "presenciaBase": 20,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 3,
     "rotura": 0,
@@ -74,7 +74,7 @@
   {
     "nombre": "Dardos de cerbatana",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 2,
     "rotura": -4,
@@ -86,7 +86,7 @@
   {
     "nombre": "Bala (Pistola de mecha)",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 11,
     "rotura": 5,
@@ -98,7 +98,7 @@
   {
     "nombre": "Bala (Arcabuz)",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 11,
     "rotura": 5,
@@ -110,7 +110,7 @@
   {
     "nombre": "Piedras de honda",
     "presenciaBase": 10,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 7,
     "rotura": 2,
@@ -122,7 +122,7 @@
   {
     "nombre": "Virote ligero",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 16,
     "rotura": 8,
@@ -134,7 +134,7 @@
   {
     "nombre": "Virote pesado",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 18,
     "rotura": 12,
@@ -146,7 +146,7 @@
   {
     "nombre": "Bala de cañón",
     "presenciaBase": 15,
-    "especidades": [],
+    "especialidades": [],
     "tipo": "Munición",
     "entereza": 20,
     "rotura": 14,

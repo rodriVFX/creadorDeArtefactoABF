@@ -8,7 +8,7 @@ public abstract class ArmaDistancia extends Arma{
 
     public ArmaDistancia(){}
 
-    public ArmaDistancia(String nombre, int presenciaBase, List<String> especialidades, int modificadorHA, int ignoraTA, int velocidad, String fuerzaRequerida, String criticoPrimario, String criticoSecundario, String tipo, int entereza, int rotura, List<String> especializaciones, int alcance){
+    public ArmaDistancia(String nombre, int presenciaBase, List<String> especialidades, int modificadorHA, int velocidad, String fuerzaRequerida, String tipo, int entereza, int rotura, List<String> especializaciones, int alcance){
         super(nombre, presenciaBase, especialidades, tipo, entereza, rotura, especializaciones, modificadorHA, velocidad, fuerzaRequerida);
         this.alcance = alcance;
     }

@@ -1,42 +1,42 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
+
+import Datos.RepositorioDatos;
+import Datos.Repositorios.*;
 import Contenedores.*;
-import MateriasPrimas.ConfiguracionComponente;
-import Poderes.ConfiguracionPoder;
 
 public class AsistenteCreacionArtefacto {
 
-    private final ConfiguracionObjeto objetos = new ConfiguracionObjeto();
-    private final ConfiguracionArmaMelee armasMelee = new ConfiguracionArmaMelee();
-    private final ConfiguracionArmaLanzable armasLanzables = new ConfiguracionArmaLanzable();
-    private final ConfiguracionArmaProyectiles armasProyectil = new ConfiguracionArmaProyectiles();
-    private final ConfiguracionMunicion municiones = new ConfiguracionMunicion();
-    private final ConfiguracionArmadura armaduras = new ConfiguracionArmadura();
-    ConfiguracionPoder cfgPoder = new ConfiguracionPoder();
-    ConfiguracionComponente cfgComponente = new ConfiguracionComponente();
-    ConfiguracionArtefacto cfgArtefacto = new ConfiguracionArtefacto();
+    private RepositorioDatos datos = new RepositorioDatos();
+    private final Scanner obj = new Scanner(System.in);
 
     public Contenedor elegirContenedor(){
-        Scanner obj = new Scanner(System.in);
-        StringBuilder sb1 = new StringBuilder();
-        System.out.println(sb1.append("Selecciona el tipo de contenedor: \n")
-                .append("1. Objeto\n").append("2. Arma cuerpo a cuerpo\n")
-                .append("3. Arma lanzable\n").append("4. Arma de proyectiles\n")
-                .append("5. Munición\n").append("6. Armadura"));
+        System.out.println("""
+                Selecciona el tipo de contenedor:
+                1. Objeto
+                2. Arma cuerpo a cuerpo
+                3. Arma lanzable
+                4. Arma de proyectiles
+                5. Munición
+                6. Armadura
+                """);
         int input1 = obj.nextInt();
+        if(input1 < 1 || input1 > 6){throw new IllegalArgumentException("Número incorrecto");}
 
         List<? extends Contenedor> lista = new ArrayList<>(switch(input1){
-            case 1 -> objetos.getObjetos().values();
-            case 2 -> armasMelee.getArmasMelee().values();
-            case 3 -> armasLanzables.getArmasLanzables().values();
-            case 4 -> armasProyectil.getArmasProyectiles().values();
-            case 5 -> municiones.getMuniciones().values();
-            case 6 -> armaduras.getArmaduras().values();
+            case 1 -> datos.getObjetos().listar().values();
+            case 2 -> datos.getArmasMelee().listar().values();
+            case 3 -> datos.getArmasLanzables().listar().values();
+            case 4 -> datos.getArmasProyectiles().listar().values();
+            case 5 -> datos.getMuniciones().listar().values();
+            case 6 -> datos.getArmaduras().listar().values();
             default -> throw new IllegalArgumentException("El número introducido no es correcto.");
         });
-        System.out.println(lista);
-        return (Contenedor) lista;
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println((i+1) + ". " + lista.get(i).getNombre());
+        }
+        int input2 = obj.nextInt();
+        return lista.get(input2 - 1);
     }
 }

@@ -1,6 +1,9 @@
+package Artefactos;
+
 import Contenedores.Contenedor;
 import Datos.Calidad;
 import Datos.Material;
+import Datos.Repositorios.RepositorioArtefacto;
 import MateriasPrimas.MateriaPrima;
 import Poderes.ModificadorPoder;
 import Poderes.Poder;
@@ -15,7 +18,7 @@ public class Artefacto {
     private List<Poder> poderes;
     private List<MateriaPrima> materiasPrimas;
 
-    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, ConfiguracionArtefacto config){
+    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, RepositorioArtefacto config){
         this.contenedor = contenedor;
         this.material = material.getNombre();
         this.calidad = calidad.getNombre();
@@ -26,7 +29,7 @@ public class Artefacto {
         calcularPresenciaInicial(config);
     }
 
-    private void calcularPresenciaInicial(ConfiguracionArtefacto config){
+    private void calcularPresenciaInicial(RepositorioArtefacto config){
 
         Material mat = config.getMaterial(material);
         Calidad cal = config.getCalidad(calidad);
@@ -58,7 +61,7 @@ public class Artefacto {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("==========\n");
-        sb.append("Artefacto\n");
+        sb.append("Artefactos.Artefacto\n");
         sb.append("==========\n\n");
 
         sb.append("Contenedor = ").append(contenedor.getNombre()).append("\n");

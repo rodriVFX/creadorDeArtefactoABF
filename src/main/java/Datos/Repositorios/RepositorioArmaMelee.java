@@ -1,5 +1,6 @@
-package Contenedores;
+package Datos.Repositorios;
 
+import Contenedores.ArmaMelee;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.InputStream;
@@ -7,11 +8,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ConfiguracionArmaMelee {
+public class RepositorioArmaMelee {
 
     private final Map<String, ArmaMelee> armasMelee;
 
-    public ConfiguracionArmaMelee() {
+    public RepositorioArmaMelee() {
 
         try {
 
@@ -39,7 +40,7 @@ public class ConfiguracionArmaMelee {
         return armasMelee.get(nombre);
     }
 
-    public Map<String, ArmaMelee> getArmasMelee() {
+    public Map<String, ArmaMelee> listar() {
         return Map.copyOf(armasMelee);
     }
 }
