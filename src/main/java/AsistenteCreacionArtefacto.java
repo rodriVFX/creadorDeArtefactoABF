@@ -1,17 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import Datos.RepositorioDatos;
 import Datos.Repositorios.*;
 import Contenedores.*;
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
-
+import Poderes.*;
 public class AsistenteCreacionArtefacto {
 
     private final RepositorioDatos datos = new RepositorioDatos();
     private final CreadorMateriaPrima creadorMat = new CreadorMateriaPrima();
+    private final CreadorPoder creadorPoder = new CreadorPoder();
     private final Scanner obj = new Scanner(System.in);
 
     public Contenedor elegirContenedor(){
@@ -63,6 +65,27 @@ public class AsistenteCreacionArtefacto {
             case 5 ->cfgSacrificioDeVida();
             default -> throw new IllegalArgumentException("Error al seleccionar el modo de obtención de PP.");
         };
+    }
+
+    public Poder elegirPoderes(){
+        List<String> facetas = new ArrayList<>(datos.getPoderes().listarFacetas());
+        System.out.println("Selecciona la faceta del poder:\n");
+        for (int i = 0; i < facetas.size(); i++) {
+            System.out.println((i+1) + ". " + facetas.get(i));
+        }
+        int inputFaceta = obj.nextInt();
+        if(inputFaceta < 1 || inputFaceta > facetas.size()){
+            throw new IllegalArgumentException("Opción no válida.");
+        }
+
+        List<PoderBase> base = new ArrayList<>(datos.getPoderes().listar().values().stream().filter(p -> p.getFaceta().equals(facetas.get(inputFaceta-1))).toList());
+
+        System.out.println("Selecciona un poder:\n");
+        for (int i = 0; i < base.size(); i++) {
+            System.out.println((i+1) + ". " + base.get(i).getNombre());
+        }
+        PoderBase baseElegida;
+        creadorPoder.crearPoder()
     }
 
     private MateriaPrima elegirComponente(){
