@@ -4,9 +4,11 @@ import java.util.HashMap;
 
 public class CreadorMateriaPrima {
 
-    public SacrificioDeObjetos crearSacrificioDeObjetos(int nivelPP, int cantidadPP, boolean conservaNivelPP){
+    public SacrificioDeObjetos crearSacrificioDeObjetos(int[] nivelesPP, int[] cantidadesPP, boolean conservaNivelPP){
         HashMap<Integer, Integer> niveles = new HashMap<>();
-        niveles.put(nivelPP, cantidadPP);
+        for(int i : nivelesPP){
+            niveles.put(i, cantidadesPP[i]);
+        }
         return new SacrificioDeObjetos(niveles, conservaNivelPP);
     }
 
