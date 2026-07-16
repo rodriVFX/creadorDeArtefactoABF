@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 import Datos.RepositorioDatos;
 import Datos.Repositorios.*;
@@ -68,24 +65,10 @@ public class AsistenteCreacionArtefacto {
     }
 
     public Poder elegirPoderes(){
-        List<String> facetas = new ArrayList<>(datos.getPoderes().listarFacetas());
-        System.out.println("Selecciona la faceta del poder:\n");
-        for (int i = 0; i < facetas.size(); i++) {
-            System.out.println((i+1) + ". " + facetas.get(i));
-        }
-        int inputFaceta = obj.nextInt();
-        if(inputFaceta < 1 || inputFaceta > facetas.size()){
-            throw new IllegalArgumentException("Opción no válida.");
-        }
-
-        List<PoderBase> base = new ArrayList<>(datos.getPoderes().listar().values().stream().filter(p -> p.getFaceta().equals(facetas.get(inputFaceta-1))).toList());
-
-        System.out.println("Selecciona un poder:\n");
-        for (int i = 0; i < base.size(); i++) {
-            System.out.println((i+1) + ". " + base.get(i).getNombre());
-        }
-        PoderBase baseElegida;
-        creadorPoder.crearPoder()
+        PoderBase base = elegirBase();
+        OpcionPoder opcion = elegirOpcion(base);
+        List<ModificadorPoder> modificadores = elegirModificadores(base);
+        return creadorPoder.crearPoder(base, opcion, modificadores);
     }
 
     private MateriaPrima elegirComponente(){
@@ -170,5 +153,77 @@ public class AsistenteCreacionArtefacto {
         if(artificial < 1 || artificial > 2){throw new IllegalArgumentException("Opción no válida.");}
 
         return creadorMat.crearSacrificioDeVidas(presencia, natura, gnosis, voluntario==1, sobrenatural==1, artificial==1);
+    }
+
+    private String elegirFaceta(){
+        List<String> facetas = new ArrayList<>(datos.getPoderes().listarFacetas());
+        facetas.sort(Comparator.comparing(String::toString));
+
+        System.out.println("Selecciona la faceta del poder:\n");
+        for (int i = 0; i < facetas.size(); i++) {
+            System.out.println((i+1) + ". " + facetas.get(i));
+        }
+        int inputFaceta = obj.nextInt();
+        if(inputFaceta < 1 || inputFaceta > facetas.size()){
+            throw new IllegalArgumentException("Opción no válida.");
+        }
+        return facetas.get(inputFaceta - 1);
+    }
+    private PoderBase elegirBase(){
+        String facetaElegida = elegirFaceta();
+        List<PoderBase> base = new ArrayList<>(datos.getPoderes().listar().values().stream().filter(p -> p.getFaceta().equals(facetaElegida)).toList());
+        base.sort(Comparator.comparing(PoderBase::getNombre));
+
+        System.out.println("Selecciona un poder:\n");
+        for (int i = 0; i < base.size(); i++) {
+            System.out.println((i+1) + ". " + base.get(i).getNombre());
+        }
+        int elegirBase = obj.nextInt();
+        return datos.getPoderes().getPoder(base.get(elegirBase - 1).getNombre());
+    }
+    private OpcionPoder elegirOpcion(PoderBase base){
+        List<OpcionPoder> opciones = new ArrayList<>(datos.getPoderes().getPoder(base.getNombre()).getOpciones());
+        opciones.sort(Comparator.comparing(OpcionPoder::getNombre));
+
+        System.out.println("Selecciona la opción del poder que quieres:");
+        for (int i = 0; i < opciones.size(); i++) {
+            System.out.println((i+1) + ". " + opciones.get(i).getNombre());
+        }
+        int elegirOpcion = obj.nextInt();
+        return opciones.get(elegirOpcion - 1);
+    }
+    private List<ModificadorPoder> elegirModificadores(PoderBase base){
+        List<ModificadorPoder> modificadores= new ArrayList<>(datos.getPoderes().getPoder(base.getNombre()).getModificadores());
+        modificadores.sort(Comparator.comparing(ModificadorPoder::getNombre));
+
+        if(modificadores.isEmpty()){
+            return modificadores;
+        }
+        else {
+            System.out.println("Selecciona el modificador que quieras añadir:");
+            return listaModificadores(modificadores);
+        }
+    }
+    private List<ModificadorPoder> listaModificadores(List<ModificadorPoder> modificadores) {
+        List<ModificadorPoder> modificadoresElegidos = new ArrayList<>();
+        boolean acabado = false;
+        while(!acabado){
+            System.out.println("0. No añadir modificador.");
+            for (int i = 0; i < modificadores.size(); i++) {
+                System.out.println((i + 1) + ". " + modificadores.get(i).getNombre());
+            }
+            int modificadorElegido = obj.nextInt();
+            if (modificadorElegido < 0 || modificadorElegido > modificadores.size()) {
+            throw new IllegalArgumentException("Opción no válida.");
+        }
+            if(modificadorElegido != 0) {
+            modificadoresElegidos.add(modificadores.get(modificadorElegido - 1));
+            modificadores.remove(modificadorElegido - 1);
+            }
+            else{acabado = true;}
+        }
+
+        modificadoresElegidos.sort(Comparator.comparing(ModificadorPoder::getNombre));
+        return modificadoresElegidos;
     }
 }

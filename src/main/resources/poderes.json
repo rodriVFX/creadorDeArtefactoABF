@@ -228,7 +228,7 @@
       "faceta": "Conjuros Innatos",
       "opciones": [
         {
-          "nombre": "Nivel 2 a 10",
+          "nombre": "Nivel 02 a 10",
           "costePP": 0,
           "nivel": 1,
           "descripcion": "Determina el nivel del conjuro que puede lanzar el artefacto. El coste en PP es equivalente a una cuarta parte del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba."
@@ -340,7 +340,7 @@
     "faceta": "Conjuros Innatos",
     "opciones": [
       {
-        "nombre": "Nivel 2 a 10",
+        "nombre": "Nivel 02 a 10",
         "costePP": 0,
         "nivel": 1,
         "descripcion": "Determina el nivel del conjuro que va a lanzar el artefacto. El coste en PP es equivalente a la mitad del valor del conjuro en puntos de Zeon, redondeado en grupos de 5 hacia arriba. El conjuro se lanza automáticamente, sin necesidad de acumular Zeon ni invertir poder sobrenatural. Si el conjuro tiene mantenimiento, permanece activo automáticamente durante tres asaltos o una hora si su mantenimiento es diario. Tras utilizarlo debe transcurrir un día completo antes de volver a lanzarlo."
