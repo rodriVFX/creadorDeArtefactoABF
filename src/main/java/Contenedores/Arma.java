@@ -1,5 +1,7 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
+
 import java.util.List;
 
 public abstract class Arma extends Equipamiento{
@@ -10,7 +12,7 @@ public abstract class Arma extends Equipamiento{
 
     public Arma(){}
 
-    public Arma(String nombre, int presenciaBase, List<String> especialidades, String tipo, int entereza, int rotura, List<String> especializaciones, int modificadorHA, int velocidad, String fuerzaRequerida){
+    public Arma(String nombre, int presenciaBase, List<String> especialidades,String tipo, int entereza, int rotura, List<String> especializaciones, int modificadorHA, int velocidad, String fuerzaRequerida){
         super(nombre, presenciaBase, especialidades, tipo, entereza, rotura, especializaciones);
         this.modificadorHA = modificadorHA;
         this.velocidad = velocidad;

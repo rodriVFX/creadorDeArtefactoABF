@@ -1,15 +1,16 @@
+import Artefactos.Artefacto;
+import Artefactos.ValidadorArtefacto;
 import Contenedores.Contenedor;
+import Datos.Calidad;
+import Datos.Material;
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
 
 void main() {
     AsistenteCreacionArtefacto asistente = new AsistenteCreacionArtefacto();
+    ValidadorArtefacto validador = new ValidadorArtefacto();
 
-    Contenedor contenedor = asistente.elegirContenedor();
-    MateriaPrima materiaPrima = asistente.elegirMateriasPrimas();
-    Poder poder = asistente.elegirPoderes();
-
-    System.out.println("Poder: " + poder.getNombre() + ": " + poder.getOpcion().getNombre() + ".\n" + "Modificadores: " + poder.getModificadores().toString());
-    System.out.println(contenedor.getNombre() + ", " + contenedor.getEspecialidades() + ", " + contenedor.getPresenciaBase());
-    System.out.println(materiaPrima.getNombre() + ", " + materiaPrima.getPuntosPoder() + ", " + materiaPrima.getReglasEspeciales());
+    Artefacto artefacto = asistente.crearArtefacto();
+    validador.calcularPPRestantes(artefacto);
+    System.out.println(artefacto.toString());
 }

@@ -1,7 +1,7 @@
 package Datos.Repositorios;
 
-import Datos.Calidad;
 import Datos.Material;
+import Datos.Calidad;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -54,5 +54,13 @@ public class RepositorioArtefacto {
 
     public Calidad getCalidad (String nombre){
         return calidades.get(nombre);
+    }
+
+    public Map<String, Calidad> listarCalidades (){
+        return Map.copyOf(calidades);
+    }
+
+    public Map<String, Material> listarMateriales (){
+        return Map.copyOf(materiales);
     }
 }

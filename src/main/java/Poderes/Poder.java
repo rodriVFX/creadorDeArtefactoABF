@@ -35,6 +35,9 @@ public class Poder {
     public String getNombre(){
     return base.getNombre();
     }
+    public PoderBase getBase(){
+        return base;
+    }
     public OpcionPoder getOpcion(){
         return opcion;
     }

@@ -1,11 +1,12 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Equipamiento extends Contenedor {
 
-    private String tipo;
     private int entereza;
     private int rotura;
     private List<String> especializaciones;
@@ -13,17 +14,13 @@ public abstract class Equipamiento extends Contenedor {
     public Equipamiento(){}
 
     public Equipamiento(String nombre, int presenciaBase, List<String> especialidades, String tipo, int entereza, int rotura, List<String> especializaciones){
-        super(nombre, presenciaBase, especialidades);
-        this.tipo = tipo;
+        super(nombre, presenciaBase, especialidades, tipo);
         this.entereza = entereza;
         this.rotura = rotura;
         this.especializaciones = especializaciones;
 
     }
 
-    public String getTipo(){
-        return tipo;
-    }
     public int getEntereza(){
         return entereza;
     }

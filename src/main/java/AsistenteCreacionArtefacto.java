@@ -1,7 +1,10 @@
 import java.util.*;
 
+import Artefactos.Artefacto;
+import Artefactos.CreadorArtefacto;
+import Datos.Calidad;
+import Datos.Material;
 import Datos.RepositorioDatos;
-import Datos.Repositorios.*;
 import Contenedores.*;
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
@@ -11,7 +14,13 @@ public class AsistenteCreacionArtefacto {
     private final RepositorioDatos datos = new RepositorioDatos();
     private final CreadorMateriaPrima creadorMat = new CreadorMateriaPrima();
     private final CreadorPoder creadorPoder = new CreadorPoder();
+    private final CreadorArtefacto creadorArtefacto = new CreadorArtefacto();
     private final Scanner obj = new Scanner(System.in);
+
+
+    public Artefacto crearArtefacto(){
+        return creadorArtefacto.crearArtefacto(elegirContenedor(), elegirMaterial(), elegirCalidad(), elegirMateriasPrimas(), elegirPoderes());
+    }
 
     public Contenedor elegirContenedor(){
         System.out.println("""
@@ -35,14 +44,35 @@ public class AsistenteCreacionArtefacto {
             case 6 -> datos.getArmaduras().listar().values();
             default -> throw new IllegalArgumentException("El número introducido no es correcto.");
         });
+        lista.sort(Comparator.comparing(Contenedor::getNombre));
         for (int i = 0; i < lista.size(); i++) {
             System.out.println((i+1) + ". " + lista.get(i).getNombre());
         }
         int input2 = obj.nextInt();
         return lista.get(input2 - 1);
     }
-
-    public MateriaPrima elegirMateriasPrimas(){
+    public Calidad elegirCalidad(){
+        List<Calidad> calidades = new ArrayList<>(datos.getArtefacto().listarCalidades().values());
+        System.out.println("Selecciona la calidad del contenedor:");
+        calidades.sort(Comparator.comparing(Calidad::getNombre));
+        for (int i = 0; i < calidades.size(); i++) {
+            System.out.println((i+1) + ". " + calidades.get(i).getNombre());
+        }
+        int input = obj.nextInt();
+        return calidades.get(input - 1);
+    }
+    public Material elegirMaterial(){
+        List<Material> materiales = new ArrayList<>(datos.getArtefacto().listarMateriales().values());
+        System.out.println("Selecciona el material del contenedor:");
+        materiales.sort(Comparator.comparing(Material::getNombre));
+        for (int i = 0; i < materiales.size(); i++) {
+            System.out.println((i+1) + ". " + materiales.get(i).getNombre());
+        }
+        int input = obj.nextInt();
+        return materiales.get(input - 1);
+    }
+    public List<MateriaPrima> elegirMateriasPrimas(){
+        List<MateriaPrima> listaMaterias = new ArrayList<>();
         System.out.println("""
                 Selecciona el modo de obtención de PP:
                 1. Componentes únicos
@@ -54,25 +84,29 @@ public class AsistenteCreacionArtefacto {
         int input1 = obj.nextInt();
         if(input1 < 1 || input1 > 5){throw new IllegalArgumentException("Opción no válida.");}
 
-        return switch(input1){
-            case 1 ->elegirComponente();
-            case 2 ->cfgInfusionZeon();
-            case 3 ->cfgSacrificioDeObjetos();
-            case 4 ->cfgSacrificioDePoder();
-            case 5 ->cfgSacrificioDeVida();
-            default -> throw new IllegalArgumentException("Error al seleccionar el modo de obtención de PP.");
-        };
+        listaMaterias.add(
+                switch(input1){
+                    case 1 ->elegirComponente();
+                    case 2 ->cfgInfusionZeon();
+                    case 3 ->cfgSacrificioDeObjetos();
+                    case 4 ->cfgSacrificioDePoder();
+                    case 5 ->cfgSacrificioDeVida();
+                    default -> throw new IllegalArgumentException("Error al seleccionar el modo de obtención de PP.");
+                });
+        return listaMaterias;
     }
-
-    public Poder elegirPoderes(){
+    public List<Poder> elegirPoderes(){
+        List<Poder> listaPoderes = new ArrayList<>();
         PoderBase base = elegirBase();
         OpcionPoder opcion = elegirOpcion(base);
         List<ModificadorPoder> modificadores = elegirModificadores(base);
-        return creadorPoder.crearPoder(base, opcion, modificadores);
+        listaPoderes.add(creadorPoder.crearPoder(base, opcion, modificadores));
+        return listaPoderes;
     }
 
     private MateriaPrima elegirComponente(){
         List<? extends MateriaPrima> lista = new ArrayList<>(datos.getComponentes().listar().values());
+        lista.sort(Comparator.comparing(MateriaPrima::toString));
         for (int i = 0; i < lista.size(); i++) {
             System.out.println((i+1) + ". " + lista.get(i).getNombre());
         }

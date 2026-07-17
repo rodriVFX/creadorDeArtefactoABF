@@ -1,5 +1,7 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
+
 import java.util.List;
 
 public class Municion extends Equipamiento{
@@ -10,7 +12,7 @@ public class Municion extends Equipamiento{
 
     public Municion(){}
 
-    public Municion(String nombre, int presenciaBase, List<String> especialidades, String tipo, int entereza, int rotura, List<String> especializaciones, int dano, String criticoPrimario, String criticoSecundario) {
+    public Municion(String nombre, int presenciaBase, List<String> especialidades, int entereza, int rotura, List<String> especializaciones, int dano, String criticoPrimario, String criticoSecundario, String tipo) {
         super(nombre, presenciaBase, especialidades, tipo, entereza, rotura, especializaciones);
         this.dano = dano;
         this.criticoPrimario = criticoPrimario;

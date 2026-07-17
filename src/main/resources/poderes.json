@@ -2,6 +2,12 @@
   {
     "nombre": "Arma con Ataque Incrementado",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO"
+    ],
     "opciones": [
       { "nombre": "+5", "costePP": 50, "nivel": 1 },
       { "nombre": "+10", "costePP": 20, "nivel": 2 },
@@ -14,6 +20,12 @@
   {
     "nombre": "Calidad de Combate",
     "faceta": "Generales de Calidad",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO"
+    ],
     "opciones": [
       { "nombre": "Calidad +5", "costePP": 50, "nivel": 2 },
       { "nombre": "Calidad +10", "costePP": 100, "nivel": 2 },
@@ -26,6 +38,12 @@
   {
     "nombre": "Potenciación Ofensiva",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO"
+    ],
     "opciones": [
       { "nombre": "Bono +5", "costePP": 60, "nivel": 2 },
       { "nombre": "Bono +10", "costePP": 120, "nivel": 2 },
@@ -37,6 +55,10 @@
   {
     "nombre": "Calidad General",
     "faceta": "Generales de Calidad",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Calidad +5", "costePP": 50, "nivel": 1 },
       { "nombre": "Calidad +10", "costePP": 100, "nivel": 1 },
@@ -49,6 +71,13 @@
   {
     "nombre": "Daño Incrementado",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "+10", "costePP": 20, "nivel": 1 },
       { "nombre": "+20", "costePP": 80, "nivel": 1 },
@@ -64,6 +93,14 @@
   {
     "nombre": "Arma Encantada",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Encantada", "costePP": 50, "nivel": 2 },
       { "nombre": "Sobrenatural", "costePP": 80, "nivel": 3 }
@@ -73,6 +110,13 @@
   {
     "nombre": "Ataques Elementales",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Frío", "costePP": 30, "nivel": 2 },
       { "nombre": "Fuego", "costePP": 30, "nivel": 2 },
@@ -90,6 +134,13 @@
   {
     "nombre": "Exterminador",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Un tipo de raza", "costePP": 50, "nivel": 3 },
       { "nombre": "Un ser determinado", "costePP": 20, "nivel": 2 },
@@ -102,6 +153,13 @@
   {
     "nombre": "Embate",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Embate", "costePP": 100, "nivel": 2 },
       { "nombre": "Embate mayor", "costePP": 50, "nivel": 3 },
@@ -115,6 +173,9 @@
   {
     "nombre": "Munición Ilimitada",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAPROYECTILES"
+    ],
     "opciones": [
       { "nombre": "10 Proyectiles al día", "costePP": 20, "nivel": 1 },
       { "nombre": "25 Proyectiles al día", "costePP": 50, "nivel": 1 },
@@ -129,6 +190,14 @@
   {
     "nombre": "Ataque Especial",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Distancia: 25 metros", "costePP": 20, "nivel": 2 },
       { "nombre": "Distancia: 50 metros", "costePP": 40, "nivel": 2 },
@@ -172,6 +241,12 @@
   {
     "nombre": "Crítico Incrementado",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "+10", "costePP": 40, "nivel": 1 },
       { "nombre": "+20", "costePP": 40, "nivel": 2 },
@@ -186,6 +261,12 @@
   {
     "nombre": "Destrucción de Armadura",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "-1 TA", "costePP": 40, "nivel": 1 },
       { "nombre": "-2 TA", "costePP": 20, "nivel": 2 },
@@ -201,6 +282,14 @@
   {
     "nombre": "Recuperación",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Lanzamiento (Activo)", "costePP": 50, "nivel": 2 },
       { "nombre": "Lanzamiento (Pasivo)", "costePP": 50, "nivel": 3 },
@@ -213,6 +302,13 @@
   {
     "nombre": "Otras Habilidades de Armas",
     "faceta": "Ofensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "MUNICION"
+    ],
     "opciones": [
       { "nombre": "Precisa", "costePP": 50, "nivel": 2 },
       { "nombre": "Vorpal", "costePP": 50, "nivel": 3 },
@@ -226,6 +322,14 @@
   {
       "nombre": "Lanzador de Conjuros",
       "faceta": "Conjuros Innatos",
+      "contenedoresPermitidos": [
+        "ARMAMELEE",
+        "ARMALANZABLE",
+        "ARMAPROYECTILES",
+        "ESCUDO",
+        "ARMADURA",
+        "MUNICION"
+    ],
       "opciones": [
         {
           "nombre": "Nivel 02 a 10",
@@ -288,6 +392,15 @@
     {
       "nombre": "Habilidad de Lanzador",
       "faceta": "Conjuros Innatos",
+      "contenedoresPermitidos": [
+        "OBJETO",
+        "ARMAMELEE",
+        "ARMALANZABLE",
+        "ARMAPROYECTILES",
+        "ESCUDO",
+        "ARMADURA",
+        "MUNICION"
+      ],
       "opciones": [
         {
           "nombre": "80",
@@ -338,6 +451,15 @@
   {
     "nombre": "Conjuros Automáticos",
     "faceta": "Conjuros Innatos",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Nivel 02 a 10",
@@ -400,6 +522,9 @@
   {
     "nombre": "Calidad de Armadura",
     "faceta": "Defensiva",
+    "contenedoresPermitidos": [
+      "ARMADURA"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -444,6 +569,15 @@
   {
     "nombre": "Armadura Innata",
     "faceta": "Defensiva",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Armadura 1",
@@ -518,6 +652,11 @@
   {
     "nombre": "Potenciación Defensiva",
     "faceta": "Defensiva",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -549,6 +688,12 @@
   {
     "nombre": "Arma con Defensa Incrementada",
     "faceta": "Defensiva",
+    "contenedoresPermitidos": [
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -586,6 +731,15 @@
   {
     "nombre": "Inmunidad",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Mitad de daño",
@@ -629,6 +783,15 @@
   {
     "nombre": "Inmunidad Mágica",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Zeon 40",
@@ -685,6 +848,15 @@
   {
     "nombre": "Inmunidad Psíquica",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Matrices 80",
@@ -747,6 +919,15 @@
   {
     "nombre": "Inmunidad Elemental",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "2 intensidades",
@@ -803,6 +984,15 @@
   {
     "nombre": "Reducción de Daño",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "-10",
@@ -835,6 +1025,15 @@
   {
     "nombre": "Barrera de Daño",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "40",
@@ -896,6 +1095,15 @@
   {
     "nombre": "Mejora de Resistencias",
     "faceta": "Protección",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -970,6 +1178,15 @@
   {
     "nombre": "ACT",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1020,6 +1237,15 @@
   {
     "nombre": "Proyección Mágica",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1064,6 +1290,15 @@
   {
     "nombre": "Contenedor de Zeon",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "50",
@@ -1149,6 +1384,15 @@
   {
     "nombre": "Poder Añadido",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10 Zeon",
@@ -1193,6 +1437,15 @@
   {
     "nombre": "Control de Resistencia Mágica Incrementado",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -1237,6 +1490,15 @@
   {
     "nombre": "Recarga Mágica",
     "faceta": "Potenciación Mágica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -1292,6 +1554,15 @@
   {
     "nombre": "Potencial",
     "faceta": "Potenciación Psíquica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1342,6 +1613,15 @@
   {
     "nombre": "Proyección Psíquica",
     "faceta": "Potenciación Psíquica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1386,6 +1666,15 @@
   {
     "nombre": "Control de Resistencia Psíquica Incrementado",
     "faceta": "Potenciación Psíquica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -1430,6 +1719,15 @@
   {
     "nombre": "Mejora de Mantenimientos",
     "faceta": "Potenciación Psíquica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+1",
@@ -1474,6 +1772,15 @@
   {
     "nombre": "Presencia Incrementada",
     "faceta": "Potenciación en la Conjuración",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -1523,6 +1830,15 @@
   {
     "nombre": "Reducción de Atadura",
     "faceta": "Potenciación en la Conjuración",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "-1 nivel",
@@ -1561,6 +1877,15 @@
   {
     "nombre": "Convocación Incrementada",
     "faceta": "Potenciación en la Conjuración",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1635,6 +1960,15 @@
   {
     "nombre": "Incremento del Turno",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+5",
@@ -1678,6 +2012,15 @@
   {
     "nombre": "Regeneración",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Regeneración 4",
@@ -1739,6 +2082,15 @@
   {
     "nombre": "Mejora del Movimiento",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+1",
@@ -1770,6 +2122,15 @@
   {
     "nombre": "Mejora de Habilidades Secundarias",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+10",
@@ -1837,6 +2198,15 @@
   {
     "nombre": "Mejora de Características",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+1",
@@ -1881,6 +2251,15 @@
   {
     "nombre": "Sustitución de Características",
     "faceta": "Mejoras",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "8",
@@ -1930,6 +2309,15 @@
   {
     "nombre": "Potenciador de Acumulaciones de Ki",
     "faceta": "Domine",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "+1",
@@ -1998,6 +2386,15 @@
   {
     "nombre": "Técnica Especial",
     "faceta": "Domine",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Nivel 1",
@@ -2048,6 +2445,15 @@
   {
     "nombre": "Reserva de Ki",
     "faceta": "Domine",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "12",
@@ -2122,6 +2528,9 @@
   {
     "nombre": "Prótesis",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO"
+    ],
     "descripcion": "Permite crear mediante magia prótesis que sustituyan partes perdidas. Además de la propia creación del artefacto, habrá que tener en cuenta la inserción de la misma en el cuerpo, para lo que será necesario un control de Medicina. Naturalmente, las prótesis pueden estar dotadas de otros poderes adicionales.",
     "opciones": [
       {
@@ -2197,6 +2606,15 @@
   {
     "nombre": "Alteración del Destino",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Pifia reducida",
@@ -2235,6 +2653,15 @@
   {
     "nombre": "Ocultación Mejorada",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Absurdo",
@@ -2278,6 +2705,15 @@
   {
     "nombre": "Medios de Visión Especiales",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Visión nocturna",
@@ -2321,6 +2757,15 @@
   {
     "nombre": "Efectos Menores",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Oculto",
@@ -2358,6 +2803,15 @@
   {
     "nombre": "Ego",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Ego básico",
@@ -2402,6 +2856,15 @@
   {
     "nombre": "Creador de Portales",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Puerta a La Vigilia (Velo Débil)",
@@ -2458,6 +2921,15 @@
   {
     "nombre": "Efecto Místico",
     "faceta": "Esotérica",
+    "contenedoresPermitidos": [
+      "OBJETO",
+      "ARMAMELEE",
+      "ARMALANZABLE",
+      "ARMAPROYECTILES",
+      "ESCUDO",
+      "ARMADURA",
+      "MUNICION"
+    ],
     "opciones": [
       {
         "nombre": "Miedo",

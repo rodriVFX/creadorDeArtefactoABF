@@ -1,0 +1,5 @@
+package Datos;
+
+public enum TipoContenedorEnum {
+    OBJETO, ARMAMELEE, ARMALANZABLE, ARMAPROYECTILES, ESCUDO, ARMADURA, MUNICION
+}

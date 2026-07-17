@@ -1,5 +1,6 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
 import Datos.TipoDanoEnum;
 
 import java.util.HashMap;

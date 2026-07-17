@@ -24,6 +24,7 @@ public class RepositorioDatos {
         componentes = new RepositorioComponente();
         artefacto = new RepositorioArtefacto();
 
+
     }
 
     public RepositorioPoder getPoderes(){return poderes;}
@@ -35,4 +36,5 @@ public class RepositorioDatos {
     public RepositorioArmadura getArmaduras(){return armaduras;};
     public RepositorioComponente getComponentes(){return componentes;};
     public RepositorioArtefacto getArtefacto(){return artefacto;};
+
 }
