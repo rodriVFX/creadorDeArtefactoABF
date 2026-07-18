@@ -1,16 +1,17 @@
 package Datos;
 
 import Artefactos.Artefacto;
+import Contenedores.Contenedor;
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Calculadora {
     Scanner obj = new Scanner(System.in);
-
 
     public Map<Integer, Integer> calcularPPRestantes(Artefacto artefacto) {
         Map<Integer, Integer> puntosDisponibles = calcularPPDisponibles(artefacto);
@@ -21,20 +22,17 @@ public class Calculadora {
         }
         return puntosRestantes;
     }
-    public boolean creadoParaArtefacto() {
-        System.out.println("¿El contenedor ha sido fabricado durante la creación del artefacto?");
-        return obj.hasNext();
-    }
-    public int calcularPresenciaInicial(Artefacto artefacto, boolean creadoParaEsto) {
-        int presenciaInicial = artefacto.getPresencia();
+
+    public int calcularPresenciaInicial(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaEsto) {
+        int presenciaInicial = contenedor.getPresenciaBase() + material.getModificador() + calidad.getModificador();
         if (creadoParaEsto) {
             presenciaInicial += 20;
         }
         return presenciaInicial;
     }
-    public int calcularPresenciaRequerida(Artefacto artefacto) {
+    public int calcularPresenciaRequerida(List<Poder> poderes) {
         int presenciaRequerida = 0;
-        for (Poder p : artefacto.getPoderes()) {
+        for (Poder p : poderes) {
             presenciaRequerida += switch (p.getOpcion().getNivel()) {
                 case 1 -> 10;
                 case 2 -> 15;
@@ -46,8 +44,8 @@ public class Calculadora {
         }
         return presenciaRequerida;
     }
-    public int calcularPresenciaFinal(Artefacto artefacto){
-        return calcularPresenciaInicial(artefacto, creadoParaArtefacto()) + calcularPresenciaRequerida(artefacto);
+    public int calcularPresenciaFinal(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaEsto, List<Poder> poderes){
+        return calcularPresenciaInicial(contenedor, material, calidad, creadoParaEsto) + calcularPresenciaRequerida(poderes);
     }
 
     private Map<Integer, Integer> calcularPPDisponibles(Artefacto artefacto) {

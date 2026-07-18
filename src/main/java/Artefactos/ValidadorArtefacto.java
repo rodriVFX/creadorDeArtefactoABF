@@ -8,11 +8,12 @@ import java.util.*;
 
 public class ValidadorArtefacto {
 
+
     Calculadora calc = new Calculadora();
 
     public void validarArtefacto(Artefacto artefacto){
         validadorCompatibilidad(artefacto);
-        validarPresencia(calc.calcularPresenciaInicial(artefacto, calc.creadoParaArtefacto()), calc.calcularPresenciaRequerida(artefacto));
+        validarPresencia(calc.calcularPresenciaInicial(artefacto.getContenedor(), artefacto.getMaterial(), artefacto.getCalidad(), artefacto.getCreado()), calc.calcularPresenciaRequerida(artefacto.getPoderes()));
         validarPPs(artefacto);
     }
 

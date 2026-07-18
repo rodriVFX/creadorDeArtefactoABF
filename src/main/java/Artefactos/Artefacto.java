@@ -13,15 +13,15 @@ public class Artefacto {
     private final Contenedor contenedor;
     private final Material material;
     private final Calidad calidad;
-    private int presencia;
+    private final boolean creadoParaArtefacto;
     private final List<Poder> poderes;
     private final List<MateriaPrima> materiasPrimas;
 
-    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, int presencia, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
+    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
         this.contenedor = contenedor;
         this.material = material;
         this.calidad = calidad;
-        this.presencia = presencia;
+        this.creadoParaArtefacto = creadoParaArtefacto;
         this.poderes = new ArrayList<>(poderes);
         this.materiasPrimas = new ArrayList<>(materiasPrimas);
     }
@@ -35,15 +35,16 @@ public class Artefacto {
     public Calidad getCalidad(){
         return calidad;
     }
-    public int getPresencia(){
-        return presencia;
-    }
     public List<MateriaPrima> getMateriasPrimas(){
         return new ArrayList<>(materiasPrimas);
     }
     public List<Poder> getPoderes(){
         return new ArrayList<>(poderes);
     }
+    public boolean getCreado(){
+        return creadoParaArtefacto;
+    }
+
 
     @Override
     public String toString(){
@@ -54,8 +55,7 @@ public class Artefacto {
 
         sb.append("Contenedor = ").append(contenedor.getNombre()).append("\n");
         sb.append("Material = ").append(material.getNombre()).append("\n");
-        sb.append("Calidad = ").append(calidad.getNombre()).append("\n");
-        sb.append("Presencia = ").append(presencia).append("\n\n");
+        sb.append("Calidad = ").append(calidad.getNombre()).append("\n\n");
 
         sb.append("Materias primas\n");
         sb.append("--------------------\n");

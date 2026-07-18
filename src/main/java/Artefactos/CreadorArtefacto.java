@@ -1,6 +1,7 @@
 package Artefactos;
 
 import Contenedores.Contenedor;
+import Datos.Calculadora;
 import Datos.Calidad;
 import Datos.Material;
 import MateriasPrimas.MateriaPrima;
@@ -10,11 +11,9 @@ import java.util.List;
 
 public class CreadorArtefacto {
 
-    public Artefacto crearArtefacto(Contenedor contenedor, Material material, Calidad calidad, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
-        return new Artefacto(contenedor, material, calidad, calcularPresenciaInicial(contenedor, material, calidad), materiasPrimas, poderes);
-    }
+    Calculadora calc = new Calculadora();
 
-    private int calcularPresenciaInicial(Contenedor contenedor, Material material, Calidad calidad){
-        return contenedor.getPresenciaBase() + material.getModificador() + calidad.getModificador();
+    public Artefacto crearArtefacto(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
+        return new Artefacto(contenedor, material, calidad, creadoParaArtefacto, materiasPrimas, poderes);
     }
 }

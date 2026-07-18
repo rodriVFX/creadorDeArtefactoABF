@@ -2,6 +2,7 @@ import java.util.*;
 
 import Artefactos.Artefacto;
 import Artefactos.CreadorArtefacto;
+import Datos.Calculadora;
 import Datos.Calidad;
 import Datos.Material;
 import Datos.RepositorioDatos;
@@ -16,10 +17,10 @@ public class AsistenteCreacionArtefacto {
     private final CreadorPoder creadorPoder = new CreadorPoder();
     private final CreadorArtefacto creadorArtefacto = new CreadorArtefacto();
     private final Scanner obj = new Scanner(System.in);
-
+    private Calculadora calc = new Calculadora();
 
     public Artefacto crearArtefacto() {
-        return creadorArtefacto.crearArtefacto(elegirContenedor(), elegirMaterial(), elegirCalidad(), elegirMateriasPrimas(), elegirPoderes());
+        return creadorArtefacto.crearArtefacto(elegirContenedor(), elegirMaterial(), elegirCalidad(), creadoParaArtefacto(), elegirMateriasPrimas(), elegirPoderes());
     }
 
     public Contenedor elegirContenedor() {
@@ -106,6 +107,10 @@ public class AsistenteCreacionArtefacto {
         List<ModificadorPoder> modificadores = elegirModificadores(base);
         listaPoderes.add(creadorPoder.crearPoder(base, opcion, modificadores));
         return listaPoderes;
+    }
+    public boolean creadoParaArtefacto() {
+        System.out.println("¿El contenedor ha sido fabricado durante la creación del artefacto?");
+        return obj.hasNext();
     }
 
 
