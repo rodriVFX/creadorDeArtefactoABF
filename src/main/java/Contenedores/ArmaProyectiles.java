@@ -1,5 +1,7 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
+
 import java.util.List;
 
 public class ArmaProyectiles extends ArmaDistancia{
@@ -14,4 +16,9 @@ public class ArmaProyectiles extends ArmaDistancia{
     }
 
     public int getRecarga() { return recarga; }
+
+    @Override
+    public TipoContenedorEnum getTipoEnum(){
+        return TipoContenedorEnum.ARMAPROYECTILES;
+    }
 }

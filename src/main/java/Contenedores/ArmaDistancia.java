@@ -15,4 +15,6 @@ public abstract class ArmaDistancia extends Arma{
 
     public int getAlcance(){ return alcance; }
 
+
+
 }

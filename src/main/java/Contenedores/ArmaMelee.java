@@ -30,4 +30,9 @@ public class ArmaMelee extends Arma {
         return criticoPrimario;
     }
     public String getCriticoSecundario(){ return criticoSecundario; }
+
+    @Override
+    public TipoContenedorEnum getTipoEnum(){
+        return TipoContenedorEnum.ARMAMELEE;
+    }
 }

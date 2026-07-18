@@ -24,16 +24,16 @@ public abstract class Contenedor {
     public String getNombre(){
         return nombre;
     }
-
     public int getPresenciaBase(){
         return presenciaBase;
     }
-
     public List<String> getEspecialidades(){
         return new ArrayList<>(especialidades);
     }
-
     public String getTipo(){
         return tipo;
     }
+    public abstract TipoContenedorEnum getTipoEnum();
+
+
 }

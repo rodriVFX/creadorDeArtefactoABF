@@ -1,5 +1,7 @@
 package Contenedores;
 
+import Datos.TipoContenedorEnum;
+
 import java.util.List;
 
 public class ArmaLanzable extends ArmaDistancia{
@@ -23,4 +25,9 @@ public class ArmaLanzable extends ArmaDistancia{
     public int getIgnoraTA(){ return ignoraTA; }
     public String getCriticoPrimario(){ return criticoPrimario; }
     public String getCriticoSecundario(){ return criticoSecundario; }
+
+    @Override
+    public TipoContenedorEnum getTipoEnum(){
+        return TipoContenedorEnum.ARMALANZABLE;
+    }
 }

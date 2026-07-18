@@ -22,4 +22,9 @@ public class Municion extends Equipamiento{
     public int getDano() { return dano; }
     public String getCriticoPrimario() { return criticoPrimario; }
     public String getCriticoSecundario() { return criticoSecundario; }
+
+    @Override
+    public TipoContenedorEnum getTipoEnum(){
+        return TipoContenedorEnum.MUNICION;
+    }
 }

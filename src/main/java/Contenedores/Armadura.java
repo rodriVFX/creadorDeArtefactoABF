@@ -38,4 +38,9 @@ public class Armadura extends Equipamiento{
 
         ta.put(tipoDano, ta.getOrDefault(tipoDano, 0)+ modificador);
     }
+
+    @Override
+    public TipoContenedorEnum getTipoEnum(){
+        return TipoContenedorEnum.ARMADURA;
+    }
 }
