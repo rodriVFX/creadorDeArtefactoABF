@@ -46,6 +46,9 @@ public class Calculadora {
         }
         return presenciaRequerida;
     }
+    public int calcularPresenciaFinal(Artefacto artefacto){
+        return calcularPresenciaInicial(artefacto, creadoParaArtefacto()) + calcularPresenciaRequerida(artefacto);
+    }
 
     private Map<Integer, Integer> calcularPPDisponibles(Artefacto artefacto) {
         Map<Integer, Integer> puntos = new HashMap<>();

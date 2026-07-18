@@ -35,6 +35,7 @@ public class ValidadorArtefacto {
             }
         }
     }
+
     private boolean compatibilidadArmas(Artefacto artefacto) {
         TipoContenedorEnum tipoContenedor = TipoContenedorEnum.valueOf(artefacto.getContenedor().getTipo().toUpperCase());
         List<TipoContenedorEnum> tiposPermitidos = new ArrayList<>();
@@ -53,6 +54,5 @@ public class ValidadorArtefacto {
         }
         return permitido;
     }
-
 
 }
