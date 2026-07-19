@@ -44,6 +44,10 @@
     "modificador": 10
   },
   {
+    "nombre": "Tinta",
+    "modificador": 0
+  },
+  {
     "nombre": "Perla Negra",
     "modificador": 30
   }

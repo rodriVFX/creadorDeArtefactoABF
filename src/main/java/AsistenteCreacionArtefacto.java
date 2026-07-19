@@ -2,10 +2,7 @@ import java.util.*;
 
 import Artefactos.Artefacto;
 import Artefactos.CreadorArtefacto;
-import Datos.Calculadora;
-import Datos.Calidad;
-import Datos.Material;
-import Datos.RepositorioDatos;
+import Datos.*;
 import Contenedores.*;
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
@@ -20,7 +17,13 @@ public class AsistenteCreacionArtefacto {
     private Calculadora calc = new Calculadora();
 
     public Artefacto crearArtefacto() {
-        return creadorArtefacto.crearArtefacto(elegirContenedor(), elegirMaterial(), elegirCalidad(), creadoParaArtefacto(), elegirMateriasPrimas(), elegirPoderes());
+        Contenedor contenedor = elegirContenedor();
+        Material material = elegirMaterial(contenedor);
+        Calidad calidad = elegirCalidad(contenedor);
+        boolean creado = creadoParaArtefacto(contenedor);
+        List<MateriaPrima> matPrimas = elegirMateriasPrimas();
+        List<Poder> poderes = elegirPoderes();
+        return creadorArtefacto.crearArtefacto(contenedor, material, calidad, creado, matPrimas, poderes);
     }
 
     public Contenedor elegirContenedor() {
@@ -32,9 +35,10 @@ public class AsistenteCreacionArtefacto {
                 4. Arma de proyectiles
                 5. Munición
                 6. Armadura
+                7. Tatuaje
                 """);
         int input1 = obj.nextInt();
-        if (input1 < 1 || input1 > 6) {
+        if (input1 < 1 || input1 > 7) {
             throw new IllegalArgumentException("Opción no válida");
         }
 
@@ -45,6 +49,7 @@ public class AsistenteCreacionArtefacto {
             case 4 -> datos.getArmasProyectiles().listar().values();
             case 5 -> datos.getMuniciones().listar().values();
             case 6 -> datos.getArmaduras().listar().values();
+            case 7 -> datos.getTatuajes().listar().values();
             default -> throw new IllegalArgumentException("El número introducido no es correcto.");
         });
         lista.sort(Comparator.comparing(Contenedor::getNombre));
@@ -54,7 +59,10 @@ public class AsistenteCreacionArtefacto {
         int input2 = obj.nextInt();
         return lista.get(input2 - 1);
     }
-    public Calidad elegirCalidad() {
+    public Calidad elegirCalidad(Contenedor contenedor) {
+        if(TipoContenedorEnum.TATUAJE.equals(contenedor.getTipoEnum())){
+            return datos.getArtefacto().getCalidad("Calidad normal");
+        }
         List<Calidad> calidades = new ArrayList<>(datos.getArtefacto().listarCalidades().values());
         System.out.println("Selecciona la calidad del contenedor:");
         calidades.sort(Comparator.comparing(Calidad::getNombre));
@@ -64,9 +72,13 @@ public class AsistenteCreacionArtefacto {
         int input = obj.nextInt();
         return calidades.get(input - 1);
     }
-    public Material elegirMaterial() {
+    public Material elegirMaterial(Contenedor contenedor) {
+        if(TipoContenedorEnum.TATUAJE.equals(contenedor.getTipoEnum())){
+            return datos.getArtefacto().getMaterial("Tinta");
+        }
         List<Material> materiales = new ArrayList<>(datos.getArtefacto().listarMateriales().values());
         System.out.println("Selecciona el material del contenedor:");
+        materiales.remove(datos.getArtefacto().getMaterial("Tinta"));
         materiales.sort(Comparator.comparing(Material::getNombre));
         for (int i = 0; i < materiales.size(); i++) {
             System.out.println((i + 1) + ". " + materiales.get(i).getNombre());
@@ -108,16 +120,19 @@ public class AsistenteCreacionArtefacto {
         listaPoderes.add(creadorPoder.crearPoder(base, opcion, modificadores));
         return listaPoderes;
     }
-    public boolean creadoParaArtefacto() {
-        System.out.println("¿El contenedor ha sido fabricado durante la creación del artefacto?");
-        return obj.hasNext();
+    public boolean creadoParaArtefacto(Contenedor contenedor) {
+        if(!TipoContenedorEnum.TATUAJE.equals(contenedor.getTipoEnum())) {
+            System.out.println("¿El contenedor ha sido fabricado durante la creación del artefacto?");
+        }
+        else{System.out.println("¿El tatuaje es de gran tamaño?");}
+        return (obj.nextInt()==1);
     }
 
 
 
     private MateriaPrima elegirComponente() {
         List<? extends MateriaPrima> lista = new ArrayList<>(datos.getComponentes().listar().values());
-        lista.sort(Comparator.comparing(MateriaPrima::toString));
+        lista.sort(Comparator.comparing(MateriaPrima::getNombre));
         for (int i = 0; i < lista.size(); i++) {
             System.out.println((i + 1) + ". " + lista.get(i).getNombre());
         }

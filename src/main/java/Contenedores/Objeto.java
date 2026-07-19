@@ -8,8 +8,8 @@ public class Objeto extends Contenedor {
 
     public Objeto(){}
 
-    public Objeto(String nombre, int presenciaBase, List<String> especialidades, String tipo){
-        super(nombre, presenciaBase, especialidades, tipo);
+    public Objeto(String nombre, int presenciaBase, List<String> especialidades){
+        super(nombre, presenciaBase, especialidades, "Objeto");
     }
 
     @Override

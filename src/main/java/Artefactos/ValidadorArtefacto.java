@@ -13,7 +13,7 @@ public class ValidadorArtefacto {
 
     public void validarArtefacto(Artefacto artefacto){
         validadorCompatibilidad(artefacto);
-        validarPresencia(calc.calcularPresenciaInicial(artefacto.getContenedor(), artefacto.getMaterial(), artefacto.getCalidad(), artefacto.getCreado()), calc.calcularPresenciaRequerida(artefacto.getPoderes()));
+        validarPresencia(calc.calcularPresenciaDisponible(artefacto.getContenedor(), artefacto.getMaterial(), artefacto.getCalidad(), artefacto.getCreado(), artefacto.getPoderes()), calc.calcularPresenciaRequerida(artefacto.getPoderes()));
         validarPPs(artefacto);
     }
 
@@ -24,8 +24,8 @@ public class ValidadorArtefacto {
             }
         }
     }
-    private void validarPresencia(int presenciaInicial, int presenciaRequerida){
-        if(presenciaRequerida > presenciaInicial){
+    private void validarPresencia(int presenciaDisponible, int presenciaRequerida){
+        if(presenciaRequerida > presenciaDisponible){
             throw new IllegalArgumentException("La presencia del objeto es demasiado baja.");
         }
     }
@@ -38,19 +38,21 @@ public class ValidadorArtefacto {
     }
 
     private boolean compatibilidadArmas(Artefacto artefacto) {
-        TipoContenedorEnum tipoContenedor = TipoContenedorEnum.valueOf(artefacto.getContenedor().getTipo().toUpperCase());
+        TipoContenedorEnum tipoContenedor = artefacto.getContenedor().getTipoEnum();
         List<TipoContenedorEnum> tiposPermitidos = new ArrayList<>();
         List<Integer> permitidos = new ArrayList<>();
         boolean permitido = false;
         for (Poder p : artefacto.getPoderes()) {
             tiposPermitidos.addAll(p.getBase().getContenedoresPermitidos());
+            //System.out.println(tiposPermitidos.toString());
             if (tiposPermitidos.contains(tipoContenedor)) {
                 permitidos.add(1);
             } else {
                 permitidos.add(0);
             }
         }
-        if (permitidos.contains(0)) {
+        //System.out.println(permitidos.toString());
+        if (permitidos.contains(1)) {
             permitido = true;
         }
         return permitido;

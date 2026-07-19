@@ -12,6 +12,7 @@ public class RepositorioDatos {
     private final RepositorioArmadura armaduras;
     private final RepositorioComponente componentes;
     private final RepositorioArtefacto artefacto;
+    private final RepositorioTatuajes tatuajes;
 
     public RepositorioDatos(){
         poderes = new RepositorioPoder();
@@ -23,7 +24,7 @@ public class RepositorioDatos {
         armaduras = new RepositorioArmadura();
         componentes = new RepositorioComponente();
         artefacto = new RepositorioArtefacto();
-
+        tatuajes = new RepositorioTatuajes();
 
     }
 
@@ -36,5 +37,7 @@ public class RepositorioDatos {
     public RepositorioArmadura getArmaduras(){return armaduras;};
     public RepositorioComponente getComponentes(){return componentes;};
     public RepositorioArtefacto getArtefacto(){return artefacto;};
-
+    public RepositorioTatuajes getTatuajes(){
+        return tatuajes;
+    }
 }

@@ -5,22 +5,26 @@ import Contenedores.Contenedor;
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculadora {
     Scanner obj = new Scanner(System.in);
 
     public Map<Integer, Integer> calcularPPRestantes(Artefacto artefacto) {
-        Map<Integer, Integer> puntosDisponibles = calcularPPDisponibles(artefacto);
-        Map<Integer, Integer> puntosGastados = calcularPPGastados(artefacto);
-        Map<Integer, Integer> puntosRestantes = new HashMap<>();
-        for (Map.Entry<Integer, Integer> entrada : puntosDisponibles.entrySet()) {
-            puntosRestantes.put(entrada.getKey(), puntosDisponibles.get(entrada.getKey()) - puntosGastados.getOrDefault(entrada.getKey(), 0));
+        Map<Integer, Integer> puntos = calcularPPDisponibles(artefacto);
+        for(Poder p : artefacto.getPoderes()){
+            for(Map.Entry<Integer, Integer> coste : p.getCostePP().entrySet()){
+                int nivel = coste.getKey();
+                int cantidad = coste.getValue();
+
+                for(int i = 0; i < cantidad; i++){
+                    if(!consumirPP(puntos, nivel)){
+                        throw new IllegalArgumentException("No hay suficientes PP de nivel " + nivel);
+                    }
+                }
+            }
         }
-        return puntosRestantes;
+        return puntos;
     }
 
     public int calcularPresenciaInicial(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaEsto) {
@@ -29,6 +33,21 @@ public class Calculadora {
             presenciaInicial += 20;
         }
         return presenciaInicial;
+    }
+    public int calcularPresenciaDisponible(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaEsto, List<Poder> poderes) {
+        int presencia = calcularPresenciaInicial(contenedor, material, calidad, creadoParaEsto);
+        List<Integer> especialidades = new ArrayList<>();
+        for (Poder p : poderes) {
+            if (contenedor.getEspecialidades().contains(p.getNombre())) {
+                especialidades.add(1);
+            } else {
+                especialidades.add(0);
+            }
+        }
+        if (especialidades.contains(1)) {
+            presencia += 20;
+        }
+        return presencia;
     }
     public int calcularPresenciaRequerida(List<Poder> poderes) {
         int presenciaRequerida = 0;
@@ -57,14 +76,37 @@ public class Calculadora {
         }
         return puntos;
     }
-    private Map<Integer, Integer> calcularPPGastados(Artefacto artefacto) {
-        Map<Integer, Integer> puntos = new HashMap<>();
-        for (Poder p : artefacto.getPoderes()) {
-            for (Map.Entry<Integer, Integer> entrada : p.getCostePP().entrySet()) {
-                puntos.merge(entrada.getKey(), entrada.getValue(), Integer::sum);
-            }
-        }
-        return puntos;
-    }
+    private boolean consumirPP(Map<Integer, Integer> puntos, int nivel) {
 
+        //Tengo PP del nivel que necesito?
+        if (puntos.getOrDefault(nivel, 0) > 0) {
+
+            puntos.put(nivel, puntos.get(nivel) - 1);
+
+            if(puntos.get(nivel) == 0){
+                puntos.remove(nivel);
+            }
+            return true;
+        }
+        //Estoy en el nivel máximo?
+        if(nivel == 5){
+            return false;
+        }
+        //Intento obtener del nivel superior
+        int nivelSuperior = nivel + 1;
+        if (!consumirPP(puntos, nivelSuperior)) {
+            return false;
+        }
+
+        //El PP de nivel superior ya ha sido consumido
+        //Genero los dos puntos del nivel actual
+        puntos.merge(nivel, 2, Integer::sum);
+
+        //Y ahora gasto un punto
+        puntos.put(nivel, puntos.get(nivel) - 1);
+        if(puntos.get(nivel) == 0){
+            puntos.remove(nivel);
+        }
+        return true;
+    }
 }

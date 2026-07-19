@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "Tatuaje simple",
+    "presenciaBase": 20,
+    "especialidades": []
+  },
+  {
+    "nombre": "Tatuaje complejo",
+    "presenciaBase": 40,
+    "especialidades": []
+  },
+  {
+    "nombre": "Obra maestra",
+    "presenciaBase": 60,
+    "especialidades": []
+  }
+]
