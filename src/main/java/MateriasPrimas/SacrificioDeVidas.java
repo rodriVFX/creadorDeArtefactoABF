@@ -45,4 +45,9 @@ public class SacrificioDeVidas extends MateriaPrima{
     public SacrificioDeVidas(int presenciaSacrificio, int natura, int gnosis, boolean esVoluntario, boolean esSobrenatural, boolean esArtificial) {
         super(calcularPP(presenciaSacrificio, natura, gnosis, esVoluntario, esSobrenatural, esArtificial), crearReglas(esVoluntario, esArtificial), "Sacrificio de criatura");
     }
+
+    @Override
+    public String getNombre(){
+        return "Sacrificio de vidas";
+    }
 }

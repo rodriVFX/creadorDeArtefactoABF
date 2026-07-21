@@ -18,7 +18,6 @@ public abstract class Arma extends Equipamiento{
         this.velocidad = velocidad;
         this.fuerzaRequerida = fuerzaRequerida;
     }
-
     public int getModificadorHA() { return modificadorHA; }
     public int getVelocidad(){
         return velocidad;
@@ -26,4 +25,5 @@ public abstract class Arma extends Equipamiento{
     public String getFuerzaRequerida(){
         return fuerzaRequerida;
     }
+
 }

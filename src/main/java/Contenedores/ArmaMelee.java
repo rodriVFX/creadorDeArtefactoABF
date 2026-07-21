@@ -1,10 +1,11 @@
 package Contenedores;
 
+import Contenedores.Interfaces.HaceDano;
 import Datos.TipoContenedorEnum;
 
 import java.util.List;
 
-public class ArmaMelee extends Arma {
+public class ArmaMelee extends Arma implements HaceDano {
 
     private int dano;
     private int ignoraTA;
@@ -20,7 +21,6 @@ public class ArmaMelee extends Arma {
         this.criticoPrimario = criticoPrimario;
         this.criticoSecundario = criticoSecundario;
     }
-
 
     public int getDano(){
         return dano;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 public class SacrificioDeObjetos extends MateriaPrima{
 
+
     public static HashMap<Integer, Integer> calcularNivelesPP(HashMap<Integer, Integer> objetoPrevio, boolean conservarNivelPP){
         ArrayList<Integer> nivelesViejos = new ArrayList<>(objetoPrevio.keySet());
         ArrayList<Integer> nivelesNuevos = new ArrayList<>();
@@ -44,5 +45,10 @@ public class SacrificioDeObjetos extends MateriaPrima{
 
     public SacrificioDeObjetos(HashMap<Integer, Integer> objetoPrevio, boolean conservarNivelPP) {
         super(calcularNivelesPP(objetoPrevio, conservarNivelPP), crearReglas(), "Contenedores.Objeto Sacrificado");
+    }
+
+    @Override
+    public String getNombre(){
+        return "Objeto sacrificado";
     }
 }

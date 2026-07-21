@@ -34,4 +34,9 @@ public class SacrificioDePoder extends MateriaPrima{
     public SacrificioDePoder(int nivelPOD, int presenciaUsuario){
         super(ppSacrificioPoder(nivelPOD, presenciaUsuario), crearReglas(), "Sacrificio de POD");
     }
+
+    @Override
+    public String getNombre(){
+        return "Sacrificio de POD";
+    }
 }

@@ -23,7 +23,8 @@ public class AsistenteCreacionArtefacto {
         boolean creado = creadoParaArtefacto(contenedor);
         List<MateriaPrima> matPrimas = elegirMateriasPrimas();
         List<Poder> poderes = elegirPoderes();
-        return creadorArtefacto.crearArtefacto(contenedor, material, calidad, creado, matPrimas, poderes);
+        String nombre = elegirNombre();
+        return creadorArtefacto.crearArtefacto(nombre, contenedor, material, calidad, creado, matPrimas, poderes);
     }
 
     public Contenedor elegirContenedor() {
@@ -127,6 +128,10 @@ public class AsistenteCreacionArtefacto {
         else{System.out.println("¿El tatuaje es de gran tamaño?");}
         return (obj.nextInt()==1);
     }
+    public String elegirNombre(){
+        System.out.println("Ponle un nombre a tu creación:");
+        return obj.nextLine();
+    }
 
 
 
@@ -150,18 +155,20 @@ public class AsistenteCreacionArtefacto {
         if (nPoderes < 1) {
             throw new IllegalArgumentException("Opción no válida.");
         }
-
-        int[] nivelesPP = new int[nPoderes];
-        int[] cantidadesPP = new int[nPoderes];
-
+        Map<Integer, Integer> niveles = new HashMap<>();
         for (int i = 0; i < nPoderes; i++) {
             System.out.println("Introduce el " + (i + 1) + "º nivel de PP:");
             int nivelPP = obj.nextInt();
-            nivelesPP[i] = nivelPP;
 
             System.out.println("Introduce la " + (i + 1) + "º cantidad de PP:");
             int cantidadPP = obj.nextInt();
-            cantidadesPP[i] = cantidadPP;
+
+            if(niveles.get(nivelPP) != null){
+                niveles.merge(nivelPP, cantidadPP, Integer::sum);
+            }
+            else{
+                niveles.put(nivelPP, cantidadPP);
+            }
         }
 
         System.out.println("""
@@ -175,7 +182,7 @@ public class AsistenteCreacionArtefacto {
         }
         boolean conservaNivel = conservarNivel == 1;
 
-        return creadorMat.crearSacrificioDeObjetos(nivelesPP, cantidadesPP, conservaNivel);
+        return creadorMat.crearSacrificioDeObjetos(niveles, conservaNivel);
     }
     private MateriaPrima cfgSacrificioDePoder() {
         System.out.println("Introduce tu presencia:");

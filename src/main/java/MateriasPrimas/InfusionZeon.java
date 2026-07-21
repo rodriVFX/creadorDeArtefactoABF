@@ -20,4 +20,9 @@ public class InfusionZeon extends MateriaPrima{
     public InfusionZeon (int zeon){
         super(calcularPP(zeon), crearReglas(), "Zeón");
     }
+
+    @Override
+    public String getNombre(){
+        return "Infusión de zeón";
+    }
 }

@@ -13,7 +13,7 @@ public class CreadorArtefacto {
 
     Calculadora calc = new Calculadora();
 
-    public Artefacto crearArtefacto(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
-        return new Artefacto(contenedor, material, calidad, creadoParaArtefacto, materiasPrimas, poderes);
+    public Artefacto crearArtefacto(String nombre, Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
+        return new Artefacto(nombre, contenedor, material, calidad, creadoParaArtefacto, materiasPrimas, poderes);
     }
 }

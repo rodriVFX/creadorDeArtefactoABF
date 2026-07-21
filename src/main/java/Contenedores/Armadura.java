@@ -25,8 +25,8 @@ public class Armadura extends Equipamiento{
         this.restriccionMov = restriccionMov;
         this.localizacion = localizacion;
     }
-
     public Map<TipoDanoEnum, Integer> getTa() { return new HashMap<>(ta);}
+
     public int getRequerimientoArmadura() { return requerimientoArmadura; }
     public int getPenalizadorNatural() { return penalizadorNatural; }
     public int getRestriccionMov() { return restriccionMov; }
@@ -36,7 +36,7 @@ public class Armadura extends Equipamiento{
 
         if(ta == null){ ta = new HashMap<>(); }
 
-        ta.put(tipoDano, ta.getOrDefault(tipoDano, 0)+ modificador);
+        ta.put(tipoDano, ta.getOrDefault(tipoDano, 0) + modificador);
     }
 
     @Override

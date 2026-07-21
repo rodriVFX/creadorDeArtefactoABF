@@ -323,6 +323,7 @@
       "nombre": "Lanzador de Conjuros",
       "faceta": "Conjuros Innatos",
       "contenedoresPermitidos": [
+        "OBJETO",
         "ARMAMELEE",
         "ARMALANZABLE",
         "ARMAPROYECTILES",

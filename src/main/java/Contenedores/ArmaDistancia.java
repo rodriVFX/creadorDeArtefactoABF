@@ -14,7 +14,6 @@ public abstract class ArmaDistancia extends Arma{
         super(nombre, presenciaBase, especialidades, tipo, entereza, rotura, especializaciones, modificadorHA, velocidad, fuerzaRequerida);
         this.alcance = alcance;
     }
-
     public int getAlcance(){ return alcance; }
 
 }

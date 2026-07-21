@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Artefacto {
+    private final String nombre;
     private final Contenedor contenedor;
     private final Material material;
     private final Calidad calidad;
@@ -17,7 +18,8 @@ public class Artefacto {
     private final List<Poder> poderes;
     private final List<MateriaPrima> materiasPrimas;
 
-    public Artefacto(Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
+    public Artefacto(String nombre, Contenedor contenedor, Material material, Calidad calidad, boolean creadoParaArtefacto, List<MateriaPrima> materiasPrimas, List<Poder> poderes){
+        this.nombre = nombre;
         this.contenedor = contenedor;
         this.material = material;
         this.calidad = calidad;
@@ -26,6 +28,9 @@ public class Artefacto {
         this.materiasPrimas = new ArrayList<>(materiasPrimas);
     }
 
+    public String getNombre(){
+        return nombre;
+    }
     public Contenedor getContenedor(){
         return contenedor;
     }

@@ -1,14 +1,12 @@
 package MateriasPrimas;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CreadorMateriaPrima {
 
-    public SacrificioDeObjetos crearSacrificioDeObjetos(int[] nivelesPP, int[] cantidadesPP, boolean conservaNivelPP){
-        HashMap<Integer, Integer> niveles = new HashMap<>();
-        for(int i : nivelesPP){
-            niveles.put(i, cantidadesPP[i]);
-        }
+    public SacrificioDeObjetos crearSacrificioDeObjetos(Map<Integer, Integer> puntos, boolean conservaNivelPP){
+        HashMap<Integer, Integer> niveles = new HashMap<>(puntos);
         return new SacrificioDeObjetos(niveles, conservaNivelPP);
     }
 

@@ -1,6 +1,7 @@
 [
   {
     "nombre": "Boleadoras",
+    "dano" : 30,
     "presenciaBase": 15,
     "especialidades": [],
     "modificadorHA": 0,
@@ -18,6 +19,7 @@
   },
   {
     "nombre": "Bolas",
+    "dano" : 20,
     "presenciaBase": 15,
     "especialidades": [],
     "modificadorHA": 0,
@@ -35,6 +37,7 @@
   },
   {
     "nombre": "Dardos de mano",
+    "dano" : 20,
     "presenciaBase": 15,
     "especialidades": [],
     "modificadorHA": 0,
@@ -52,6 +55,7 @@
   },
   {
     "nombre": "Turcus",
+    "dano" : 40,
     "presenciaBase": 20,
     "especialidades": [],
     "modificadorHA": 0,
