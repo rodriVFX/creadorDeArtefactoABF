@@ -28,6 +28,9 @@ public abstract class Contenedor {
         return presenciaBase;
     }
     public List<String> getEspecialidades(){
+        if(especialidades == null){
+            return new ArrayList<>();
+        }
         return new ArrayList<>(especialidades);
     }
     public String getTipo(){

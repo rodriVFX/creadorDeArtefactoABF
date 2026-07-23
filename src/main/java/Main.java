@@ -4,8 +4,9 @@ import Artefactos.ValidadorArtefacto;
 void main() {
     AsistenteCreacionArtefacto asistente = new AsistenteCreacionArtefacto();
     ValidadorArtefacto validador = new ValidadorArtefacto();
+    ExportadorPDF exportador = new ExportadorPDF();
 
     Artefacto artefacto = asistente.crearArtefacto();
     validador.validarArtefacto(artefacto);
-    System.out.println(artefacto.toString());
+    exportador.exportar(artefacto, artefacto.getNombre());
 }

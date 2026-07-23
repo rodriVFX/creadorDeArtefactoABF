@@ -2,6 +2,8 @@ import Artefactos.Artefacto;
 import Contenedores.*;
 import Contenedores.Interfaces.HaceDano;
 import MateriasPrimas.MateriaPrima;
+import Poderes.ModificadorPoder;
+import Poderes.Poder;
 import org.openpdf.text.Document;
 import org.openpdf.text.Font;
 import org.openpdf.text.Paragraph;
@@ -10,7 +12,9 @@ import org.openpdf.text.pdf.PdfWriter;
 import org.openpdf.text.pdf.draw.LineSeparator;
 
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ExportadorPDF {
@@ -19,8 +23,9 @@ public class ExportadorPDF {
         try {
             Document documento = new Document();
             Contenedor contenedor = artefacto.getContenedor();
-            ;
-            PdfWriter.getInstance(documento, new FileOutputStream(ruta));
+            String output = "C:\\Users\\rodri\\Documents\\%s.pdf".formatted(ruta);
+
+            PdfWriter.getInstance(documento, new FileOutputStream(output));
 
             documento.open();
 
@@ -36,6 +41,8 @@ public class ExportadorPDF {
             documento.close();
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
             throw new RuntimeException("No se pudo crear el PDF.", e);
         }
     }
@@ -148,9 +155,40 @@ public class ExportadorPDF {
             tabla.addCell(String.valueOf(m.getNivelPP()));
             tabla.addCell(String.valueOf(m.getCantidadPP()));
         }
+        documento.add(tabla);
     }
-    private void escribirPoderes(Document documento, Artefacto artefacto){}
-    private void escribirDescripcion(Document documento, Artefacto artefacto){}
+    private void escribirPoderes(Document documento, Artefacto artefacto){
+        PdfPTable tabla = new PdfPTable(5);
+        tabla.addCell("Poder");
+        tabla.addCell("Variante");
+        tabla.addCell("Modificadores");
+        tabla.addCell("Coste");
+        tabla.addCell("Nivel");
+
+        for(Poder p : artefacto.getPoderes()){
+            tabla.addCell(p.getNombre());
+            tabla.addCell(p.getOpcion().getNombre());
+            List<String> modificadores = new ArrayList<>();
+            for(ModificadorPoder m : p.getModificadores()){
+                modificadores.add(m.getNombre());
+            }
+            tabla.addCell(String.join(", ", modificadores));
+            for(Map.Entry<Integer, Integer> m : p.getCostePP().entrySet()){
+                tabla.addCell(String.valueOf(m.getKey()));
+                tabla.addCell(String.valueOf(m.getValue()));
+            }
+        }
+        documento.add(tabla);
+    }
+    private void escribirDescripcion(Document documento, Artefacto artefacto){
+        descripcionArtefacto();
+        PdfPTable tabla = new PdfPTable(2);
+        for(Poder p : artefacto.getPoderes()){
+            tabla.addCell(p.getNombre() + ": " + p.getOpcion().getNombre());
+            tabla.addCell(p.getOpcion().getDescripcion());
+        }
+        documento.add(tabla);
+    }
 
     private Map<String, Integer> contarMateriasPrimas(Artefacto artefacto){
         Map<String, Integer> listaMat = new HashMap<>();
@@ -158,6 +196,9 @@ public class ExportadorPDF {
             listaMat.put(m.getNombre(), listaMat.getOrDefault(m.getNombre(), 0) + 1);
         }
         return listaMat;
+    }
+    private void descripcionArtefacto(){
+
     }
 
 }
