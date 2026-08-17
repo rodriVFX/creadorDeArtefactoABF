@@ -1,3 +1,5 @@
+package Exportacion;
+
 import java.util.*;
 
 import Artefactos.Artefacto;
@@ -17,13 +19,13 @@ public class AsistenteCreacionArtefacto {
     private Calculadora calc = new Calculadora();
 
     public Artefacto crearArtefacto() {
-        String nombre = elegirNombre();
         Contenedor contenedor = elegirContenedor();
         Material material = elegirMaterial(contenedor);
         Calidad calidad = elegirCalidad(contenedor);
         boolean creado = creadoParaArtefacto(contenedor);
         List<MateriaPrima> matPrimas = elegirMateriasPrimas();
         List<Poder> poderes = elegirPoderes();
+        String nombre = elegirNombre();
         return creadorArtefacto.crearArtefacto(nombre, contenedor, material, calidad, creado, matPrimas, poderes);
     }
 
@@ -130,6 +132,7 @@ public class AsistenteCreacionArtefacto {
     }
     public String elegirNombre(){
         System.out.println("Ponle un nombre a tu creación:");
+        obj.nextLine();
         return obj.nextLine();
     }
 

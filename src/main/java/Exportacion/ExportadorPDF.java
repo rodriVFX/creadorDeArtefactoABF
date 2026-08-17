@@ -1,3 +1,5 @@
+package Exportacion;
+
 import Artefactos.Artefacto;
 import Contenedores.*;
 import Contenedores.Interfaces.HaceDano;
@@ -23,9 +25,9 @@ public class ExportadorPDF {
         try {
             Document documento = new Document();
             Contenedor contenedor = artefacto.getContenedor();
-            String output = "C:\\Users\\rodri\\Documents\\%s.pdf".formatted(ruta);
+            //String output = "C:\\Users\\rodri\\Documents\\%s.pdf".formatted(ruta);
 
-            PdfWriter.getInstance(documento, new FileOutputStream(output));
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta));
 
             documento.open();
 

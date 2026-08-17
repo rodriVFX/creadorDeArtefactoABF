@@ -1,12 +1,27 @@
-import Artefactos.Artefacto;
-import Artefactos.ValidadorArtefacto;
+import GUI.EscenaCrearArtefacto;
+import GUI.VentanaPrincipal;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-void main() {
-    AsistenteCreacionArtefacto asistente = new AsistenteCreacionArtefacto();
-    ValidadorArtefacto validador = new ValidadorArtefacto();
-    ExportadorPDF exportador = new ExportadorPDF();
+import static javafx.application.Application.launch;
 
-    Artefacto artefacto = asistente.crearArtefacto();
-    validador.validarArtefacto(artefacto);
-    exportador.exportar(artefacto, artefacto.getNombre());
+public class Main extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle("Constructor de Artefactos");
+
+        EscenaCrearArtefacto escenaCrearArtefacto = new EscenaCrearArtefacto();
+
+        stage.setScene(escenaCrearArtefacto.crear());
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
 }
