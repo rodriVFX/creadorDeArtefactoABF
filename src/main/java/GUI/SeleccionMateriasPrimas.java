@@ -1,0 +1,91 @@
+package GUI;
+
+import MateriasPrimas.MateriaPrima;
+import Datos.RepositorioDatos;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class SeleccionMateriasPrimas {
+
+    private RepositorioDatos datos = new RepositorioDatos();
+    private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
+
+    public SeleccionMateriasPrimas(RepositorioDatos datos){
+        this.datos = datos;
+    }
+
+    public Node getVista(){
+        VBox root = new VBox(10);
+
+        ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
+        ComboBox<MateriaPrima> comboMat = new ComboBox<>();
+        comboMat.getItems().addAll(datos.getComponentes().listar().values());
+        comboMat.setCellFactory(param -> new ListCell<>(){
+            @Override
+            protected void updateItem(MateriaPrima mat, boolean empty){
+                super.updateItem(mat, empty);
+                if(empty || mat == null){
+                    setText(null);
+                }
+                else{
+                    setText(mat.getNombre());
+                }
+            }
+        });
+        comboMat.setButtonCell(new ListCell<>(){
+            @Override
+            protected void updateItem(MateriaPrima mat, boolean empty){
+                super.updateItem(mat, empty);
+                if(empty || mat == null){
+                    setText(null);
+                }
+                else{
+                    setText(mat.getNombre());
+                }
+            }
+        });
+
+        Button botonAnadirMat = new Button("Añadir");
+        botonAnadirMat.setOnAction(event -> {
+            MateriaPrima mat = comboMat.getValue();
+
+            if(mat != null){
+                materiasSeleccionadas.add(mat);
+            }
+        });
+
+        TableView<MateriaPrima> tablaMat = new TableView<>();
+        TableColumn<MateriaPrima, String> columnaNombre = new TableColumn<>("Materia Prima");
+        columnaNombre.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
+        TableColumn<MateriaPrima, Integer> materiaPP = new TableColumn<>("PP");
+        materiaPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCantidadPP()));
+        TableColumn<MateriaPrima, Integer> materiaNivel = new TableColumn<>("Nivel PP");
+        materiaNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getNivelPP()));
+        tablaMat.getColumns().addAll(columnaNombre, materiaPP, materiaNivel);
+        tablaMat.setItems(materiasSeleccionadas);
+
+        root.getChildren().addAll(
+                comboMat,
+                botonAnadirMat,
+                tablaMat
+        );
+        return root;
+    }
+
+    public List<MateriaPrima> getMateriasSeleccionadas(){
+        return new ArrayList<>(materiasSeleccionadas);
+    }
+}

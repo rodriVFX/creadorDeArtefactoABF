@@ -44,4 +44,11 @@ public class Poder {
     public List<ModificadorPoder> getModificadores(){
         return new ArrayList<>(modificadores);
     }
+    public List<String> listarModificadores(){
+        List<String> nombres = new ArrayList<>();
+        for(ModificadorPoder m : modificadores){
+            nombres.add(m.getNombre());
+        }
+        return nombres;
+    }
 }

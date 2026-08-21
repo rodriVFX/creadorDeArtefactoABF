@@ -9,11 +9,18 @@ import Datos.RepositorioDatos;
 import Datos.TipoContenedorEnum;
 import MateriasPrimas.MateriaPrima;
 import Poderes.Poder;
+import Poderes.PoderBase;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -33,8 +40,8 @@ public class EscenaCrearArtefacto {
     }
     RepositorioDatos datos = new RepositorioDatos();
     CreadorArtefacto creadorArtefacto = new CreadorArtefacto();
-    private List<MateriaPrima> materiasPrimas;
-    private List<Poder> poderes;
+    SeleccionMateriasPrimas matPrimas = new SeleccionMateriasPrimas(datos);
+    SeleccionPoderes poderes = new SeleccionPoderes(datos);
 
     public Scene crear() {
 
@@ -198,18 +205,6 @@ public class EscenaCrearArtefacto {
 
         CheckBox creadoParaArtefacto = new CheckBox("Creado específicamente para el artefacto");
 
-        Button botonMatPrimas = new Button("Seleccionar materias primas");
-        botonMatPrimas.setOnAction(event -> {
-            VentanaMateriasPrimas ventana = new VentanaMateriasPrimas();
-            materiasPrimas = ventana.mostrar();
-        });
-
-        Button botonPoderes = new Button("Seleccionar poderes");
-        botonPoderes.setOnAction(event -> {
-            VentanaPoderes ventana = new VentanaPoderes();
-            poderes = ventana.mostrar();
-        });
-
         Button botonCrear = new Button("Crear artefacto");
         botonCrear.setOnAction(event ->{
 
@@ -226,8 +221,8 @@ public class EscenaCrearArtefacto {
                     material,
                     calidad,
                     creado,
-                    materiasPrimas,
-                    poderes
+                    matPrimas.getMateriasSeleccionadas(),
+                    poderes.getPoderesSeleccionados()
             );
 
             VentanaExportacion ventanaExportacion = new VentanaExportacion(artefacto);
@@ -247,8 +242,8 @@ public class EscenaCrearArtefacto {
                 comboMaterial,
                 comboCalidad,
                 creadoParaArtefacto,
-                botonMatPrimas,
-                botonPoderes,
+                matPrimas.getVista(),
+                poderes.getVista(),
                 botonCrear
         );
 
