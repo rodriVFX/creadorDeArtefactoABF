@@ -1,4 +1,4 @@
-package GUI;
+package GUI.ParteVentanaPrincipal;
 
 import Poderes.CreadorPoder;
 import Poderes.OpcionPoder;
@@ -13,17 +13,20 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 
 public class VentanaAnadirPoder {
 
     private final PoderBase base;
     private Poder poderCreado;
+    private List<Poder> poderesSeleccionados;
 
     public VentanaAnadirPoder(PoderBase base){
         this.base = base;
     }
 
-    public Poder mostrar(Stage ventanaPrincipal){
+    public List<Poder> mostrar(Stage ventanaPrincipal){
         Stage ventana = new Stage();
 
         ventana.initModality(Modality.WINDOW_MODAL);
@@ -72,6 +75,7 @@ public class VentanaAnadirPoder {
             CreadorPoder creador = new CreadorPoder();
 
             poderCreado = creador.crearPoder(base, opcion, base.getModificadores());
+            poderesSeleccionados.add(poderCreado);
             ventana.close();
         });
 
@@ -92,6 +96,6 @@ public class VentanaAnadirPoder {
         ventana.setTitle("Añadir poder");
         ventana.showAndWait();
 
-        return poderCreado;
+        return poderesSeleccionados;
     }
 }

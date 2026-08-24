@@ -1,31 +1,24 @@
-package GUI;
+package GUI.ParteVentanaPrincipal;
 
 import Datos.RepositorioDatos;
 import Poderes.Poder;
 import Poderes.PoderBase;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class SeleccionPoderes {
 
-    private RepositorioDatos datos = new RepositorioDatos();
+    private final RepositorioDatos datos = new RepositorioDatos();
     private final ObservableList<Poder> poderesSeleccionados = FXCollections.observableArrayList();
-
-    public SeleccionPoderes(RepositorioDatos datos){
-        this.datos = datos;
-    }
 
     public Node getVista() {
         VBox root = new VBox(10);
@@ -65,9 +58,9 @@ public class SeleccionPoderes {
             }
             VentanaAnadirPoder ventana = new VentanaAnadirPoder(base);
 
-            Poder poder = ventana.mostrar((Stage) botonAnadirPod.getScene().getWindow());
+            List<Poder> poder = ventana.mostrar((Stage) botonAnadirPod.getScene().getWindow());
             if(poder != null){
-                poderesSeleccionados.add(poder);
+                poderesSeleccionados.addAll(poder);
             }
         });
 
@@ -93,7 +86,7 @@ public class SeleccionPoderes {
         return root;
     }
 
-    public List<Poder> getPoderesSeleccionados(){
-        return new ArrayList<>(poderesSeleccionados);
+    public ObservableList<Poder> getPoderesSeleccionados(){
+        return poderesSeleccionados;
     }
 }

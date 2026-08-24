@@ -1,4 +1,4 @@
-package GUI;
+package GUI.ParteVentanaPrincipal.TiposMatPrima;
 
 import MateriasPrimas.MateriaPrima;
 import Datos.RepositorioDatos;
@@ -7,25 +7,16 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
-public class SeleccionMateriasPrimas {
+public class SeleccionComponentes implements SelectorInterfaz{
 
-    private RepositorioDatos datos = new RepositorioDatos();
+    private final RepositorioDatos datos = new RepositorioDatos();
     private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
-
-    public SeleccionMateriasPrimas(RepositorioDatos datos){
-        this.datos = datos;
-    }
 
     public Node getVista(){
         VBox root = new VBox(10);
