@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class SeleccionObjetos implements SelectorInterfaz{
 
-    private final List<MateriaPrima> materiasSeleccionadas = new ArrayList<>();
+    private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
     private final CreadorMateriaPrima creador = new CreadorMateriaPrima();
 
     public Node getVista(){
@@ -66,7 +66,8 @@ public class SeleccionObjetos implements SelectorInterfaz{
         return root;
     }
 
-    public List<MateriaPrima> getMateriasSeleccionadas(){
+    @Override
+    public ObservableList<MateriaPrima> getMateriasSeleccionadas(){
         return materiasSeleccionadas;
     }
 }

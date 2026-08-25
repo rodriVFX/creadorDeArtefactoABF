@@ -21,7 +21,6 @@ public class SeleccionComponentes implements SelectorInterfaz{
     public Node getVista(){
         VBox root = new VBox(10);
 
-        ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
         ComboBox<MateriaPrima> comboMat = new ComboBox<>();
         comboMat.getItems().addAll(datos.getComponentes().listar().values());
         comboMat.setCellFactory(param -> new ListCell<>(){
@@ -58,25 +57,15 @@ public class SeleccionComponentes implements SelectorInterfaz{
             }
         });
 
-        TableView<MateriaPrima> tablaMat = new TableView<>();
-        TableColumn<MateriaPrima, String> columnaNombre = new TableColumn<>("Materia Prima");
-        columnaNombre.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
-        TableColumn<MateriaPrima, Integer> materiaPP = new TableColumn<>("PP");
-        materiaPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCantidadPP()));
-        TableColumn<MateriaPrima, Integer> materiaNivel = new TableColumn<>("Nivel PP");
-        materiaNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getNivelPP()));
-        tablaMat.getColumns().addAll(columnaNombre, materiaPP, materiaNivel);
-        tablaMat.setItems(materiasSeleccionadas);
-
         root.getChildren().addAll(
                 comboMat,
-                botonAnadirMat,
-                tablaMat
+                botonAnadirMat
         );
         return root;
     }
 
-    public List<MateriaPrima> getMateriasSeleccionadas(){
-        return new ArrayList<>(materiasSeleccionadas);
+    @Override
+    public ObservableList<MateriaPrima> getMateriasSeleccionadas(){
+        return materiasSeleccionadas;
     }
 }

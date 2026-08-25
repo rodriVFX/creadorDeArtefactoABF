@@ -1,8 +1,7 @@
 package GUI.ParteVentanaPrincipal;
 
-import Datos.RepositorioDatos;
+import Datos.ListaFacetasPoder;
 import Poderes.Poder;
-import Poderes.PoderBase;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -12,55 +11,58 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
 
 public class SeleccionPoderes {
 
-    private final RepositorioDatos datos = new RepositorioDatos();
     private final ObservableList<Poder> poderesSeleccionados = FXCollections.observableArrayList();
 
     public Node getVista() {
         VBox root = new VBox(10);
-        ComboBox<PoderBase> comboPod = new ComboBox<>();
-        comboPod.getItems().addAll(datos.getPoderes().listar().values());
-        comboPod.setCellFactory(param -> new ListCell<>(){
+
+        ComboBox<ListaFacetasPoder> comboFaceta = new ComboBox<>();
+        for(ListaFacetasPoder lista : ListaFacetasPoder.values()){
+            comboFaceta.getItems().add(lista);
+        }
+        comboFaceta.getItems().sort(Comparator.comparing(ListaFacetasPoder::toString));
+        comboFaceta.setCellFactory(param -> new ListCell<>(){
             @Override
-            protected void updateItem(PoderBase pod, boolean empty){
-                super.updateItem(pod, empty);
-                if(empty || pod == null){
+            protected void updateItem(ListaFacetasPoder faceta, boolean empty){
+                super.updateItem(faceta, empty);
+
+                if(empty || faceta == null) {
                     setText(null);
+                } else {
+                    setText(nombreFaceta(faceta));
                 }
-                else{
-                    setText(pod.getNombre());
-                }
+
             }
         });
-        comboPod.setButtonCell(new ListCell<>(){
+        comboFaceta.setButtonCell(new ListCell<>(){
             @Override
-            protected void updateItem(PoderBase pod, boolean empty){
-                super.updateItem(pod, empty);
-                if(empty || pod == null){
+            protected void updateItem(ListaFacetasPoder faceta, boolean empty){
+                super.updateItem(faceta, empty);
+
+                if(empty || faceta == null) {
                     setText(null);
+                } else {
+                    setText(nombreFaceta(faceta));
                 }
-                else{
-                    setText(pod.getNombre());
-                }
+
             }
         });
 
-        Button botonAnadirPod = new Button("Añadir");
-        botonAnadirPod.setOnAction(event -> {
-            PoderBase base = comboPod.getValue();
-
-            if(base == null){
+        Button botonAnadir = new Button("Añadir");
+        botonAnadir.setOnAction(event -> {
+            ListaFacetasPoder faceta = comboFaceta.getValue();
+            if(faceta == null){
                 return;
             }
-            VentanaAnadirPoder ventana = new VentanaAnadirPoder(base);
+            VentanaAnadirPoder ventana = new VentanaAnadirPoder(faceta);
 
-            List<Poder> poder = ventana.mostrar((Stage) botonAnadirPod.getScene().getWindow());
-            if(poder != null){
-                poderesSeleccionados.addAll(poder);
+            ObservableList<Poder> pod = ventana.mostrar((Stage) botonAnadir.getScene().getWindow());
+            if(pod != null){
+                poderesSeleccionados.addAll(pod);
             }
         });
 
@@ -79,11 +81,27 @@ public class SeleccionPoderes {
         tablaPod.setItems(poderesSeleccionados);
 
         root.getChildren().addAll(
-                comboPod,
-                botonAnadirPod,
+                comboFaceta,
+                botonAnadir,
                 tablaPod
         );
         return root;
+    }
+
+    public String nombreFaceta(ListaFacetasPoder faceta){
+        return switch(faceta){
+            case GENERAL -> "Generales de Calidad";
+            case OFENSIVA -> "Ofensiva";
+            case DEFENSIVA -> "Defensiva";
+            case PROTECCION -> "Protección";
+            case MAGICA -> "Potenciación Mágica";
+            case PSIQUICA -> "Potenciación Psíquica";
+            case CONJURACION -> "Potenciación en la Conjuración";
+            case CONJUROS -> "Conjuros Innatos";
+            case MEJORAS -> "Mejoras";
+            case DOMINE -> "Domine";
+            case ESOTERICA -> "Esotérica";
+        };
     }
 
     public ObservableList<Poder> getPoderesSeleccionados(){

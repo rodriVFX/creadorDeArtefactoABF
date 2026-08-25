@@ -3,6 +3,8 @@ package GUI.ParteVentanaPrincipal.TiposMatPrima;
 
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -14,7 +16,7 @@ import java.util.List;
 
 public class SeleccionZeon implements SelectorInterfaz{
 
-    private final List<MateriaPrima> matSeleccionadas = new ArrayList<>();
+    private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
 
     public Node getVista(){
         VBox root = new VBox(10);
@@ -34,7 +36,7 @@ public class SeleccionZeon implements SelectorInterfaz{
             if(zeon < 1){
                 return;
             }
-            matSeleccionadas.add(new CreadorMateriaPrima().crearInfusionZeon(zeon));
+            materiasSeleccionadas.add(new CreadorMateriaPrima().crearInfusionZeon(zeon));
         });
 
         root.getChildren().addAll(
@@ -44,7 +46,8 @@ public class SeleccionZeon implements SelectorInterfaz{
         return root;
     }
 
-    public List<MateriaPrima> getMateriasSeleccionadas(){
-        return matSeleccionadas;
+    @Override
+    public ObservableList<MateriaPrima> getMateriasSeleccionadas(){
+        return materiasSeleccionadas;
     }
 }

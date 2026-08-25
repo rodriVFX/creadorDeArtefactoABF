@@ -3,9 +3,16 @@ package GUI.ParteVentanaPrincipal;
 import Datos.TipoMatPrimaEnum;
 import GUI.ParteVentanaPrincipal.TiposMatPrima.*;
 import MateriasPrimas.MateriaPrima;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,7 +28,7 @@ public class VentanaAnadirMateria {
         this.tipoMat = tipoMat;
     }
 
-    public List<MateriaPrima> mostrar(Stage ventanaPrincipal) {
+    public ObservableList<MateriaPrima> mostrar(Stage ventanaPrincipal) {
         Stage ventana = new Stage();
 
         ventana.initModality(Modality.WINDOW_MODAL);
@@ -31,10 +38,33 @@ public class VentanaAnadirMateria {
 
         Node vista = crearVista();
 
+        Button botonAceptar = new Button("Aceptar");
+        Button botonCancelar = new Button("Cancelar");
+        botonAceptar.setOnAction(event -> {
+            ventana.close();
+        });
+        botonCancelar.setOnAction(event -> {
+            selector.getMateriasSeleccionadas().clear();
+            ventana.close();
+        });
+
+        TableView<MateriaPrima> tablaMat = new TableView<>();
+        TableColumn<MateriaPrima, String> columnaNombre = new TableColumn<>("Materia");
+        columnaNombre.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
+        TableColumn<MateriaPrima, Integer> columnaPP = new TableColumn<>("Cantidad PP");
+        columnaPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCantidadPP()));
+        TableColumn<MateriaPrima, Integer> columnaNivel = new TableColumn<>("Nivel PP");
+        columnaNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getNivelPP()));
+        tablaMat.getColumns().addAll(columnaNombre, columnaPP, columnaNivel);
+        tablaMat.setItems(selector.getMateriasSeleccionadas());
+
         VBox root = new VBox(10);
         root.getChildren().addAll(
                 titulo,
-                vista
+                vista,
+                botonAceptar,
+                botonCancelar,
+                tablaMat
         );
 
         Scene scene = new Scene(root, 400, 300);

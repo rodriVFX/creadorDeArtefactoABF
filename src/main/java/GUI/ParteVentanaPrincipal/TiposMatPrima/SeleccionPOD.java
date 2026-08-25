@@ -2,6 +2,8 @@ package GUI.ParteVentanaPrincipal.TiposMatPrima;
 
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class SeleccionPOD implements SelectorInterfaz{
 
-    private final List<MateriaPrima> materiasSeleccionadas = new ArrayList<>();
+    private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
     private final CreadorMateriaPrima creador = new CreadorMateriaPrima();
 
     public Node getVista(){
@@ -57,7 +59,8 @@ public class SeleccionPOD implements SelectorInterfaz{
         return root;
     }
 
-    public List<MateriaPrima> getMateriasSeleccionadas(){
+    @Override
+    public ObservableList<MateriaPrima> getMateriasSeleccionadas(){
         return materiasSeleccionadas;
     }
 }

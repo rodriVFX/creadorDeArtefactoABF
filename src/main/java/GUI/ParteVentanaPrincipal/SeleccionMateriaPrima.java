@@ -19,7 +19,6 @@ public class SeleccionMateriaPrima {
 
     private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
 
-
     public Node getVista(){
         VBox root = new VBox(10);
 
@@ -62,7 +61,7 @@ public class SeleccionMateriaPrima {
             }
             VentanaAnadirMateria ventana = new VentanaAnadirMateria(tipoMat);
 
-            List<MateriaPrima> mat = ventana.mostrar((Stage) botonAnadirMat.getScene().getWindow());
+            ObservableList<MateriaPrima> mat = ventana.mostrar((Stage) botonAnadirMat.getScene().getWindow());
             if(mat != null){
                 materiasSeleccionadas.addAll(mat);
             }
