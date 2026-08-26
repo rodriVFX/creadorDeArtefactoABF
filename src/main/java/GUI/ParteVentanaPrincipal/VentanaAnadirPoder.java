@@ -2,10 +2,7 @@ package GUI.ParteVentanaPrincipal;
 
 import Datos.ListaFacetasPoder;
 import Datos.RepositorioDatos;
-import Poderes.CreadorPoder;
-import Poderes.OpcionPoder;
-import Poderes.Poder;
-import Poderes.PoderBase;
+import Poderes.*;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -17,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -36,10 +34,11 @@ public class VentanaAnadirPoder {
         ventana.initModality(Modality.WINDOW_MODAL);
         ventana.initOwner(ventanaPrincipal);
 
-        Label titulo = new Label("Añadir poder:" + faceta.toString());
+        Label titulo = new Label("Añadir poder de la faceta " + faceta.toString());
 
         ComboBox<PoderBase> comboBase = new ComboBox<>();
         comboBase.getItems().addAll(poderesDisponibles());
+        comboBase.getItems().sort(Comparator.comparing(PoderBase::getNombre));
         comboBase.setCellFactory(param -> new ListCell<>(){
             @Override
             protected void updateItem(PoderBase pod, boolean empty){
@@ -90,11 +89,34 @@ public class VentanaAnadirPoder {
                 }
             }
         });
+        comboBase.setPromptText("Selecciona un poder");
+        ListView<ModificadorPoder> listaMod = new ListView<>();
+        listaMod.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        listaMod.setCellFactory(param -> new ListCell<>() {
+            @Override
+            protected void updateItem(ModificadorPoder mod, boolean empty) {
+                super.updateItem(mod, empty);
+
+                if (empty || mod == null) {
+                    setText(null);
+                } else {
+                    setText(mod.getNombre());
+                }
+            }
+        });
         comboBase.setOnAction(event -> {
             comboOpcion.getItems().clear();
             if(comboBase.getValue() != null) {
                 comboOpcion.getItems().addAll(comboBase.getValue().getOpciones());
+                comboOpcion.getItems().sort(Comparator.comparing(OpcionPoder::getNombre));
             }
+            List<ModificadorPoder> mods = comboBase.getValue().getModificadores();
+            listaMod.getItems().clear();
+            if(mods == null){
+                return;
+            }
+            listaMod.getItems().addAll(mods);
+            listaMod.getItems().sort(Comparator.comparing(ModificadorPoder::getNombre));
         });
         comboOpcion.setPromptText("Selecciona una variante");
 
@@ -105,13 +127,14 @@ public class VentanaAnadirPoder {
         anadirPod.setOnAction(event -> {
             PoderBase base = comboBase.getValue();
             OpcionPoder opcion = comboOpcion.getValue();
+            List<ModificadorPoder> mods = listaMod.getSelectionModel().getSelectedItems();
 
             if(base == null || opcion == null){
                 return;
             }
             CreadorPoder creador = new CreadorPoder();
 
-            Poder poder = creador.crearPoder(base, opcion, base.getModificadores());
+            Poder poder = creador.crearPoder(base, opcion, mods);
             poderesSeleccionados.add(poder);
         });
 
@@ -134,7 +157,9 @@ public class VentanaAnadirPoder {
         columnaFaceta.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getBase().getFaceta()));
         TableColumn<Poder, String> columnaDescripcion = new TableColumn<>("Descripción");
         columnaDescripcion.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getBase().getDescripcion()));
-        tablaPod.getColumns().addAll(columnaNombre, columnaFaceta, columnaDescripcion, columnaPP, columnaNivel);
+        TableColumn<Poder, String> columnaMods = new TableColumn<>("Modificadores");
+        columnaMods.setCellValueFactory(dato -> new SimpleStringProperty(String.join(", ", dato.getValue().listarModificadores())));
+        tablaPod.getColumns().addAll(columnaNombre, columnaFaceta, columnaDescripcion, columnaMods, columnaPP, columnaNivel);
         tablaPod.setItems(poderesSeleccionados);
 
         VBox root = new VBox(10);
@@ -142,13 +167,14 @@ public class VentanaAnadirPoder {
                 titulo,
                 comboBase,
                 comboOpcion,
+                listaMod,
                 anadirPod,
                 tablaPod,
                 aceptar,
                 cancelar
         );
 
-        Scene scene = new Scene(root, 400, 300);
+        Scene scene = new Scene(root, 1200, 800);
         ventana.setScene(scene);
         ventana.setTitle("Añadir poder");
         ventana.showAndWait();

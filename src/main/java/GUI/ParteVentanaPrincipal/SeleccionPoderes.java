@@ -51,6 +51,7 @@ public class SeleccionPoderes {
 
             }
         });
+        comboFaceta.setPromptText("Selecciona una faceta de poder");
 
         Button botonAnadir = new Button("Añadir");
         botonAnadir.setOnAction(event -> {
@@ -73,11 +74,13 @@ public class SeleccionPoderes {
         columnaOpcion.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getOpcion().getNombre()));
         TableColumn<Poder, String> columnaModificadores = new TableColumn<>("Modificadores");
         columnaModificadores.setCellValueFactory(dato -> new SimpleStringProperty(String.join(", ", dato.getValue().listarModificadores())));
+        TableColumn<Poder, String> columnaDescripcion = new TableColumn<>("Descripción");
+        columnaDescripcion.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getBase().getDescripcion()));
         TableColumn<Poder, Integer> poderPP = new TableColumn<>("Coste PP");
         poderPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCostePP().entrySet().iterator().next().getValue()));
         TableColumn<Poder, Integer> poderNivel = new TableColumn<>("Nivel PP");
         poderNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCostePP().entrySet().iterator().next().getKey()));
-        tablaPod.getColumns().addAll(columnaPoder, columnaOpcion, columnaModificadores, poderPP, poderNivel);
+        tablaPod.getColumns().addAll(columnaPoder, columnaOpcion, columnaDescripcion, columnaModificadores, poderPP, poderNivel);
         tablaPod.setItems(poderesSeleccionados);
 
         root.getChildren().addAll(

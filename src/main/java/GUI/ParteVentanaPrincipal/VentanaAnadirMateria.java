@@ -67,7 +67,7 @@ public class VentanaAnadirMateria {
                 tablaMat
         );
 
-        Scene scene = new Scene(root, 400, 300);
+        Scene scene = new Scene(root, 1200, 800);
         ventana.setScene(scene);
         ventana.setTitle("Añadir materia prima");
         ventana.showAndWait();
