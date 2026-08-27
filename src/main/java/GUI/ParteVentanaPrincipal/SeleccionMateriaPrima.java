@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,6 +23,7 @@ public class SeleccionMateriaPrima {
     public Node getVista(){
         VBox root = new VBox(10);
 
+        Label labelTipo = new Label("Selecciona el método de obtención de PP:");
         ComboBox<TipoMatPrimaEnum> comboTipo = new ComboBox<>();
         for(TipoMatPrimaEnum tipo : TipoMatPrimaEnum.values()){
             comboTipo.getItems().add(tipo);
@@ -53,7 +55,7 @@ public class SeleccionMateriaPrima {
         });
         comboTipo.setPromptText("Selecciona el método de obtención de PP");
 
-        Button botonAnadirMat = new Button("Añadir");
+        Button botonAnadirMat = new Button("Añadir Materia Prima");
         botonAnadirMat.setOnAction(event -> {
             TipoMatPrimaEnum tipoMat = comboTipo.getValue();
             if(tipoMat == null) {
@@ -77,9 +79,23 @@ public class SeleccionMateriaPrima {
         tablaMat.getColumns().addAll(columnaNombre, columnaPP, columnaNivel);
         tablaMat.setItems(materiasSeleccionadas);
 
+        Button botonEliminarMat = new Button("Eliminar Materia Seleccionada");
+        botonEliminarMat.setOnAction(event -> {
+            ObservableList<MateriaPrima> materiaSeleccionada = tablaMat.getSelectionModel().getSelectedItems();
+            if(materiaSeleccionada == null){
+                return;
+            }
+            for(MateriaPrima m : materiaSeleccionada){
+                tablaMat.getItems().remove(m);
+            }
+        });
+
+
+        HBox boxAnadir = new HBox(5);
+        boxAnadir.getChildren().addAll(labelTipo, comboTipo, botonAnadirMat, botonEliminarMat);
+
         root.getChildren().addAll(
-                comboTipo,
-                botonAnadirMat,
+                boxAnadir,
                 tablaMat
         );
         return root;

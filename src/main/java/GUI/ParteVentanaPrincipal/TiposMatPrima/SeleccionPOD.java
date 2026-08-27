@@ -6,8 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -21,8 +23,11 @@ public class SeleccionPOD implements SelectorInterfaz{
     public Node getVista(){
         VBox root = new VBox(10);
 
+        Label labelPOD = new Label("Introduce tu atributo POD:");
+        Label labelPresencia = new Label("Introduce tu presencia:");
+
         TextField campoNivel = new TextField();
-        campoNivel.setPromptText("Introduce tu atributo POD");
+        campoNivel.setPromptText("0");
         campoNivel.setTextFormatter(new TextFormatter<Integer>(change -> {
             if(change.getControlNewText().matches("\\d*")){
                 return change;
@@ -32,7 +37,7 @@ public class SeleccionPOD implements SelectorInterfaz{
 
 
         TextField campoPresencia = new TextField();
-        campoPresencia.setPromptText("Introduce tu presencia");
+        campoPresencia.setPromptText("0");
         campoPresencia.setTextFormatter(new TextFormatter<Integer>(change -> {
             if(change.getControlNewText().matches("\\d*")){
                 return change;
@@ -50,10 +55,11 @@ public class SeleccionPOD implements SelectorInterfaz{
             materiasSeleccionadas.add(creador.crearSacrificioDePoder(nivel, presencia));
         });
 
+        HBox boxPod = new HBox(5);
+        boxPod.getChildren().addAll(labelPOD, campoNivel, labelPresencia, campoPresencia);
 
         root.getChildren().addAll(
-                campoNivel,
-                campoPresencia,
+                boxPod,
                 botonAnadirMat
         );
         return root;

@@ -2,20 +2,15 @@ package GUI;
 
 import Artefactos.Artefacto;
 import Artefactos.CreadorArtefacto;
-import Datos.RepositorioDatos;
 import GUI.ParteVentanaPrincipal.*;
-import MateriasPrimas.MateriaPrima;
-import Poderes.Poder;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.List;
+import java.util.Objects;
 
 public class EscenaCrearArtefacto {
 
@@ -28,9 +23,14 @@ public class EscenaCrearArtefacto {
     public Scene crear() {
 
         Label titulo = new Label("Constructor de Artefactos");
+        titulo.setAlignment(Pos.CENTER);
+        titulo.getStyleClass().add("titulo");
 
+        Label labelNombre = new Label("Nombre del artefacto: ");
         TextField campoNombre = new TextField();
         campoNombre.setPromptText("Nombre del artefacto");
+        HBox boxNombre = new HBox();
+        boxNombre.getChildren().addAll(labelNombre, campoNombre);
 
         CheckBox creadoParaArtefacto = new CheckBox("Creado específicamente para el artefacto");
 
@@ -60,7 +60,7 @@ public class EscenaCrearArtefacto {
 
         root.getChildren().addAll(
                 titulo,
-                campoNombre,
+                boxNombre,
                 contenedor.getVista(),
                 creadoParaArtefacto,
                 matPrima.getVista(),
@@ -68,6 +68,9 @@ public class EscenaCrearArtefacto {
                 botonCrear
         );
 
-        return new Scene(root, 900, 700);
+        Scene scene = new Scene(root, 1000, 700);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
+        return scene;
+
     }
 }

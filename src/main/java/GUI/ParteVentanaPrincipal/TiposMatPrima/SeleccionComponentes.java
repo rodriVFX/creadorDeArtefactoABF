@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class SeleccionComponentes implements SelectorInterfaz{
 
     public Node getVista(){
         VBox root = new VBox(10);
+        Label labelComp = new Label("Selecciona el componente: ");
 
         ComboBox<MateriaPrima> comboMat = new ComboBox<>();
         comboMat.getItems().addAll(datos.getComponentes().listar().values());
@@ -57,8 +59,11 @@ public class SeleccionComponentes implements SelectorInterfaz{
             }
         });
 
+        HBox boxComp = new HBox(10);
+        boxComp.getChildren().addAll(labelComp, comboMat);
+
         root.getChildren().addAll(
-                comboMat,
+                boxComp,
                 botonAnadirMat
         );
         return root;

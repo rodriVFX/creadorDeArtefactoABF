@@ -8,6 +8,7 @@ import Datos.TipoContenedorEnum;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.Comparator;
@@ -186,11 +187,15 @@ public class SeleccionContenedor {
             calidad = comboCalidad.getValue();
         });
 
-        root.getChildren().addAll(
+        HBox boxOrden = new HBox(5);
+        boxOrden.getChildren().addAll(
                 comboTipo,
                 comboCont,
                 comboMaterial,
-                comboCalidad
+                comboCalidad);
+
+        root.getChildren().addAll(
+                boxOrden
         );
         return root;
     }

@@ -1,0 +1,29 @@
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.text-field {
+    -fx-pref-height: 35px;
+    -fx-pref-weight: bold;
+}
+.combo-box {
+    -fx-pref-height: 35px;
+}
+.table-view {
+    -fx-pref-height: 400px;
+}
+.root {
+    -fx-padding: 20px;
+}
+.label {
+    -fx-padding: 5px;
+    -fx-font-size: 12px;
+}
+.titulo{
+    -fx-padding: 10px;
+    -fx-font-size: 26px;
+    -fx-font-weight: italic;
+}
+.descripcion{
+    -fx-pref-height: 200px;
+}

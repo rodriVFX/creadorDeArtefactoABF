@@ -11,6 +11,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.Objects;
 
 public class VentanaExportacion {
 
@@ -37,6 +38,10 @@ public class VentanaExportacion {
         Button botonRuta = new Button("Elegir ubicación...");
 
         Label rutaSeleccionada = new Label("No se ha seleccionado ninguna ubicación.");
+
+        TextField campoDescripcion = new TextField();
+        campoDescripcion.setPromptText("Descripción del objeto");
+        campoDescripcion.getStyleClass().add("descripcion");
 
         Button botonExportar = new Button("Exportar");
         Button botonCancelar = new Button("Cancelar");
@@ -116,6 +121,7 @@ public class VentanaExportacion {
                 10,
                 titulo,
                 campoNombre,
+                campoDescripcion,
                 botonRuta,
                 rutaSeleccionada,
                 botones
@@ -123,7 +129,8 @@ public class VentanaExportacion {
 
         root.setPadding(new Insets(20));
 
-        Scene scene = new Scene(root, 500, 250);
+        Scene scene = new Scene(root, 500, 400);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
 
         ventana.setScene(scene);
         ventana.show();

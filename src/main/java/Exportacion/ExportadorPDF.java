@@ -21,6 +21,10 @@ import java.util.Map;
 
 public class ExportadorPDF {
 
+    private final Font titulo = new Font(Font.HELVETICA, 24, Font.BOLD);
+    private final Font encabezado = new Font(Font.HELVETICA, 16, Font.BOLD);
+    private final Font texto = new Font(Font.HELVETICA, 12, Font.NORMAL);
+
     public void exportar(Artefacto artefacto, String ruta){
         try {
             Document documento = new Document();
@@ -50,12 +54,11 @@ public class ExportadorPDF {
     }
 
     private void escribirCabecera(Document documento, String nombre){
-        Font cabecera = new Font(Font.HELVETICA, 18, Font.BOLD);
-        documento.add(new Paragraph(nombre, cabecera));
+        documento.add(new Paragraph(nombre, titulo));
         documento.add(new LineSeparator());
     }
     private void escribirDatosBasicos(Document documento, Artefacto artefacto){
-        documento.add(new Paragraph(artefacto.getContenedor().getNombre() + " (" + artefacto.getMaterial().getNombre() + " " + artefacto.getCalidad().getNombre()));
+        documento.add(new Paragraph(artefacto.getContenedor().getNombre() + " (" + artefacto.getMaterial().getNombre() + " " + artefacto.getCalidad().getNombre() + ")"));
         documento.add(new LineSeparator());
     }
     private void escribirDatosArma(Document documento, Artefacto artefacto){

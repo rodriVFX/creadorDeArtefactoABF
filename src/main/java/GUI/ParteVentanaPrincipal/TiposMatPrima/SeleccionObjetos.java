@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -21,8 +22,11 @@ public class SeleccionObjetos implements SelectorInterfaz{
     public Node getVista(){
         VBox root = new VBox(10);
 
+        Label labelCantidad = new Label("Introduce la cantidad de PP:");
+        Label labelNivel = new Label("Introduce el nivel de los PP:");
+
         TextField campoCantidad = new TextField();
-        campoCantidad.setPromptText("Introduce la cantidad de PP");
+        campoCantidad.setPromptText("0");
         campoCantidad.setTextFormatter(new TextFormatter<Integer>(change -> {
             if(change.getControlNewText().matches("\\d*")){
                 return change;
@@ -30,8 +34,8 @@ public class SeleccionObjetos implements SelectorInterfaz{
             return null;
         }));
 
-        TextField campoNivel = new TextField("1");
-        campoNivel.setPromptText("Introduce el nivel de los PP");
+        TextField campoNivel = new TextField();
+        campoNivel.setPromptText("0");
         campoNivel.setTextFormatter(new TextFormatter<Integer>(change -> {
             if(change.getControlNewText().matches("\\d*")){
                 return change;
@@ -57,9 +61,11 @@ public class SeleccionObjetos implements SelectorInterfaz{
             materiasSeleccionadas.add(creador.crearSacrificioDeObjetos(pp, conserva));
         });
 
+        HBox boxObjetos = new HBox(5);
+        boxObjetos.getChildren().addAll(labelCantidad, campoCantidad, labelNivel, campoNivel);
+
         root.getChildren().addAll(
-                campoCantidad,
-                campoNivel,
+                boxObjetos,
                 checkConservaNivel,
                 botonAnadir
         );

@@ -7,8 +7,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -21,8 +23,10 @@ public class SeleccionZeon implements SelectorInterfaz{
     public Node getVista(){
         VBox root = new VBox(10);
 
+        Label labelZeon = new Label("Introduce una cantidad de Zeón");
+
         TextField campoCantidad = new TextField();
-        campoCantidad.setPromptText("Introduce una cantidad de Zeón");
+        campoCantidad.setPromptText("0");
         campoCantidad.setTextFormatter(new TextFormatter<Integer>(change -> {
             if(change.getControlNewText().matches("\\d*")){
                 return change;
@@ -39,8 +43,11 @@ public class SeleccionZeon implements SelectorInterfaz{
             materiasSeleccionadas.add(new CreadorMateriaPrima().crearInfusionZeon(zeon));
         });
 
+        HBox boxZeon = new HBox(5);
+        boxZeon.getChildren().addAll(labelZeon, campoCantidad);
+
         root.getChildren().addAll(
-                campoCantidad,
+                boxZeon,
                 botonAnadirZeon
         );
         return root;

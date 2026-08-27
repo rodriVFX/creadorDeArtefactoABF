@@ -5,10 +5,8 @@ import MateriasPrimas.MateriaPrima;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -21,6 +19,10 @@ public class SeleccionVidas implements SelectorInterfaz{
 
     public Node getVista(){
         VBox root = new VBox(10);
+
+        Label labelPresencia = new Label("Introduce la presencia del sacrificio:");
+        Label labelNatura = new Label("Introduce la natura del sacrificio:");
+        Label labelGnosis = new Label("Introduce la gnosis del sacrificio:");
 
         TextField campoPresencia = new TextField();
         campoPresencia.setPromptText("Introduce la presencia del sacrificio");
@@ -65,10 +67,11 @@ public class SeleccionVidas implements SelectorInterfaz{
             materiasSeleccionadas.add(creador.crearSacrificioDeVidas(presencia, natura, gnosis, voluntario, sobrenat, artificial));
         });
 
+        HBox boxVida = new HBox(5);
+        boxVida.getChildren().addAll(labelPresencia, campoPresencia, labelNatura, campoNatura, labelGnosis, campoGnosis);
+
         root.getChildren().addAll(
-                campoPresencia,
-                campoNatura,
-                campoGnosis,
+                boxVida,
                 checkVoluntario,
                 checkSobrenat,
                 checkArtificial,

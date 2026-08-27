@@ -7,17 +7,20 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.Objects;
 
 public class VentanaAnadirMateria {
 
@@ -35,6 +38,8 @@ public class VentanaAnadirMateria {
         ventana.initOwner(ventanaPrincipal);
 
         Label titulo = new Label("Añadir materia prima:");
+        titulo.setAlignment(Pos.CENTER);
+        titulo.getStyleClass().add("titulo");
 
         Node vista = crearVista();
 
@@ -58,18 +63,21 @@ public class VentanaAnadirMateria {
         tablaMat.getColumns().addAll(columnaNombre, columnaPP, columnaNivel);
         tablaMat.setItems(selector.getMateriasSeleccionadas());
 
+        HBox boxBotones = new HBox(5);
+        boxBotones.getChildren().addAll(botonAceptar, botonCancelar);
+
         VBox root = new VBox(10);
         root.getChildren().addAll(
                 titulo,
                 vista,
-                botonAceptar,
-                botonCancelar,
+                boxBotones,
                 tablaMat
         );
 
-        Scene scene = new Scene(root, 1200, 800);
+        Scene scene = new Scene(root, 1000, 600);
         ventana.setScene(scene);
         ventana.setTitle("Añadir materia prima");
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
         ventana.showAndWait();
 
 

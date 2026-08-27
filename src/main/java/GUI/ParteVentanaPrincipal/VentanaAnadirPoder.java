@@ -7,8 +7,10 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 
 public class VentanaAnadirPoder {
@@ -34,7 +37,13 @@ public class VentanaAnadirPoder {
         ventana.initModality(Modality.WINDOW_MODAL);
         ventana.initOwner(ventanaPrincipal);
 
-        Label titulo = new Label("Añadir poder de la faceta " + faceta.toString());
+        Label titulo = new Label("Añadir poder de la faceta: " + faceta.toString());
+        titulo.setAlignment(Pos.CENTER);
+        titulo.getStyleClass().add("titulo");
+
+        Label labelBase = new Label("Selecciona un poder:");
+        Label labelOpcion = new Label("Selecciona una variante:");
+        Label labelModificadores = new Label("Selecciona los modificadores:");
 
         ComboBox<PoderBase> comboBase = new ComboBox<>();
         comboBase.getItems().addAll(poderesDisponibles());
@@ -121,8 +130,8 @@ public class VentanaAnadirPoder {
         comboOpcion.setPromptText("Selecciona una variante");
 
         Button anadirPod = new Button("Añadir");
-        Button aceptar = new Button("Aceptar");
-        Button cancelar = new Button("Cancelar");
+        Button botonAceptar = new Button("Aceptar");
+        Button botonCancelar = new Button("Cancelar");
 
         anadirPod.setOnAction(event -> {
             PoderBase base = comboBase.getValue();
@@ -138,10 +147,10 @@ public class VentanaAnadirPoder {
             poderesSeleccionados.add(poder);
         });
 
-        aceptar.setOnAction(event -> {
+        botonAceptar.setOnAction(event -> {
             ventana.close();
         });
-        cancelar.setOnAction(event -> {
+        botonCancelar.setOnAction(event -> {
             poderesSeleccionados.clear();
             ventana.close();
         });
@@ -162,21 +171,26 @@ public class VentanaAnadirPoder {
         tablaPod.getColumns().addAll(columnaNombre, columnaFaceta, columnaDescripcion, columnaMods, columnaPP, columnaNivel);
         tablaPod.setItems(poderesSeleccionados);
 
+        HBox boxPoder = new HBox(5);
+        boxPoder.getChildren().addAll(labelBase, comboBase, labelOpcion, comboOpcion);
+
+        HBox boxBotones = new HBox(5);
+        boxBotones.getChildren().addAll(botonAceptar, botonCancelar);
         VBox root = new VBox(10);
         root.getChildren().addAll(
                 titulo,
-                comboBase,
-                comboOpcion,
+                boxPoder,
+                labelModificadores,
                 listaMod,
                 anadirPod,
                 tablaPod,
-                aceptar,
-                cancelar
+                boxBotones
         );
 
         Scene scene = new Scene(root, 1200, 800);
         ventana.setScene(scene);
         ventana.setTitle("Añadir poder");
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
         ventana.showAndWait();
 
         return poderesSeleccionados;

@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,6 +20,8 @@ public class SeleccionPoderes {
 
     public Node getVista() {
         VBox root = new VBox(10);
+
+        Label labelFaceta = new Label("Selecciona la faceta del Poder:");
 
         ComboBox<ListaFacetasPoder> comboFaceta = new ComboBox<>();
         for(ListaFacetasPoder lista : ListaFacetasPoder.values()){
@@ -51,9 +54,9 @@ public class SeleccionPoderes {
 
             }
         });
-        comboFaceta.setPromptText("Selecciona una faceta de poder");
+        comboFaceta.setPromptText("Selecciona la faceta del Poder");
 
-        Button botonAnadir = new Button("Añadir");
+        Button botonAnadir = new Button("Añadir Poder");
         botonAnadir.setOnAction(event -> {
             ListaFacetasPoder faceta = comboFaceta.getValue();
             if(faceta == null){
@@ -83,9 +86,22 @@ public class SeleccionPoderes {
         tablaPod.getColumns().addAll(columnaPoder, columnaOpcion, columnaDescripcion, columnaModificadores, poderPP, poderNivel);
         tablaPod.setItems(poderesSeleccionados);
 
+        Button botonEliminarPoder = new Button("Eliminar Poder Seleccionado");
+        botonEliminarPoder.setOnAction(event -> {
+            ObservableList<Poder> poderSeleccionado = tablaPod.getSelectionModel().getSelectedItems();
+            if(poderSeleccionado == null){
+                return;
+            }
+            for(Poder p : poderSeleccionado){
+                tablaPod.getItems().remove(p);
+            }
+        });
+
+        HBox boxAnadir = new HBox(5);
+        boxAnadir.getChildren().addAll(labelFaceta, comboFaceta, botonAnadir, botonEliminarPoder);
+
         root.getChildren().addAll(
-                comboFaceta,
-                botonAnadir,
+                boxAnadir,
                 tablaPod
         );
         return root;
