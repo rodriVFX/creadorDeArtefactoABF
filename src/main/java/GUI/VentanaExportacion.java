@@ -39,9 +39,10 @@ public class VentanaExportacion {
 
         Label rutaSeleccionada = new Label("No se ha seleccionado ninguna ubicación.");
 
-        TextField campoDescripcion = new TextField();
+        TextArea campoDescripcion = new TextArea();
         campoDescripcion.setPromptText("Descripción del objeto");
         campoDescripcion.getStyleClass().add("descripcion");
+        campoDescripcion.setWrapText(true);
 
         Button botonExportar = new Button("Exportar");
         Button botonCancelar = new Button("Cancelar");
@@ -93,7 +94,8 @@ public class VentanaExportacion {
             try {
                 exportador.exportar(
                         artefacto,
-                        archivo.getAbsolutePath()
+                        archivo.getAbsolutePath(),
+                        campoDescripcion.getText()
                 );
 
                 ventana.close();

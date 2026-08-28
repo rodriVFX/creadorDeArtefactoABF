@@ -6,13 +6,14 @@ import Contenedores.Interfaces.HaceDano;
 import MateriasPrimas.MateriaPrima;
 import Poderes.ModificadorPoder;
 import Poderes.Poder;
-import org.openpdf.text.Document;
+import org.openpdf.text.*;
 import org.openpdf.text.Font;
-import org.openpdf.text.Paragraph;
+import org.openpdf.text.pdf.PdfPCell;
 import org.openpdf.text.pdf.PdfPTable;
 import org.openpdf.text.pdf.PdfWriter;
 import org.openpdf.text.pdf.draw.LineSeparator;
 
+import java.awt.*;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,8 +25,9 @@ public class ExportadorPDF {
     private final Font titulo = new Font(Font.HELVETICA, 24, Font.BOLD);
     private final Font encabezado = new Font(Font.HELVETICA, 16, Font.BOLD);
     private final Font texto = new Font(Font.HELVETICA, 12, Font.NORMAL);
+    private final Font textoMarcado = new Font(Font.HELVETICA, 12, Font.BOLD);
 
-    public void exportar(Artefacto artefacto, String ruta){
+    public void exportar(Artefacto artefacto, String ruta, String descripcion){
         try {
             Document documento = new Document();
             Contenedor contenedor = artefacto.getContenedor();
@@ -42,7 +44,7 @@ public class ExportadorPDF {
             }
             escribirMateriasPrimas(documento, artefacto);
             escribirPoderes(documento, artefacto);
-            escribirDescripcion(documento, artefacto);
+            descripcionArtefacto(documento, descripcion);
 
             documento.close();
         }
@@ -54,12 +56,21 @@ public class ExportadorPDF {
     }
 
     private void escribirCabecera(Document documento, String nombre){
-        documento.add(new Paragraph(nombre, titulo));
-        documento.add(new LineSeparator());
+        Paragraph texto = new Paragraph(nombre, titulo);
+        texto.setAlignment(Element.ALIGN_CENTER);
+        texto.setSpacingAfter(10);
+        documento.add(texto);
+        documento.add(new LineSeparator(0.5f, 60, Color.black, Element.ALIGN_CENTER, 0));
     }
     private void escribirDatosBasicos(Document documento, Artefacto artefacto){
-        documento.add(new Paragraph(artefacto.getContenedor().getNombre() + " (" + artefacto.getMaterial().getNombre() + " " + artefacto.getCalidad().getNombre() + ")"));
-        documento.add(new LineSeparator());
+        StringBuilder sb = new StringBuilder();
+        if(artefacto.getContenedor().getTipo() != null){
+            sb.append(artefacto.getContenedor().getTipo()).append(": ");
+        }
+        Paragraph texto = new Paragraph(sb + artefacto.getContenedor().getNombre() + " (" + artefacto.getMaterial().getNombre() + " " + artefacto.getCalidad().getNombre() + ")", encabezado);
+        texto.setSpacingAfter(10);
+        documento.add(texto);
+        documento.add(new LineSeparator(1, 60, Color.black, Element.ALIGN_CENTER, 0));
     }
     private void escribirDatosArma(Document documento, Artefacto artefacto){
         Contenedor contenedor = artefacto.getContenedor();
@@ -69,11 +80,11 @@ public class ExportadorPDF {
         ArmaDistancia distancia = contenedor instanceof ArmaDistancia d ? d : null;
 
         PdfPTable tabla = new PdfPTable(5);
-        tabla.addCell("Daño");
-        tabla.addCell("Turno");
-        tabla.addCell("FUE R.");
-        tabla.addCell("Crítico 1");
-        tabla.addCell("Crítico 2");
+        tabla.addCell(new Paragraph("Daño", encabezado));
+        tabla.addCell(new Paragraph("Turno", encabezado));
+        tabla.addCell(new Paragraph("FUE R.", encabezado));
+        tabla.addCell(new Paragraph("Crítico 1", encabezado));
+        tabla.addCell(new Paragraph("Crítico 2", encabezado));
 
         if(haceDano != null) {
             tabla.addCell(String.valueOf(haceDano.getDano()));
@@ -97,11 +108,11 @@ public class ExportadorPDF {
         }
 
         PdfPTable tabla2 = new PdfPTable(5);
-        tabla2.addCell("Tipo de arma");
-        tabla2.addCell("Especial");
-        tabla2.addCell("Entereza");
-        tabla2.addCell("Rotura");
-        tabla2.addCell("Presencia");
+        tabla2.addCell(new Paragraph("Tipo de arma", encabezado));
+        tabla2.addCell(new Paragraph("Especial", encabezado));
+        tabla2.addCell(new Paragraph("Entereza", encabezado));
+        tabla2.addCell(new Paragraph("Rotura", encabezado));
+        tabla2.addCell(new Paragraph("Presencia", encabezado));
 
         tabla2.addCell(artefacto.getContenedor().getTipo());
         String especialidades = String.join(", ", contenedor.getEspecialidades());
@@ -118,57 +129,65 @@ public class ExportadorPDF {
 
         PdfPTable tabla3 = new PdfPTable(4);
         if(distancia != null){
-            tabla3.addCell("Tipo");
-            tabla3.addCell("Cadencia de fuego");
-            tabla3.addCell("Recarga");
-            tabla3.addCell("Alcance");
+            tabla3.addCell(new Paragraph("Tipo", encabezado));
+            tabla3.addCell(new Paragraph("Cadencia de fuego", encabezado));
+            tabla3.addCell(new Paragraph("Recarga", encabezado));
+            tabla3.addCell(new Paragraph("Alcance", encabezado));
 
             if(contenedor instanceof ArmaLanzable lanzable){
-                tabla3.addCell("Lanzable");
+                tabla3.addCell(new Paragraph("Lanzable", encabezado));
                 tabla3.addCell(String.valueOf(lanzable.getCadenciaFuego()));
             }
             else{
-                tabla3.addCell("Disparo");
-                tabla3.addCell("-");
+                tabla3.addCell(new Paragraph("Disparo", encabezado));
+                tabla3.addCell(new Paragraph("-", encabezado));
             }
             if(contenedor instanceof ArmaProyectiles disparo){
                 tabla3.addCell(String.valueOf(disparo.getRecarga()));
             }
             else{
-                tabla3.addCell("-");
+                tabla3.addCell(new Paragraph("-", encabezado));
             }
             tabla3.addCell(String.valueOf(distancia.getAlcance()));
         }
 
+        anadirTituloSeccion(documento, "Datos del arma:");
+        tabla.setSpacingAfter(5);
+        tabla2.setSpacingAfter(5);
+        tabla3.setSpacingAfter(5);
         documento.add(tabla);
+        documento.add(new LineSeparator(1, 60, Color.white, Element.ALIGN_CENTER, 0));
         documento.add(tabla2);
         if(distancia != null){
+            documento.add(new LineSeparator(1, 60, Color.white, Element.ALIGN_CENTER, 0));
             documento.add(tabla3);
         }
     }
     private void escribirMateriasPrimas(Document documento, Artefacto artefacto){
         PdfPTable tabla = new PdfPTable(4);
-        tabla.addCell("Fuente de poder");
-        tabla.addCell("Cantidad");
-        tabla.addCell("PPs");
-        tabla.addCell("Nivel");
+        tabla.addCell(new Paragraph("Fuente de poder", encabezado));
+        tabla.addCell(new Paragraph("Cantidad", encabezado));
+        tabla.addCell(new Paragraph("PPs", encabezado));
+        tabla.addCell(new Paragraph("Nivel", encabezado));
 
         Map<String, Integer> listaMat = new HashMap<>(contarMateriasPrimas(artefacto));
-        for(MateriaPrima m : artefacto.getMateriasPrimas()){
+        for(MateriaPrima m : rehacerListaMat(artefacto)){
             tabla.addCell(m.getNombre());
             tabla.addCell(String.valueOf(listaMat.get(m.getNombre())));
             tabla.addCell(String.valueOf(m.getNivelPP()));
             tabla.addCell(String.valueOf(m.getCantidadPP()));
         }
+        tabla.setSpacingBefore(5);
+        tabla.setSpacingAfter(10);
         documento.add(tabla);
     }
     private void escribirPoderes(Document documento, Artefacto artefacto){
         PdfPTable tabla = new PdfPTable(5);
-        tabla.addCell("Poder");
-        tabla.addCell("Variante");
-        tabla.addCell("Modificadores");
-        tabla.addCell("Coste");
-        tabla.addCell("Nivel");
+        tabla.addCell(new Paragraph("Poder", encabezado));
+        tabla.addCell(new Paragraph("Variante", encabezado));
+        tabla.addCell(new Paragraph("Modificadores", encabezado));
+        tabla.addCell(new Paragraph("Coste", encabezado));
+        tabla.addCell(new Paragraph("Nivel", encabezado));
 
         for(Poder p : artefacto.getPoderes()){
             tabla.addCell(p.getNombre());
@@ -183,16 +202,26 @@ public class ExportadorPDF {
                 tabla.addCell(String.valueOf(m.getValue()));
             }
         }
+        tabla.setSpacingAfter(5);
         documento.add(tabla);
     }
-    private void escribirDescripcion(Document documento, Artefacto artefacto){
-        descripcionArtefacto();
+    private void descripcionPoder(Document documento, Artefacto artefacto){
         PdfPTable tabla = new PdfPTable(2);
         for(Poder p : artefacto.getPoderes()){
             tabla.addCell(p.getNombre() + ": " + p.getOpcion().getNombre());
             tabla.addCell(p.getOpcion().getDescripcion());
         }
         documento.add(tabla);
+    }
+    private void descripcionArtefacto(Document documento, String descripcion){
+        documento.add(new LineSeparator(1, 60, Color.black, Element.ALIGN_CENTER, 0));
+        Paragraph des = new Paragraph(descripcion, texto);
+        PdfPTable tabla = new PdfPTable(1);
+        PdfPCell celda = new PdfPCell(des);
+        celda.setBorderWidth(2);
+        tabla.addCell(celda);
+        tabla.setSpacingAfter(5);
+        documento.add(des);
     }
 
     private Map<String, Integer> contarMateriasPrimas(Artefacto artefacto){
@@ -202,8 +231,18 @@ public class ExportadorPDF {
         }
         return listaMat;
     }
-    private void descripcionArtefacto(){
-
+    private List<MateriaPrima> rehacerListaMat(Artefacto artefacto){
+        List<MateriaPrima> listaMaterias = new ArrayList<>();
+        for(MateriaPrima m : artefacto.getMateriasPrimas()){
+            if (!listaMaterias.contains(m)) {
+                listaMaterias.add(m);
+            }
+        }
+        return listaMaterias;
+    }
+    private void anadirTituloSeccion(Document documento, String titulo){
+        documento.add(new Paragraph(titulo, encabezado));
+        documento.add(new LineSeparator(1, 60, Color.white, Element.ALIGN_CENTER, 0));
     }
 
 }
