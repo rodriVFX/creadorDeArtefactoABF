@@ -56,12 +56,25 @@ public class VentanaAnadirMateria {
         TableView<MateriaPrima> tablaMat = new TableView<>();
         TableColumn<MateriaPrima, String> columnaNombre = new TableColumn<>("Materia");
         columnaNombre.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
+        columnaNombre.setPrefWidth(300);
         TableColumn<MateriaPrima, Integer> columnaPP = new TableColumn<>("Cantidad PP");
         columnaPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCantidadPP()));
+        columnaPP.setPrefWidth(100);
         TableColumn<MateriaPrima, Integer> columnaNivel = new TableColumn<>("Nivel PP");
         columnaNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getNivelPP()));
-        tablaMat.getColumns().addAll(columnaNombre, columnaPP, columnaNivel);
+        TableColumn<MateriaPrima, String> columnaEspecial = new TableColumn<>("Reglas especiales");
+        columnaEspecial.setCellValueFactory(dato -> new SimpleStringProperty(String.join(", ", dato.getValue().getReglasEspeciales())));
+        columnaEspecial.setPrefWidth(400);
+        tablaMat.getColumns().addAll(columnaNombre, columnaEspecial, columnaPP, columnaNivel);
         tablaMat.setItems(selector.getMateriasSeleccionadas());
+
+        Button botonEliminarMateria = new Button("Eliminar Materia Seleccionada");
+        botonEliminarMateria.setOnAction(event -> {
+            if(tablaMat.getItems() == null){
+                return;
+            }
+            tablaMat.getItems().remove(tablaMat.getSelectionModel().getSelectedItem());
+        });
 
         HBox boxBotones = new HBox(5);
         boxBotones.getChildren().addAll(botonAceptar, botonCancelar);
@@ -70,6 +83,7 @@ public class VentanaAnadirMateria {
         root.getChildren().addAll(
                 titulo,
                 vista,
+                botonEliminarMateria,
                 boxBotones,
                 tablaMat
         );

@@ -21,10 +21,10 @@ public abstract class MateriaPrima {
     public Map<Integer, Integer> getPuntosPoder(){
         return new HashMap<>(puntosPoder);
     }
-    public int getCantidadPP(){
+    public int getNivelPP(){
         return puntosPoder.keySet().iterator().next();
     }
-    public int getNivelPP(){
+    public int getCantidadPP(){
         return puntosPoder.values().iterator().next();
     }
     public List<String> getReglasEspeciales(){

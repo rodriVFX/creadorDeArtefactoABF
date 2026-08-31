@@ -73,12 +73,16 @@ public class SeleccionPoderes {
         TableView<Poder> tablaPod = new TableView<>();
         TableColumn<Poder, String> columnaPoder = new TableColumn<>("Poder");
         columnaPoder.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
+        columnaPoder.setPrefWidth(150);
         TableColumn<Poder, String> columnaOpcion = new TableColumn<>("Variante");
         columnaOpcion.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getOpcion().getNombre()));
+        columnaOpcion.setPrefWidth(150);
         TableColumn<Poder, String> columnaModificadores = new TableColumn<>("Modificadores");
         columnaModificadores.setCellValueFactory(dato -> new SimpleStringProperty(String.join(", ", dato.getValue().listarModificadores())));
+        columnaModificadores.setPrefWidth(150);
         TableColumn<Poder, String> columnaDescripcion = new TableColumn<>("Descripción");
         columnaDescripcion.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getBase().getDescripcion()));
+        columnaDescripcion.setPrefWidth(350);
         TableColumn<Poder, Integer> poderPP = new TableColumn<>("Coste PP");
         poderPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCostePP().entrySet().iterator().next().getValue()));
         TableColumn<Poder, Integer> poderNivel = new TableColumn<>("Nivel PP");

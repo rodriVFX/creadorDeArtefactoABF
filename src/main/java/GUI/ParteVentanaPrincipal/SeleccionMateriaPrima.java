@@ -72,11 +72,16 @@ public class SeleccionMateriaPrima {
         TableView<MateriaPrima> tablaMat = new TableView<>();
         TableColumn<MateriaPrima, String> columnaNombre = new TableColumn<>("Materia");
         columnaNombre.setCellValueFactory(dato -> new SimpleStringProperty(dato.getValue().getNombre()));
+        columnaNombre.setPrefWidth(300);
         TableColumn<MateriaPrima, Integer> columnaPP = new TableColumn<>("Cantidad PP");
         columnaPP.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getCantidadPP()));
+        columnaPP.setPrefWidth(100);
         TableColumn<MateriaPrima, Integer> columnaNivel = new TableColumn<>("Nivel PP");
         columnaNivel.setCellValueFactory(dato -> new ReadOnlyObjectWrapper<>(dato.getValue().getNivelPP()));
-        tablaMat.getColumns().addAll(columnaNombre, columnaPP, columnaNivel);
+        TableColumn<MateriaPrima, String> columnaEspecial = new TableColumn<>("Reglas especiales");
+        columnaEspecial.setCellValueFactory(dato -> new SimpleStringProperty(String.join(", ", dato.getValue().getReglasEspeciales())));
+        columnaEspecial.setPrefWidth(400);
+        tablaMat.getColumns().addAll(columnaNombre, columnaEspecial, columnaPP, columnaNivel);
         tablaMat.setItems(materiasSeleccionadas);
 
         Button botonEliminarMat = new Button("Eliminar Materia Seleccionada");
