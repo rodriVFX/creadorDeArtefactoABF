@@ -1,24 +1,20 @@
 package Datos;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import Datos.Repositorios.RepositorioPoder;
+import Poderes.PoderBase;
+
 
 public class Prueba {
 
     public static void main(String[] args) {
 
-        try (Connection conexion = ConexionDB.conectar();
-             Statement statement = conexion.createStatement();
-             ResultSet resultado = statement.executeQuery(
-                     "SELECT nombre FROM poder_base")) {
+        RepositorioPoder rep = new RepositorioPoder();
 
-            while (resultado.next()) {
-                System.out.println(resultado.getString("nombre"));
-            }
+        PoderBase pod = rep.getPoder("Ataque Especial");
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println(pod.getNombre());
+        System.out.println(pod.getOpciones());
+        System.out.println(pod.getModificadores());
+        System.out.println(pod.getContenedoresPermitidos());
     }
 }

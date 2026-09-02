@@ -16,6 +16,15 @@ public class PoderBase {
 
     public PoderBase(){}
 
+    public PoderBase(String nombre, String faceta, String descripcion, List<TipoContenedorEnum> contenedoresPermitidos, List<OpcionPoder> opciones, List<ModificadorPoder> modificadores) {
+        this.nombre = nombre;
+        this.faceta = faceta;
+        this.descripcion = descripcion;
+        this.contenedoresPermitidos = new ArrayList<>(contenedoresPermitidos);
+        this.opciones = new ArrayList<>(opciones);
+        this.modificadores = new ArrayList<>(modificadores);
+    }
+
     public String getNombre(){return nombre;}
     public String getFaceta(){return faceta;}
     public String getDescripcion(){return descripcion;}
