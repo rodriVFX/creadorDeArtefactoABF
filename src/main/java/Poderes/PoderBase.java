@@ -1,7 +1,6 @@
 package Poderes;
 
-import Datos.TipoContenedorEnum;
-import Datos.TipoDanoEnum;
+import Datos.Enums.TipoContenedorEnum;
 
 import java.util.ArrayList;
 import java.util.List;

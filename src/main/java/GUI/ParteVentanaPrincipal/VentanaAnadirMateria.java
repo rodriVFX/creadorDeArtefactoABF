@@ -1,11 +1,10 @@
 package GUI.ParteVentanaPrincipal;
 
-import Datos.TipoMatPrimaEnum;
+import Datos.Enums.TipoMatPrimaEnum;
 import GUI.ParteVentanaPrincipal.TiposMatPrima.*;
 import MateriasPrimas.MateriaPrima;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -19,7 +18,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.util.List;
 import java.util.Objects;
 
 public class VentanaAnadirMateria {

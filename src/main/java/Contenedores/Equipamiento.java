@@ -1,7 +1,5 @@
 package Contenedores;
 
-import Datos.TipoContenedorEnum;
-
 import java.util.ArrayList;
 import java.util.List;
 

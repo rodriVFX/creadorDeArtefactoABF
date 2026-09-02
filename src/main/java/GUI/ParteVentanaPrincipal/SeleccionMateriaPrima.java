@@ -1,6 +1,6 @@
 package GUI.ParteVentanaPrincipal;
 
-import Datos.TipoMatPrimaEnum;
+import Datos.Enums.TipoMatPrimaEnum;
 import MateriasPrimas.MateriaPrima;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
@@ -12,9 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public class SeleccionMateriaPrima {
 

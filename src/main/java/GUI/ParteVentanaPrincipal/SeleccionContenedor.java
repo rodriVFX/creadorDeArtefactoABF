@@ -4,7 +4,7 @@ import Contenedores.Contenedor;
 import Datos.Calidad;
 import Datos.Material;
 import Datos.RepositorioDatos;
-import Datos.TipoContenedorEnum;
+import Datos.Enums.TipoContenedorEnum;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;

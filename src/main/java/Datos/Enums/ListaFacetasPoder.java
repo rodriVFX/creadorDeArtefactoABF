@@ -1,4 +1,4 @@
-package Datos;
+package Datos.Enums;
 
 public enum ListaFacetasPoder {
     GENERAL, OFENSIVA, DEFENSIVA, PROTECCION, MAGICA, PSIQUICA, CONJURACION, CONJUROS, MEJORAS, DOMINE, ESOTERICA;

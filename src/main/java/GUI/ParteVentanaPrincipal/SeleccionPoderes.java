@@ -1,6 +1,6 @@
 package GUI.ParteVentanaPrincipal;
 
-import Datos.ListaFacetasPoder;
+import Datos.Enums.ListaFacetasPoder;
 import Poderes.Poder;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;

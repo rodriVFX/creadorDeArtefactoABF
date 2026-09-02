@@ -1,7 +1,5 @@
 package Contenedores;
 
-import Datos.TipoContenedorEnum;
-
 import java.util.List;
 
 public abstract class ArmaDistancia extends Arma{

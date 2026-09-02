@@ -6,6 +6,7 @@ import Artefactos.Artefacto;
 import Artefactos.CreadorArtefacto;
 import Datos.*;
 import Contenedores.*;
+import Datos.Enums.TipoContenedorEnum;
 import MateriasPrimas.CreadorMateriaPrima;
 import MateriasPrimas.MateriaPrima;
 import Poderes.*;

@@ -1,4 +1,4 @@
-package Datos;
+package Datos.Enums;
 
 public enum TipoContenedorEnum {
     OBJETO, ARMAMELEE, ARMALANZABLE, ARMAPROYECTILES, ESCUDO, ARMADURA, MUNICION, TATUAJE

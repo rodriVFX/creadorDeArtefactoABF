@@ -1,7 +1,7 @@
 package Artefactos;
 
 import Datos.Calculadora;
-import Datos.TipoContenedorEnum;
+import Datos.Enums.TipoContenedorEnum;
 import Poderes.Poder;
 
 import java.util.*;
