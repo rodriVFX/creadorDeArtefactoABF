@@ -9,7 +9,7 @@
     "tipo": "Proyectil",
     "entereza": 8,
     "rotura": -2,
-    "especializaciones": ["Fuerza 8, A una o dos manos", "Ver"],
+    "especializaciones": ["Fuerza 8", "A una o dos manos", "Ver"],
     "alcance": 60,
     "recarga": 2
   },
@@ -23,7 +23,7 @@
     "tipo": "Proyectil",
     "entereza": 6,
     "rotura": -2,
-    "especializaciones": ["Fuerza 8, A una o dos manos", "Ver"],
+    "especializaciones": ["Fuerza 8", "A una o dos manos", "Ver"],
     "alcance": 60,
     "recarga": 3
   },
@@ -37,7 +37,7 @@
     "tipo": "Proyectil",
     "entereza": 8,
     "rotura": -1,
-    "especializaciones": ["Fuerza 8, A una o dos manos", "Ver"],
+    "especializaciones": ["Fuerza 8", "A una o dos manos", "Ver"],
     "alcance": 80,
     "recarga": 2
   },
@@ -51,7 +51,7 @@
     "tipo": "Proyectil",
     "entereza": 5,
     "rotura": -4,
-    "especializaciones": ["Fuerza 6, Ver"],
+    "especializaciones": ["Fuerza 6", "Ver"],
     "alcance": 30,
     "recarga": 10
   },
