@@ -12,8 +12,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.Comparator;
-
 public class SeleccionMateriaPrima {
 
     private final ObservableList<MateriaPrima> materiasSeleccionadas = FXCollections.observableArrayList();
@@ -26,7 +24,6 @@ public class SeleccionMateriaPrima {
         for(TipoMatPrimaEnum tipo : TipoMatPrimaEnum.values()){
             comboTipo.getItems().add(tipo);
         }
-        comboTipo.getItems().sort(Comparator.comparing(TipoMatPrimaEnum::toString));
         comboTipo.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(TipoMatPrimaEnum tipo, boolean empty) {

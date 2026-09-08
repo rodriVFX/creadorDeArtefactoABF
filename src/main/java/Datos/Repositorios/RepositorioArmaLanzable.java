@@ -58,6 +58,7 @@ public class RepositorioArmaLanzable {
         String sql = """
                 SELECT nombre
                 FROM armas_lanzables
+                ORDER BY nombre
                 """;
         try(Connection conexion = ConexionDB.conectar();
             PreparedStatement sentencia = conexion.prepareStatement(sql);

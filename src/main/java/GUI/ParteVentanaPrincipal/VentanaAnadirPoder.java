@@ -16,7 +16,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -47,7 +46,6 @@ public class VentanaAnadirPoder {
 
         ComboBox<PoderBase> comboBase = new ComboBox<>();
         comboBase.getItems().addAll(poderesDisponibles());
-        comboBase.getItems().sort(Comparator.comparing(PoderBase::getNombre));
         comboBase.setCellFactory(param -> new ListCell<>(){
             @Override
             protected void updateItem(PoderBase pod, boolean empty){
@@ -117,7 +115,6 @@ public class VentanaAnadirPoder {
             comboOpcion.getItems().clear();
             if(comboBase.getValue() != null) {
                 comboOpcion.getItems().addAll(comboBase.getValue().getOpciones());
-                comboOpcion.getItems().sort(Comparator.comparing(OpcionPoder::getNombre));
             }
             List<ModificadorPoder> mods = comboBase.getValue().getModificadores();
             listaMod.getItems().clear();
@@ -125,7 +122,6 @@ public class VentanaAnadirPoder {
                 return;
             }
             listaMod.getItems().addAll(mods);
-            listaMod.getItems().sort(Comparator.comparing(ModificadorPoder::getNombre));
         });
         comboOpcion.setPromptText("Selecciona una variante");
 

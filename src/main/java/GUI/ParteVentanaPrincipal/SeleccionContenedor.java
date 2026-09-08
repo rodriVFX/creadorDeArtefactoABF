@@ -11,8 +11,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-import java.util.Comparator;
-
 public class SeleccionContenedor {
 
     private RepositorioDatos datos = new RepositorioDatos();
@@ -39,7 +37,6 @@ public class SeleccionContenedor {
         for(TipoContenedorEnum tipo : TipoContenedorEnum.values()){
             comboTipo.getItems().add(tipo);
         }
-        comboTipo.getItems().sort(Comparator.comparing(TipoContenedorEnum::toString));
         comboTipo.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(TipoContenedorEnum tipo, boolean empty) {
@@ -81,7 +78,6 @@ public class SeleccionContenedor {
                 case TATUAJE -> datos.getTatuajes().listar().values();
             }
             );
-            comboCont.getItems().sort(Comparator.comparing(Contenedor::getNombre));
         });
         comboCont.setCellFactory(param -> new ListCell<>(){
             @Override
@@ -122,12 +118,9 @@ public class SeleccionContenedor {
             else{
                 comboMaterial.getItems().add(datos.getArtefacto().getMaterial("Piel"));
             }
-            comboMaterial.getItems().sort(Comparator.comparing(Material::getNombre));
-
             if(comboTipo.getValue() != TipoContenedorEnum.TATUAJE){
                 comboCalidad.getItems().addAll(datos.getArtefacto().listarCalidades().values());
             }
-            comboCalidad.getItems().sort(Comparator.comparing(Calidad::getNombre));
         });
         comboMaterial.setCellFactory(param -> new ListCell<>(){
             @Override

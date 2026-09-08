@@ -12,8 +12,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.Comparator;
-
 public class SeleccionPoderes {
 
     private final ObservableList<Poder> poderesSeleccionados = FXCollections.observableArrayList();
@@ -27,7 +25,6 @@ public class SeleccionPoderes {
         for(ListaFacetasPoder lista : ListaFacetasPoder.values()){
             comboFaceta.getItems().add(lista);
         }
-        comboFaceta.getItems().sort(Comparator.comparing(ListaFacetasPoder::toString));
         comboFaceta.setCellFactory(param -> new ListCell<>(){
             @Override
             protected void updateItem(ListaFacetasPoder faceta, boolean empty){
