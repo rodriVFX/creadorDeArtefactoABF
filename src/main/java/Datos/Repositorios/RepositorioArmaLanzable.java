@@ -125,5 +125,4 @@ public class RepositorioArmaLanzable {
         }
         return especializaciones;
     }
-
 }

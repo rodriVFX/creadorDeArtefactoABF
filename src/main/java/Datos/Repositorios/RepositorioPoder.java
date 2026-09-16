@@ -51,6 +51,7 @@ public class RepositorioPoder {
         String sql = """
                 SELECT nombre
                 FROM poder_base
+                ORDER BY nombre
                 """;
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -72,6 +73,7 @@ public class RepositorioPoder {
         String sql = """
                 SELECT DISTINCT faceta
                 FROM poder_base
+                ORDER BY faceta
                 """;
         try (Connection conexion = ConexionDB.conectar();
              PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -96,6 +98,7 @@ public class RepositorioPoder {
                     SELECT nombre, coste_pp, nivel_pp, descripcion
                     FROM opcion_poder
                     WHERE poder_base_id = ?
+                    ORDER BY nombre
                     """;
 
             try (PreparedStatement sentencia = conexion.prepareStatement(sql)){
@@ -130,6 +133,7 @@ public class RepositorioPoder {
                     SELECT nombre, mod_coste_pp, mod_nivel_pp, descripcion
                     FROM modificadores_poder
                     WHERE poder_base_id = ?
+                    ORDER BY nombre
                     """;
 
         try (PreparedStatement sentencia = conexion.prepareStatement(sql)){
@@ -164,6 +168,7 @@ public class RepositorioPoder {
                     SELECT contenedor
                     FROM contenedores_poder
                     WHERE poder_base_id = ?
+                    ORDER BY contenedor
                     """;
 
         try (PreparedStatement sentencia = conexion.prepareStatement(sql)){

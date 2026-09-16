@@ -1,43 +1,81 @@
 package Datos.Repositorios;
+import Datos.ConexionDB;
 import MateriasPrimas.Componente;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.InputStream;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class RepositorioComponente {
 
-    private HashMap<String, Componente> componentes;
+    public Componente getComponente (String nombre){
+        String sql = """
+                SELECT id, nombre, nivel_pp, cantidad_pp
+                FROM componentes_unicos
+                WHERE nombre = ?
+                """;
+        try(Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentencia = conexion.prepareStatement(sql)){
+            sentencia.setString(1, nombre);
+            try(ResultSet resultado = sentencia.executeQuery()){
+                int compID = resultado.getInt("id");
+                String nombreComp = resultado.getString("nombre");
+                int nivel = resultado.getInt("nivel_pp");
+                int cantidad = resultado.getInt("cantidad_pp");
 
-    public RepositorioComponente() {
-
-        try {
-
-            ObjectMapper mapper = new ObjectMapper();
-
-            InputStream archivo = getClass().getResourceAsStream("/componentes.json");
-            if (archivo == null) {
-                throw new IllegalStateException("No se encontró componentes.json");
+                return new Componente(nombreComp, nivel, cantidad, getEspecialidades(compID));
             }
-
-            List<Componente> lista = mapper.readValue(archivo, new TypeReference<List<Componente>>() {});
-
-            componentes = new HashMap<>();
-
-            for(Componente c : lista){
-                componentes.put(c.getNombre(), c);
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Error al cargar el componente: " + nombre, e);
+        }
+    }
+    public Map<String, Componente> listar () {
+        Map<String, Componente> lista = new HashMap<>();
+        String sql = """
+                SELECT nombre
+                FROM componentes_unicos
+                ORDER BY nombre
+                """;
+        try(Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            ResultSet resultado = sentencia.executeQuery()){
+            while(resultado.next()){
+                String nombreComp = resultado.getString("nombre");
+                lista.put(nombreComp, getComponente(nombreComp));
             }
-
-        } catch(Exception e) {
-            throw new RuntimeException("Error al configurar los componentes de creación.", e);
+            return lista;
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Error al listar los componentes", e);
         }
     }
 
-    public Componente getComponente (String nombre){
-        return componentes.get(nombre);
-    }
+    private List<String> getEspecialidades(int compID){
+        List<String> lista = new ArrayList<>();
+        String sql = """
+                SELECT especialidad
+                FROM especialidades_componentes_unicos
+                WHERE componente_id = ?
+                ORDER BY especialidad
+                """;
+        try(Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentencia = conexion.prepareStatement(sql)){
+            sentencia.setInt(1, compID);
+            try(ResultSet resultado = sentencia.executeQuery()) {
+                while (resultado.next()) {
+                    String especialidad = resultado.getString("especialidad");
+                    lista.add(especialidad);
+                }
+                return lista;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error al cargar las especialidades", e);
+        }
 
-    public Map<String, Componente> listar (){ return Map.copyOf(componentes);}
+    }
 }
