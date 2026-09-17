@@ -68,14 +68,14 @@ public class SeleccionContenedor {
             TipoContenedorEnum tipo = comboTipo.getValue();
             comboCont.getItems().clear();
             comboCont.getItems().addAll(switch(tipo){
-                case OBJETO -> datos.getObjetos().listar().values();
-                case ARMAMELEE -> datos.getArmasMelee().listar().values();
-                case ARMALANZABLE -> datos.getArmasLanzables().listar().values();
-                case ARMAPROYECTILES -> datos.getArmasProyectiles().listar().values();
-                case ESCUDO -> datos.getArmasMelee().listar().values();
-                case ARMADURA -> datos.getArmaduras().listar().values();
-                case MUNICION -> datos.getMuniciones().listar().values();
-                case TATUAJE -> datos.getTatuajes().listar().values();
+                case OBJETO -> datos.getObjetos().listar();
+                case ARMAMELEE -> datos.getArmasMelee().listar();
+                case ARMALANZABLE -> datos.getArmasLanzables().listar();
+                case ARMAPROYECTILES -> datos.getArmasProyectiles().listar();
+                case ESCUDO -> datos.getArmasMelee().listar();
+                case ARMADURA -> datos.getArmaduras().listar();
+                case MUNICION -> datos.getMuniciones().listar();
+                case TATUAJE -> datos.getTatuajes().listar();
             }
             );
         });
@@ -113,13 +113,13 @@ public class SeleccionContenedor {
             comboCalidad.getItems().clear();
 
             if(comboTipo.getValue() != TipoContenedorEnum.TATUAJE){
-                comboMaterial.getItems().addAll(datos.getArtefacto().listarMateriales().values());
+                comboMaterial.getItems().addAll(datos.getArtefacto().listarMateriales());
             }
             else{
                 comboMaterial.getItems().add(datos.getArtefacto().getMaterial("Piel"));
             }
             if(comboTipo.getValue() != TipoContenedorEnum.TATUAJE){
-                comboCalidad.getItems().addAll(datos.getArtefacto().listarCalidades().values());
+                comboCalidad.getItems().addAll(datos.getArtefacto().listarCalidades());
             }
         });
         comboMaterial.setCellFactory(param -> new ListCell<>(){

@@ -7,8 +7,8 @@ import Datos.Calidad;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RepositorioArtefacto {
 
@@ -58,10 +58,10 @@ public class RepositorioArtefacto {
         }
     }
 
-    public Map<String, Calidad> listarCalidades (){
-        Map<String, Calidad> lista = new HashMap<>();
+    public List<Calidad> listarCalidades (){
+        List<Calidad> lista = new ArrayList<>();
         String sql = """
-                SELECT nombre
+                SELECT *
                 FROM calidades
                 ORDER BY id
                 """;
@@ -70,7 +70,8 @@ public class RepositorioArtefacto {
             ResultSet resultado = sentencia.executeQuery()){
             while(resultado.next()){
                 String nombreCal = resultado.getString("nombre");
-                lista.put(nombreCal, getCalidad(nombreCal));
+                int mod = resultado.getInt("modificador");
+                lista.add(new Calidad(nombreCal, mod));
             }
             return lista;
         }
@@ -78,10 +79,10 @@ public class RepositorioArtefacto {
             throw new RuntimeException("Error al listar las calidades", e);
         }
     }
-    public Map<String, Material> listarMateriales () {
-        Map<String, Material> lista = new HashMap<>();
+    public List<Material> listarMateriales () {
+        List<Material> lista = new ArrayList<>();
         String sql = """
-                SELECT nombre
+                SELECT *
                 FROM materiales
                 ORDER BY id
                 """;
@@ -90,7 +91,8 @@ public class RepositorioArtefacto {
              ResultSet resultado = sentencia.executeQuery()) {
             while (resultado.next()) {
                 String nombreMat = resultado.getString("nombre");
-                lista.put(nombreMat, getMaterial(nombreMat));
+                int mod = resultado.getInt("modificador");
+                lista.add(new Material(nombreMat, mod));
             }
             return lista;
         }

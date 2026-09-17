@@ -6,26 +6,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RepositorioArmaMelee {
 
-    public ArmaMelee getArmaMelee(String nombre){
+
+    public List<ArmaMelee> listar() {
+        List<ArmaMelee> lista = new ArrayList<>();
         String sql = """
-                SELECT id, nombre, dano, modificador_ha, ignora_ta, turno, fue_requerida, critico_pri, critico_sec, tipo, entereza, rotura, presencia
+                SELECT *
                 FROM armas_melee
-                WHERE nombre = ?
+                ORDER BY nombre
                 """;
         try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql)){
-            sentencia.setString(1, nombre);
-
-            try(ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
+        PreparedStatement sentencia = conexion.prepareStatement(sql);
+        ResultSet resultado = sentencia.executeQuery()){
+            while(resultado.next()){
                 int armaId = resultado.getInt("id");
                 String nombreArma = resultado.getString("nombre");
                 int dano = resultado.getInt("dano");
@@ -40,27 +36,8 @@ public class RepositorioArmaMelee {
                 int rotura = resultado.getInt("rotura");
                 int presencia = resultado.getInt("presencia");
 
-                return new ArmaMelee(nombreArma, presencia, getEspecialidades(armaId), dano, modHA, ignoraTA, turno, fueReq, criticoPri, criticoSec, tipo, entereza, rotura, getEspecializaciones(armaId));
-            }
-        }
-        catch (Exception e){
-            throw new RuntimeException("Error obteniendo el arma: " + nombre, e);
-        }
-    }
+                lista.add(new ArmaMelee(nombreArma, presencia, getEspecialidades(armaId), dano, modHA, ignoraTA, turno, fueReq, criticoPri, criticoSec, tipo, entereza, rotura, getEspecializaciones(armaId)));
 
-    public Map<String, ArmaMelee> listar() {
-        Map<String, ArmaMelee> lista = new HashMap<>();
-        String sql = """
-                SELECT nombre
-                FROM armas_melee
-                ORDER BY nombre
-                """;
-        try(Connection conexion = ConexionDB.conectar();
-        PreparedStatement sentencia = conexion.prepareStatement(sql);
-        ResultSet resultado = sentencia.executeQuery()){
-            while(resultado.next()){
-                String nombre = resultado.getString("nombre");
-                lista.put(nombre, getArmaMelee(nombre));
             }
             return lista;
         }

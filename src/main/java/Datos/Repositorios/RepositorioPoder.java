@@ -13,62 +13,44 @@ import java.util.*;
 
 public class RepositorioPoder {
 
-    public PoderBase getPoder(String nombre){
-        String sql = """
-                SELECT id, nombre, faceta, descripcion
-                FROM poder_base
-                WHERE nombre = ?
-                """;
-        try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentencia = conexion.prepareStatement(sql)){
-
-            sentencia.setString(1, nombre);
-
-            try (ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
-                int poderBaseId = resultado.getInt("id");
-                String nombrePoder = resultado.getString("nombre");
-                String faceta = resultado.getString("faceta");
-                String descripcion = resultado.getString("descripcion");
-
-                List<OpcionPoder> opciones = obtenerOpciones(conexion, poderBaseId);
-                List<ModificadorPoder> modificadores = obtenerModificadores(conexion, poderBaseId);
-                List<TipoContenedorEnum> contenedores = obtenerContenedores(conexion, poderBaseId);
-
-                return new PoderBase(nombrePoder, faceta, descripcion, contenedores, opciones, modificadores);
-            }
-        }
-        catch (Exception e){
-            throw new RuntimeException("Error obteniendo el poder: " + nombre, e);
-        }
-    }
-
-    public Map<String, PoderBase> listar() {
-        Map<String, PoderBase> poderes = new HashMap<>();
+    public List<PoderBase> listar(String faceta) {
+        List<PoderBase> lista = new ArrayList<>();
 
         String sql = """
-                SELECT nombre
+                SELECT *
                 FROM poder_base
+                WHERE faceta = ?
                 ORDER BY nombre
                 """;
         try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentencia = conexion.prepareStatement(sql);
-             ResultSet resultado = sentencia.executeQuery()){
+             PreparedStatement sentencia = conexion.prepareStatement(sql)) {
 
-            while(resultado.next()){
+            sentencia.setString(1, faceta);
+
+            try (ResultSet resultado = sentencia.executeQuery()) {
+
+                while (resultado.next()) {
+                    int poderBaseId = resultado.getInt("id");
                     String nombrePoder = resultado.getString("nombre");
-                    poderes.put(nombrePoder, getPoder(nombrePoder));
+                    String facetaPoder = resultado.getString("faceta");
+                    String descripcion = resultado.getString("descripcion");
+
+                    List<OpcionPoder> opciones = obtenerOpciones(conexion, poderBaseId);
+                    List<ModificadorPoder> modificadores = obtenerModificadores(conexion, poderBaseId);
+                    List<TipoContenedorEnum> contenedores = obtenerContenedores(conexion, poderBaseId);
+
+                    lista.add(new PoderBase(nombrePoder, facetaPoder, descripcion, contenedores, opciones, modificadores));
+
+                }
+                return lista;
             }
-            return poderes;
         }
         catch (Exception e){
             throw new RuntimeException("Error obteniendo la lista de poderes", e);
         }
     }
-    public Set<String> listarFacetas(){
-        Set<String> facetas = new HashSet<>();
+    public List<String> listarFacetas(){
+        List<String> facetas = new ArrayList<>();
 
         String sql = """
                 SELECT DISTINCT faceta

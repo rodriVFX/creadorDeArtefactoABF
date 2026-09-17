@@ -7,27 +7,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RepositorioArmaLanzable {
 
-    public ArmaLanzable getArmaLanzable(String nombre){
+    public List<ArmaLanzable> listar() {
+        List<ArmaLanzable> lista = new ArrayList<>();
+
         String sql = """
-                SELECT id, nombre, dano, presencia, modificador_ha, ignora_ta, turno, fue_requerida, critico_pri, critico_sec, tipo, entereza, rotura, alcance, cadencia_fue
+                SELECT *
                 FROM armas_lanzables
-                WHERE nombre = ?
+                ORDER BY nombre
                 """;
         try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql)){
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            ResultSet resultado = sentencia.executeQuery()){
 
-            sentencia.setString(1, nombre);
-
-            try(ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
+            while (resultado.next()){
                 int armaId = resultado.getInt("id");
                 String nombreArma = resultado.getString("nombre");
                 int dano = resultado.getInt("dano");
@@ -44,38 +40,16 @@ public class RepositorioArmaLanzable {
                 int alcance = resultado.getInt("alcance");
                 int cadencia = resultado.getInt("cadencia_fue");
 
-                return new ArmaLanzable(dano, nombreArma, presencia, getEspecialidades(conexion, armaId), modHA, ignoraTA, turno, fueReq, tipo, entereza, rotura, getEspecializaciones(conexion, armaId), alcance, cadencia, criticoPri, criticoSec);
+                lista.add(new ArmaLanzable(dano, nombreArma, presencia, getEspecialidades(armaId), modHA, ignoraTA, turno, fueReq, tipo, entereza, rotura, getEspecializaciones(armaId), alcance, cadencia, criticoPri, criticoSec));
             }
-        }
-        catch (Exception e){
-            throw new RuntimeException("Error obteniendo el arma: " + nombre, e);
-        }
-    }
-
-    public Map<String, ArmaLanzable> listar() {
-        Map<String, ArmaLanzable> armas = new HashMap<>();
-
-        String sql = """
-                SELECT nombre
-                FROM armas_lanzables
-                ORDER BY nombre
-                """;
-        try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql);
-            ResultSet resultado = sentencia.executeQuery()){
-
-            while (resultado.next()){
-                String nombreArma = resultado.getString("nombre");
-                armas.put(nombreArma, getArmaLanzable(nombreArma));
-            }
-            return armas;
+            return lista;
         }
         catch (Exception e){
             throw new RuntimeException("Error obteniendo la lista de Armas Lanzables", e);
         }
     }
 
-    private List<String> getEspecialidades(Connection conexion, int armaId){
+    private List<String> getEspecialidades(int armaId){
         List<String> especialidades = new ArrayList<>();
 
         String sql = """
@@ -83,7 +57,8 @@ public class RepositorioArmaLanzable {
                 FROM especialidades_armas_lanzables
                 WHERE arma_lanzable_id = ?
                 """;
-        try(PreparedStatement sentencia = conexion.prepareStatement(sql)){
+        try(Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentencia = conexion.prepareStatement(sql)){
 
             sentencia.setInt(1, armaId);
 
@@ -100,7 +75,7 @@ public class RepositorioArmaLanzable {
         }
         return especialidades;
     }
-    private List<String> getEspecializaciones(Connection conexion, int armaId){
+    private List<String> getEspecializaciones(int armaId){
         List<String> especializaciones = new ArrayList<>();
 
         String sql = """
@@ -108,7 +83,8 @@ public class RepositorioArmaLanzable {
                 FROM especializaciones_armas_lanzables
                 WHERE arma_lanzable_id = ?
                 """;
-        try(PreparedStatement sentencia = conexion.prepareStatement(sql)){
+        try(Connection conexion = ConexionDB.conectar();
+            PreparedStatement sentencia = conexion.prepareStatement(sql)){
 
             sentencia.setInt(1, armaId);
 

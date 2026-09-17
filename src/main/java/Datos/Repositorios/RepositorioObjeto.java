@@ -7,40 +7,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RepositorioObjeto {
 
 
-    public Objeto getObjeto(String nombre){
+    public List<Objeto> listar(){
+        List<Objeto> lista = new ArrayList<>();
         String sql = """
-                SELECT id, nombre, presencia
-                FROM objetos
-                WHERE nombre = ?
-                """;
-        try(Connection conexion = ConexionDB.conectar();
-        PreparedStatement sentencia = conexion.prepareStatement(sql)){
-            sentencia.setString(1, nombre);
-            try(ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
-                int objetoID = resultado.getInt("id");
-                String objetoNombre = resultado.getString("nombre");
-                int presencia = resultado.getInt("presencia");
-
-                return new Objeto(objetoNombre, presencia, getEspecialidades(objetoID));
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("Error al cargar el objeto: " + nombre, e);
-        }
-    }
-    public Map<String, Objeto> listar(){
-        Map<String, Objeto> lista = new HashMap<>();
-        String sql = """
-                SELECT nombre
+                SELECT *
                 FROM objetos
                 ORDER BY nombre
                 """;
@@ -48,8 +23,11 @@ public class RepositorioObjeto {
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         ResultSet resultado = sentencia.executeQuery()){
             while(resultado.next()) {
-                String nombreObj = resultado.getString("nombre");
-                lista.put(nombreObj, getObjeto(nombreObj));
+                int objetoID = resultado.getInt("id");
+                String objetoNombre = resultado.getString("nombre");
+                int presencia = resultado.getInt("presencia");
+
+                lista.add(new Objeto(objetoNombre, presencia, getEspecialidades(objetoID)));
             }
             return lista;
         } catch (Exception e) {

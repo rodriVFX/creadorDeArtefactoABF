@@ -12,32 +12,10 @@ import java.util.Map;
 
 public class RepositorioComponente {
 
-    public Componente getComponente (String nombre){
+    public List<Componente> listar () {
+        List<Componente> lista = new ArrayList<>();
         String sql = """
-                SELECT id, nombre, nivel_pp, cantidad_pp
-                FROM componentes_unicos
-                WHERE nombre = ?
-                """;
-        try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql)){
-            sentencia.setString(1, nombre);
-            try(ResultSet resultado = sentencia.executeQuery()){
-                int compID = resultado.getInt("id");
-                String nombreComp = resultado.getString("nombre");
-                int nivel = resultado.getInt("nivel_pp");
-                int cantidad = resultado.getInt("cantidad_pp");
-
-                return new Componente(nombreComp, nivel, cantidad, getEspecialidades(compID));
-            }
-        }
-        catch (Exception e) {
-            throw new RuntimeException("Error al cargar el componente: " + nombre, e);
-        }
-    }
-    public Map<String, Componente> listar () {
-        Map<String, Componente> lista = new HashMap<>();
-        String sql = """
-                SELECT nombre
+                SELECT *
                 FROM componentes_unicos
                 ORDER BY nombre
                 """;
@@ -45,8 +23,13 @@ public class RepositorioComponente {
             PreparedStatement sentencia = conexion.prepareStatement(sql);
             ResultSet resultado = sentencia.executeQuery()){
             while(resultado.next()){
+                int compID = resultado.getInt("id");
                 String nombreComp = resultado.getString("nombre");
-                lista.put(nombreComp, getComponente(nombreComp));
+                int nivel = resultado.getInt("nivel_pp");
+                int cantidad = resultado.getInt("cantidad_pp");
+
+                lista.add(new Componente(nombreComp, nivel, cantidad, getEspecialidades(compID)));
+
             }
             return lista;
         }

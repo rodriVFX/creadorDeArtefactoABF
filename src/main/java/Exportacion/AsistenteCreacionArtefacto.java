@@ -1,4 +1,4 @@
-package Exportacion;
+/*package Exportacion;
 
 import java.util.*;
 
@@ -140,7 +140,7 @@ public class AsistenteCreacionArtefacto {
 
 
     private MateriaPrima elegirComponente() {
-        List<? extends MateriaPrima> lista = new ArrayList<>(datos.getComponentes().listar().values());
+        List<? extends MateriaPrima> lista = new ArrayList<>(datos.getComponentes().listar());
         lista.sort(Comparator.comparing(MateriaPrima::getNombre));
         for (int i = 0; i < lista.size(); i++) {
             System.out.println((i + 1) + ". " + lista.get(i).getNombre());
@@ -307,4 +307,4 @@ public class AsistenteCreacionArtefacto {
         modificadoresElegidos.sort(Comparator.comparing(ModificadorPoder::getNombre));
         return modificadoresElegidos;
     }
-}
+}*/

@@ -7,27 +7,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RepositorioArmaProyectiles {
 
-    public ArmaProyectiles getArmaProyectiles(String nombre){
+    public List<ArmaProyectiles> listar() {
+        List<ArmaProyectiles> lista = new ArrayList<>();
+
         String sql = """
-                SELECT id, nombre, presencia, modificador_ha, turno, fue_requerida, tipo, entereza, rotura, alcance, recarga
+                SELECT *
                 FROM armas_proyectiles
-                WHERE nombre = ?
+                ORDER BY nombre
                 """;
         try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql)){
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            ResultSet resultado = sentencia.executeQuery()){
 
-            sentencia.setString(1, nombre);
-
-            try(ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
+            while (resultado.next()){
                 int armaId = resultado.getInt("id");
                 String nombreArma = resultado.getString("nombre");
                 int presencia = resultado.getInt("presencia");
@@ -40,31 +36,10 @@ public class RepositorioArmaProyectiles {
                 int alcance = resultado.getInt("alcance");
                 int recarga = resultado.getInt("recarga");
 
-                return new ArmaProyectiles(nombreArma, presencia, getEspecialidades(armaId), modHA, turno, fueReq, tipo, entereza, rotura, getEspecializaciones(armaId), alcance, recarga);
+                lista.add(new ArmaProyectiles(nombreArma, presencia, getEspecialidades(armaId), modHA, turno, fueReq, tipo, entereza, rotura, getEspecializaciones(armaId), alcance, recarga));
+
             }
-        }
-        catch (Exception e){
-            throw new RuntimeException("Error obteniendo el arma: " + nombre, e);
-        }
-    }
-
-    public Map<String, ArmaProyectiles> listar() {
-        Map<String, ArmaProyectiles> armas = new HashMap<>();
-
-        String sql = """
-                SELECT nombre
-                FROM armas_proyectiles
-                ORDER BY nombre
-                """;
-        try(Connection conexion = ConexionDB.conectar();
-            PreparedStatement sentencia = conexion.prepareStatement(sql);
-            ResultSet resultado = sentencia.executeQuery()){
-
-            while (resultado.next()){
-                String nombreArma = resultado.getString("nombre");
-                armas.put(nombreArma, getArmaProyectiles(nombreArma));
-            }
-            return armas;
+            return lista;
         }
         catch (Exception e){
             throw new RuntimeException("Error obteniendo la lista de Armas de Proyectiles", e);

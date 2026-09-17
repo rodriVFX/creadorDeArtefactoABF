@@ -14,22 +14,20 @@ import java.util.Map;
 
 public class RepositorioArmadura {
 
-    public Armadura getArmadura(String nombre){
+    public List<Armadura> listar() {
+        List<Armadura> armaduras = new ArrayList<>();
+
         String sql = """
-                SELECT id, nombre, requerimiento, penalizador, restriccion_mov, entereza, rotura, presencia, localizacion, tipo, especializaciones
+                SELECT *
                 FROM armaduras
-                WHERE nombre = ?
+                ORDER BY nombre
                 """;
         try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentencia = conexion.prepareStatement(sql)){
+             PreparedStatement sentencia = conexion.prepareStatement(sql);
+             ResultSet resultado = sentencia.executeQuery()){
 
-            sentencia.setString(1, nombre);
-
-            try(ResultSet resultado = sentencia.executeQuery()){
-                if(!resultado.next()){
-                    return null;
-                }
-                int armaduras_id = resultado.getInt("id");
+            while(resultado.next()){
+                int armadurasId = resultado.getInt("id");
                 String nombreArmadura = resultado.getString("nombre");
                 int requerimiento = resultado.getInt("requerimiento");
                 int penalizador = resultado.getInt("penalizador");
@@ -42,28 +40,7 @@ public class RepositorioArmadura {
                 List<String> especializaciones = new ArrayList<>();
                 especializaciones.add(resultado.getString("especializaciones"));
 
-                return new Armadura(nombreArmadura, presencia, getEspecialidades(armaduras_id), tipo, entereza, rotura, especializaciones, getTa(armaduras_id), requerimiento, penalizador, restMov, localizacion);
-            }
-        }
-        catch (Exception e){
-            throw new RuntimeException("No se han podido obtener los datos de la armadura: " + nombre, e);
-        }
-    }
-
-    public Map<String, Armadura> listar() {
-        Map<String, Armadura> armaduras = new HashMap<>();
-
-        String sql = """
-                SELECT nombre
-                FROM armaduras
-                """;
-        try (Connection conexion = ConexionDB.conectar();
-             PreparedStatement sentencia = conexion.prepareStatement(sql);
-             ResultSet resultado = sentencia.executeQuery()){
-
-            while(resultado.next()){
-                String nombreArmadura = resultado.getString("nombre");
-                armaduras.put(nombreArmadura, getArmadura(nombreArmadura));
+                armaduras.add(new Armadura(nombreArmadura, presencia, getEspecialidades(armadurasId), tipo, entereza, rotura, especializaciones, getTa(armadurasId), requerimiento, penalizador, restMov, localizacion));
             }
             return armaduras;
         }
