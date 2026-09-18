@@ -1,6 +1,5 @@
 package GUI.ParteVentanaPrincipal;
 
-import Datos.Enums.ListaFacetasPoder;
 import Datos.RepositorioDatos;
 import Poderes.*;
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -23,10 +22,10 @@ import java.util.Objects;
 public class VentanaAnadirPoder {
 
     private final RepositorioDatos datos = new RepositorioDatos();
-    private final ListaFacetasPoder faceta;
+    private final String faceta;
     private final ObservableList<Poder> poderesSeleccionados = FXCollections.observableArrayList();
 
-    public VentanaAnadirPoder(ListaFacetasPoder faceta){
+    public VentanaAnadirPoder(String faceta){
         this.faceta = faceta;
     }
 
@@ -36,7 +35,7 @@ public class VentanaAnadirPoder {
         ventana.initModality(Modality.WINDOW_MODAL);
         ventana.initOwner(ventanaPrincipal);
 
-        Label titulo = new Label("Añadir poder de la faceta: " + faceta.toString());
+        Label titulo = new Label("Añadir poder de la faceta: " + faceta);
         titulo.setAlignment(Pos.CENTER);
         titulo.getStyleClass().add("titulo");
 
@@ -193,13 +192,6 @@ public class VentanaAnadirPoder {
     }
 
     private List<PoderBase> poderesDisponibles(){
-        List<PoderBase> poderesDisponibles = new ArrayList<>();
-        String nombreFaceta = new SeleccionPoderes().nombreFaceta(faceta);
-        for(PoderBase p : datos.getPoderes().listar().values()){
-            if(p.getFaceta().equals(nombreFaceta)){
-                poderesDisponibles.add(p);
-            }
-        }
-        return poderesDisponibles;
+        return new ArrayList<>(datos.getPoderes().listar(faceta));
     }
 }

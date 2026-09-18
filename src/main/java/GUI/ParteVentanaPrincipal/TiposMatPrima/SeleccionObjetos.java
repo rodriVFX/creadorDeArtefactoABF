@@ -52,7 +52,7 @@ public class SeleccionObjetos implements SelectorInterfaz{
             int nivel = Integer.parseInt(campoNivel.getText());
             boolean conserva = checkConservaNivel.isSelected();
             Map<Integer, Integer> pp = new HashMap<>();
-            pp.put(cantidad, nivel);
+            pp.put(nivel, cantidad);
 
             if(cantidad < 1 || nivel < 1 || nivel > 5){
                 return;

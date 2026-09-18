@@ -11,9 +11,11 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.Comparator;
+
 public class SeleccionContenedor {
 
-    private RepositorioDatos datos = new RepositorioDatos();
+    private final RepositorioDatos datos = new RepositorioDatos();
     private String nombreTipo(TipoContenedorEnum tipo) {
         return switch (tipo) {
             case OBJETO -> "Objeto";
@@ -61,6 +63,7 @@ public class SeleccionContenedor {
                 }
             }
         });
+        comboTipo.getItems().sort(Comparator.comparing(TipoContenedorEnum::toString));
         comboTipo.setPromptText("Selecciona el tipo de contenedor");
 
         ComboBox<Contenedor> comboCont = new ComboBox<>();

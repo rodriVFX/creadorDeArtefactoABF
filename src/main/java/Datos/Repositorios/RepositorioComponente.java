@@ -12,6 +12,30 @@ import java.util.Map;
 
 public class RepositorioComponente {
 
+    public Componente getComponente(String nombre) {
+        String sql = """
+                SELECT *
+                FROM componentes_unicos
+                WHERE nombre = ?
+                """;
+        try (Connection conexion = ConexionDB.conectar();
+             PreparedStatement sentencia = conexion.prepareStatement(sql)) {
+            sentencia.setString(1, nombre);
+            try (ResultSet resultado = sentencia.executeQuery()) {
+                if(!resultado.next()) {
+                    return null;
+                }
+                int compID = resultado.getInt("id");
+                String nombreComp = resultado.getString("nombre");
+                int nivel = resultado.getInt("nivel_pp");
+                int cantidad = resultado.getInt("cantidad_pp");
+
+                return new Componente(nombreComp, nivel, cantidad, getEspecialidades(compID));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("No se ha podido cargar el componente: " + nombre, e);
+        }
+    }
     public List<Componente> listar () {
         List<Componente> lista = new ArrayList<>();
         String sql = """

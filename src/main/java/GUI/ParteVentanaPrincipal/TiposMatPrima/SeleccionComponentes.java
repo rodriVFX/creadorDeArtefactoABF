@@ -24,7 +24,7 @@ public class SeleccionComponentes implements SelectorInterfaz{
         Label labelComp = new Label("Selecciona el componente: ");
 
         ComboBox<MateriaPrima> comboMat = new ComboBox<>();
-        comboMat.getItems().addAll(datos.getComponentes().listar().values());
+        comboMat.getItems().addAll(datos.getComponentes().listar());
         comboMat.setCellFactory(param -> new ListCell<>(){
             @Override
             protected void updateItem(MateriaPrima mat, boolean empty){

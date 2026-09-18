@@ -1,6 +1,7 @@
 package GUI.ParteVentanaPrincipal;
 
 import Datos.Enums.ListaFacetasPoder;
+import Datos.RepositorioDatos;
 import Poderes.Poder;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,38 +16,37 @@ import javafx.stage.Stage;
 public class SeleccionPoderes {
 
     private final ObservableList<Poder> poderesSeleccionados = FXCollections.observableArrayList();
+    private final RepositorioDatos datos = new RepositorioDatos();
 
     public Node getVista() {
         VBox root = new VBox(10);
 
         Label labelFaceta = new Label("Selecciona la faceta del Poder:");
 
-        ComboBox<ListaFacetasPoder> comboFaceta = new ComboBox<>();
-        for(ListaFacetasPoder lista : ListaFacetasPoder.values()){
-            comboFaceta.getItems().add(lista);
-        }
+        ComboBox<String> comboFaceta = new ComboBox<>();
+        comboFaceta.getItems().addAll(datos.getPoderes().listarFacetas());
         comboFaceta.setCellFactory(param -> new ListCell<>(){
             @Override
-            protected void updateItem(ListaFacetasPoder faceta, boolean empty){
+            protected void updateItem(String faceta, boolean empty){
                 super.updateItem(faceta, empty);
 
                 if(empty || faceta == null) {
                     setText(null);
                 } else {
-                    setText(nombreFaceta(faceta));
+                    setText(faceta);
                 }
 
             }
         });
         comboFaceta.setButtonCell(new ListCell<>(){
             @Override
-            protected void updateItem(ListaFacetasPoder faceta, boolean empty){
+            protected void updateItem(String faceta, boolean empty){
                 super.updateItem(faceta, empty);
 
                 if(empty || faceta == null) {
                     setText(null);
                 } else {
-                    setText(nombreFaceta(faceta));
+                    setText(faceta);
                 }
 
             }
@@ -55,7 +55,7 @@ public class SeleccionPoderes {
 
         Button botonAnadir = new Button("Añadir Poder");
         botonAnadir.setOnAction(event -> {
-            ListaFacetasPoder faceta = comboFaceta.getValue();
+            String faceta = comboFaceta.getValue();
             if(faceta == null){
                 return;
             }
@@ -106,22 +106,6 @@ public class SeleccionPoderes {
                 tablaPod
         );
         return root;
-    }
-
-    public String nombreFaceta(ListaFacetasPoder faceta){
-        return switch(faceta){
-            case GENERAL -> "Generales de Calidad";
-            case OFENSIVA -> "Ofensiva";
-            case DEFENSIVA -> "Defensiva";
-            case PROTECCION -> "Protección";
-            case MAGICA -> "Potenciación Mágica";
-            case PSIQUICA -> "Potenciación Psíquica";
-            case CONJURACION -> "Potenciación en la Conjuración";
-            case CONJUROS -> "Conjuros Innatos";
-            case MEJORAS -> "Mejoras";
-            case DOMINE -> "Domine";
-            case ESOTERICA -> "Esotérica";
-        };
     }
 
     public ObservableList<Poder> getPoderesSeleccionados(){

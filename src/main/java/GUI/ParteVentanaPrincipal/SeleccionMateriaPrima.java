@@ -109,7 +109,7 @@ public class SeleccionMateriaPrima {
             case PODER -> "Sacrificio de POD del hechicero";
             case VIDAS -> "Sacrificio de vidas";
         };
-    };
+    }
     public ObservableList<MateriaPrima> getMateriasSeleccionadas(){
         return materiasSeleccionadas;
     }
